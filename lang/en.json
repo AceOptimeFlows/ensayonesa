@@ -1,0 +1,499 @@
+{
+  "app": {
+    "title": "ensaYOnesa — offline PWA",
+    "logoAlt": "OptimeFlow(s) logo",
+    "brandName": "OptimeFlow(s)",
+    "brandSrOnly": "ensaYOnesa",
+    "shellAriaLabel": "ensaYOnesa essay generator",
+    "windowTitleTemplate": "{{title}} — ensaYOnesa"
+  },
+  "nav": {
+    "step1": "1. Cover and metadata",
+    "step2": "2. Settings and styles",
+    "step3": "3. Content",
+    "step4": "4. Export",
+    "step5": "5. Preview"
+  },
+  "panels": {
+    "panel1Label": "Cover and metadata",
+    "panel2Label": "Settings and styles",
+    "panel3Label": "Content",
+    "panel4Label": "Export",
+    "panel5Label": "Preview"
+  },
+  "settings": {
+    "openButton": "Settings",
+    "themeLabel": "Theme",
+    "themes": {
+      "system": "System",
+      "dark": "Dark core",
+      "midnight": "Midnight blue",
+      "nebula": "Neon nebula",
+      "ocean": "Deep ocean",
+      "forest": "Emerald forest",
+      "amber": "Warm amber",
+      "violet": "Royal violet",
+      "mono": "Mono noir"
+    },
+    "languageLabel": "Language",
+    "dictationLanguageLabel": "Dictation language",
+    "languages": {
+      "es": "Spanish",
+      "en": "English",
+      "pt-br": "Portuguese (Brazil)",
+      "it": "Italian",
+      "fr": "French",
+      "de": "German",
+      "ko": "Korean",
+      "zh": "Chinese",
+      "ja": "Japanese",
+      "ru": "Russian",
+      "hi": "Hindi",
+      "ar": "Arabic"
+    },
+    "installButton": "Install app"
+  },
+  "formats": {
+    "labels": {
+      "font": "Font",
+      "sizePx": "Size (px)",
+      "color": "Color",
+      "alphaPercent": "Alpha (%)",
+      "leading": "Line spacing (×)"
+    },
+    "fonts": {
+      "serif": "Serif",
+      "sans": "Sans",
+      "monospace": "Monospace"
+    }
+  },
+  "panel1": {
+    "titleLabel": "Title",
+    "titlePlaceholder": "ensaYOnesa",
+    "subtitleLabel": "Subtitle (optional)",
+    "subtitlePlaceholder": "Essay subtitle",
+    "authorLabel": "Author",
+    "authorPlaceholder": "Author name",
+    "licenseLabel": "License (optional)",
+    "licensePlaceholder": "e.g. CC BY 4.0",
+    "emailLabel": "Contact / Email (optional)",
+    "emailPlaceholder": "author@example.com",
+    "dateLabel": "Publication date (optional)",
+    "safeCreativeLabel": "Safe Creative ID (optional)",
+    "safeCreativePlaceholder": "SC-XXXXXXXX",
+    "doiLabel": "DOI (Zenodo) (optional)",
+    "doiPlaceholder": "10.5281/zenodo.xxxxxxx",
+    "noteLabel": "Note (optional)",
+    "notePlaceholder": "Notes / dedication / etc.",
+    "summaryLabel": "Abstract (optional)",
+    "summaryPlaceholder": "Essay abstract…",
+    "keywordsLabel": "Keywords (optional)",
+    "keywordsPlaceholder": "keyword1; keyword2; keyword3",
+    "endMatterHint": "If you fill in any of these fields, a final page will be added to the PDF (after the Bibliography).",
+    "editorialNoteLabel": "Editorial note (optional)",
+    "editorialNotePlaceholder": "Editorial note…",
+    "acknowledgmentsLabel": "Acknowledgments (optional)",
+    "acknowledgmentsPlaceholder": "Acknowledgments…",
+    "fundingLabel": "Funding (optional)",
+    "fundingPlaceholder": "Funding…",
+    "conflictsLabel": "Conflicts of interest (optional)",
+    "conflictsPlaceholder": "Conflicts of interest…",
+    "howToCiteLabel": "How to cite (optional)",
+    "howToCitePlaceholder": "How to cite this work…"
+  },
+  "panel2": {
+    "tabs": {
+      "headerFooter": "Header and footer",
+      "formats": "Formats",
+      "toc": "Table of contents"
+    },
+    "lineStyle": {
+      "label": "Line style",
+      "none": "No line",
+      "solid": "Solid line",
+      "dashed": "Dashed line",
+      "dotted": "Dotted line"
+    },
+    "header": {
+      "heading": "Header",
+      "enable": "Enable header",
+      "hint": "The header uses the essay title and author name, respecting the defined margins."
+    },
+    "footer": {
+      "heading": "Footer",
+      "enable": "Enable footer",
+      "citationsInFooter": "Citations in the footer",
+      "textLabel": "Footer text",
+      "textPlaceholder": "Reference text / website / etc."
+    },
+    "pageNumbers": {
+      "heading": "Page number",
+      "enable": "Number pages",
+      "locationLabel": "Location",
+      "positionTopLeft": "Top left",
+      "positionTopRight": "Top right",
+      "positionBottomLeft": "Bottom left",
+      "positionBottomRight": "Bottom right",
+      "positionBottomCenter": "Bottom centered (below footer)",
+      "hint": "At the top it inherits the header style; at the bottom, the footer style. Hidden on the cover and in the table of contents."
+    },
+    "toc": {
+      "enable": "Enable table of contents",
+      "countLabel": "Number of chapters/points",
+      "chapterDefaultTitle": "Chapter {{index}}",
+      "chapterTitlePlaceholder": "Chapter {{index}} title"
+    },
+    "numbering": {
+      "roman": "Roman numerals (I, II, III)",
+      "arabic": "Arabic numerals (1, 2, 3)"
+    },
+    "formatCards": {
+      "header": "Header",
+      "footer": "Footer",
+      "title": "Title",
+      "subtitle": "Subtitle",
+      "author": "Author",
+      "meta": "Metadata",
+      "endMatterHeading": "Final sections (page title)",
+      "endMatterLabel": "Final sections (titles)",
+      "endMatterBody": "Final sections (content)"
+    }
+  },
+  "panel3": {
+    "inlineFmt": {
+      "label": "Format:",
+      "bold": "Bold (Ctrl+B)",
+      "italic": "Italic (Ctrl+I)",
+      "underline": "Underline (Ctrl+U)",
+      "hint": "Shortcuts: Ctrl/Cmd + B / I / U"
+    },
+    "numbering": {
+      "label": "Chapter numbering",
+      "applyButton": "Apply"
+    },
+    "chapterPointLabel": "Chapter / point",
+    "subsectionCountLabel": "Number of subsections",
+    "subsectionSelectLabel": "Subsection",
+    "contentLabel": "Content",
+    "contentPlaceholder": "Write the content of the selected subsection here…",
+    "formatsHeading": "Formats by chapter / subsection",
+    "formatCards": {
+      "chapterTitle": "Chapter title",
+      "subsectionTitle": "Subsection title",
+      "content": "Content"
+    },
+    "applyAllInChapterButton": "Apply to all (chapter)",
+    "noChaptersOption": "— No chapters —",
+    "chapterDefaultTitle": "Chapter {{index}}",
+    "sectionDefaultTitle": "Section {{index}}",
+    "subsectionBaseLabel": "Base subsection",
+    "subsectionLabel": "Subsection title {{index}}",
+    "subsectionSelectBasePrefix": "(Base) "
+  },
+  "panel4": {
+    "ui": {
+      "sizeLabel": "Size",
+      "pageSizes": {
+        "A4": "A4 (210 x 297 mm)",
+        "A5": "A5 (148 x 210 mm)",
+        "KDP6x9": "Kindle/Amazon 6”×9” (152.4 × 228.6 mm)"
+      },
+      "marginsLabel": "Margins (mm)",
+      "margins": {
+        "top": "Top",
+        "bottom": "Bottom",
+        "left": "Left",
+        "right": "Right"
+      },
+      "headerGapLabel": "Header → text distance (mm)",
+      "breakOnChapterLabel": "New page at the start of each chapter",
+      "endCitesLabel": "Appendix of cited terms (at the end)",
+      "bibliographyLabel": "Bibliography",
+      "pdfFileNameLabel": "PDF file name",
+      "actions": {
+        "saveJson": "Save (JSON)",
+        "load": "Load",
+        "clear": "Clear (fields + database)",
+        "demo": "Load demo (full essay)",
+        "saveTemplate": "Save template (styles only)",
+        "loadTemplate": "Load template",
+        "exportTemplate": "Export template",
+        "export": "Export"
+      }
+    },
+    "defaultProjectFileName": "essay.json",
+    "defaultPdfFileName": "essay.pdf",
+    "defaultTemplateBaseFileName": "template",
+    "defaultTemplateNameShort": "Template {{index}}",
+    "defaultTemplateNameWithDate": "Template {{datetime}}",
+    "noTemplatesOption": "— No saved templates —",
+    "prompts": {
+      "templateName": "Style template name (does not include titles or contents):"
+    },
+    "alerts": {
+      "projectLoaded": "Project loaded.",
+      "invalidProjectJson": "The JSON is not valid.",
+      "confirmClearAll": "Are you sure you want to clear all fields and empty the local database?",
+      "demoConfirm": "This will replace the current content with a demo essay. Continue?",
+      "demoLoaded": "Demo essay loaded.",
+      "templateSaved": "Template saved.",
+      "templateNotDetected": "This JSON does not look like a template.",
+      "templateApplied": "Template applied.",
+      "invalidTemplateJson": "The template JSON is not valid.",
+      "selectTemplate": "Select a template."
+    },
+    "errors": {
+      "popupBlocked": "Allow pop-ups to export."
+    }
+  },
+  "citations": {
+    "selectPlaceholder": "Saved citations",
+    "textPlaceholder": "Citation content…",
+    "addButton": "Add Citation",
+    "removeButton": "Delete Citation",
+    "untitledWord": "(no word)",
+    "alertSelectText": "Select a word (or text) in the content to add a citation.",
+    "alertNoCitations": "There are no saved citations yet.",
+    "alertNoCitation": "No citation was detected in the selection. Select the word that has ^(N) or right around it.",
+    "confirmDelete": "Delete citation ({{number}}) and renumber the rest?",
+    "typeSelectAria": "Footnote type",
+    "includeInCitationsPage": "Include in the terminological/conceptual appendix",
+    "types": {
+      "bibliographic": "Bibliographic note",
+      "explanatory": "Explanatory or content note",
+      "authorComment": "Author comment"
+    }
+  },
+  "dictation": {
+    "noteStart": "Start dictation (note)",
+    "noteStop": "Stop dictation (note)",
+    "noteIndicatorIdle": "Idle",
+    "summaryStart": "Start dictation (abstract)",
+    "summaryStop": "Stop dictation (abstract)",
+    "summaryIndicatorIdle": "Idle",
+    "controls": {
+      "start": "Start dictation",
+      "pause": "Stop dictation"
+    },
+    "status": {
+      "notSupported": "Dictation is not supported by this browser",
+      "notSupportedShort": "Not supported",
+      "listening": "Listening",
+      "error": "Dictation error",
+      "idle": "Idle",
+      "webviewUnsupported": "Dictation is not available in WebView. Open the app in Chrome/Edge to transcribe.",
+      "needsHttps": "Dictation requires HTTPS (secure context).",
+      "noAudioEvents": "Dictation started but no audio events are arriving. It may not be supported on this device/browser.",
+      "noResults": "No dictation results are being received. Try Chrome/Edge or check the system speech recognition service."
+    },
+    "error": {
+      "noSpeech": "No speech was detected. Move closer to the microphone and try again.",
+      "audioCapture": "The microphone could not be accessed. Check permissions and make sure another app is not using it.",
+      "notAllowed": "Microphone permission denied or blocked by the browser.",
+      "serviceNotAllowed": "The speech recognition service is not available on this device/browser.",
+      "network": "Network error during dictation. Check your connection.",
+      "languageNotSupported": "The dictation language is not supported on this device.",
+      "badGrammar": "Internal dictation error (bad-grammar).",
+      "generic": "Dictation error."
+    }
+  },
+  "licenseGuard": {
+    "checking": {
+      "title": "Checking license…",
+      "body": "One moment, we are verifying your ensaYOnesa license."
+    },
+    "needsOnline": {
+      "title": "Connection required",
+      "body": "To activate ensaYOnesa for the first time you need an Internet connection. Open the app again when you are online."
+    },
+    "noSession": {
+      "title": "Sign in to activate the app",
+      "body": "Open your OptimeFlow(s) account on the main website to sign in and activate your ensaYOnesa license."
+    },
+    "noLicense": {
+      "title": "No active license found",
+      "body": "Your account does not have an active ensaYOnesa license. Buy the app in the OptimeFlow(s) store and open it again."
+    },
+    "error": {
+      "title": "The license could not be checked",
+      "body": "There was a problem checking the license. Check your connection and try again."
+    },
+    "configError": {
+      "title": "Configuration error",
+      "body": "The app cannot connect to Supabase. Check the project configuration or contact the developer."
+    },
+    "buttons": {
+      "openAccount": "Open my account",
+      "goToStore": "Go to the store",
+      "retry": "Retry"
+    }
+  },
+  "export": {
+    "footer": {
+      "licenseLabel": "License:",
+      "publicationDateLabel": "Publication date"
+    },
+    "bibliography": {
+      "heading": "Bibliography",
+      "empty": "(No bibliography)"
+    },
+    "endMatter": {
+      "heading": "Editorial note and statements",
+      "editorialNote": "Editorial note",
+      "acknowledgments": "Acknowledgments",
+      "funding": "Funding",
+      "conflicts": "Conflicts of interest",
+      "howToCite": "How to cite"
+    },
+    "meta": {
+      "license": "License",
+      "email": "Email",
+      "note": "Note",
+      "summary": "Abstract",
+      "keywords": "Keywords",
+      "safeCreativeId": "Safe Creative ID",
+      "doi": "DOI (Zenodo)"
+    },
+    "license": {
+      "heading": "Licenses"
+    },
+    "index": {
+      "heading": "Table of contents",
+      "defaultPagePlaceholder": "—",
+      "empty": "(No chapters)"
+    },
+    "citations": {
+      "heading": "Appendix - Terminological and conceptual clarifications",
+      "pageLabel": "p.",
+      "empty": "(No citations)",
+      "pageUnknown": "—",
+      "missingText": "—"
+    },
+    "errors": {
+      "popupBlocked": "Allow pop-ups to export."
+    }
+  },
+  "demo": {
+    "meta": {
+      "title": "Demo essay: Coherence and form",
+      "subtitle": "Standard ensaYOnesa template",
+      "author": "OptimeFlow(s) · Example",
+      "license": "CC BY-NC-SA 4.0 (example)",
+      "email": "author@example.com",
+      "note": "This is a demo essay generated by the internal ensaYOnesa template. You can safely write over it: all the content is fictional and intended only to test the format.",
+      "summary": "The aim of this demo essay is to show what the standard ensaYOnesa format looks like: cover, table of contents, chapters, subsections and justified text. You can modify titles, text and styles without touching the code.",
+      "keywords": "demo; template; coherence; example",
+      "safeCreativeId": "SC-DEMO-000000",
+      "doi": "10.0000/demo.ensayonesa"
+    },
+    "footer": {
+      "text": "ensaYOnesa · optimeflow.com · Demo template"
+    },
+    "ch1": {
+      "title": "I. Starting point",
+      "s0": {
+        "title": "I. Starting point",
+        "body": "This first demo chapter sums up the idea of a simple, readable essay. The cover, table of contents and body text are designed to work together, so you do not have to worry about layout.\n\nYou can use this chapter as a draft: change the titles, add your own paragraphs and see how the template keeps the standard format."
+      },
+      "s1": {
+        "title": "I.1. Initial question",
+        "body": "This is where the first real subsection of the chapter would go. A good beginning usually answers three questions: what do I want to say, who am I writing for, and what form do I need so it can be understood calmly.\n\nIn this example, the focus is on showing you the flow: cover → table of contents → chapter → subsections. From here on, everything you write will already be your own essay."
+      },
+      "s2": {
+        "title": "I.2. Context and methodological note",
+        "body": "This second sample subsection shows how the text is distributed when paragraphs extend over several lines. The line spacing and justification are designed for reading both on screen and on paper, without you having to adjust anything.\n\nYou can use this subsection to explain the context of your essay: where the idea comes from, which sources you have in mind, and what your text does not aim to do."
+      }
+    },
+    "ch2": {
+      "title": "II. Body of the essay",
+      "s0": {
+        "title": "II. Body of the essay",
+        "body": "This sample chapter represents the heart of the text: the place where you develop your argument, your scenes or your data. You can divide it into as many subsections as you need; here we show you two so you can see the basic behaviour."
+      },
+      "s1": {
+        "title": "II.1. Main development",
+        "body": "The first subsection of the body of the essay usually contains the strongest part of the argument: the one thing you want the reader to remember even if they only skim the text.\n\nIn this space you can combine longer paragraphs with shorter ones. The template takes care of preserving margins, typography and justification."
+      },
+      "s2": {
+        "title": "II.2. Nuances and examples",
+        "body": "Here you could add specific examples, small scenes, data or references. When paragraphs connect calmly, the reading experience feels like a continuous thread rather than a list of separate ideas.\n\nYou can delete this text and write directly over it: the chapter and subsection structure will keep working in exactly the same way."
+      }
+    },
+    "ch3": {
+      "title": "III. Closing and next steps",
+      "s0": {
+        "title": "III. Closing and next steps",
+        "body": "The last chapter of this example is intended for your conclusion: what you take from the process, what you offer the reader and which paths open up after the text.\n\nA clear closing helps the essay remain not just a series of interesting ideas, but a form that can be revisited and shared."
+      },
+      "s1": {
+        "title": "III.1. Synthesis",
+        "body": "In the synthesis you can gather the main lines of the essay in a couple of paragraphs: what the starting question was, what you discovered and what remains open.\n\nThe idea is that someone who comes directly here can understand, in just a few lines, the skeleton of the text."
+      },
+      "s2": {
+        "title": "III.2. Invitation to the reader",
+        "body": "Finally, this space can serve as an invitation: what the person who has read the essay can do now, what small gesture they can try, or what conversation they could open.\n\nA good conclusion does not close everything, but it does point to a possible next step."
+      }
+    },
+    "citations": {
+      "wordPrefix": "demo-",
+      "c1": "Demo citation 1: short reference to test the footer.",
+      "c2": "Demo citation 2: a somewhat longer reference to force a line break in the footer and check margins.",
+      "c3": "Demo citation 3: another reference to see several citations stacked on the same page.",
+      "c4": "Demo citation 4: an example citation of medium length (used to test the final citations appendix).",
+      "c5": "Demo citation 5: test citation.",
+      "c6": "Demo citation 6: test citation with a bit more length to check word-wrap.",
+      "c7": "Demo citation 7: test citation.",
+      "c8": "Demo citation 8: test citation.",
+      "c9": "Demo citation 9: test citation.",
+      "defaultText": "Demo citation {{number}}: test citation."
+    },
+    "export": {
+      "fileName": "demo-essay.pdf"
+    }
+  },
+  "footer": {
+    "brand": "OptimeFlow(s)®",
+    "appName": "ensaYOnesa",
+    "year": "2025",
+    "author": "Andrés Calvo Espinosa",
+    "coherenceButtonAria": "Universal Coherence",
+    "licenseButtonAria": "MIT License",
+    "licenseButton": "License",
+    "privacyButton": "Privacy"
+  },
+  "licenseOverlay": {
+    "title": "MIT License",
+    "text": "MIT License\n\nCopyright (c) 2025 OptimeFlow(s) by Andrés Calvo Espinosa\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "body": "<p><b>ensaYOnesa</b> works mainly in your browser and in your device's local storage. The essay content, preview and PDF export are processed locally in the app itself.</p><ul><li><b>Local data:</b> the app may store the project, settings, language, templates and some local resources in LocalStorage, SessionStorage, IndexedDB and browser caches to remember your preferences and work offline.</li><li><b>Voice dictation:</b> dictation uses the browser's speech recognition API. Depending on the browser, device and its configuration, audio may be processed locally or sent to the recognition service of the browser or system provider. <b>ensaYOnesa</b> does not upload that audio or the contents of your files to OptimeFlow(s)'s own servers.</li><li><b>Access:</b> this version can be used without signing in.</li><li><b>Cookies and tracking:</b> we do not use tracking cookies or advertising analytics in the app.</li><li><b>Deletion:</b> the “Clear” button resets the project saved by the app. To also remove caches and other site data, use your browser's option to clear site data.</li><li><b>License:</b> the software is provided “as is”, without warranties.</li></ul><p><b>Author:</b> Andrés Calvo Espinosa. <br>Last updated: 2026-03-16.</p>"
+  },
+  "coherence": {
+    "title": "Universal Coherence",
+    "body": "May this work serve as gratitude and commitment: to think, feel and act in the same direction, without \"ornaments\"; to keep creating with ethics, joy and respect for everything that connects us."
+  },
+  "common": {
+    "close": "Close"
+  },
+  "panel5": {
+    "heading": "Preview",
+    "hint": "Here you can see the document exactly as it will be exported with the current settings.",
+    "toolbar": {
+      "aria": "Preview controls",
+      "zoomOutAria": "Zoom out",
+      "zoomInAria": "Zoom in",
+      "zoomRangeAria": "Zoom",
+      "fit": "Fit to width",
+      "actual": "100%",
+      "refresh": "Refresh"
+    },
+    "viewportAria": "Document preview",
+    "frameTitle": "Previewed document",
+    "status": {
+      "loading": "Generating preview…",
+      "ready": "Preview updated.",
+      "error": "The preview could not be generated."
+    }
+  }
+}

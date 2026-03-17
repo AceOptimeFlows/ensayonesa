@@ -1,0 +1,1876 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ensaYOnesa — PWA offline</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0ea5e9" />
+  <!-- Modo libre: compatibilidad para desactivar comprobaciones de sesión/licencia -->
+  <style>
+    #licenseGateOverlay {
+      display: none !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+
+    .brand-logo-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      line-height: 0;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .brand-logo-link:focus-visible {
+      outline: 2px solid rgba(34, 211, 238, 0.75);
+      outline-offset: 3px;
+    }
+
+    .footer-author-link,
+    .footer-author-link:visited {
+      color: #c9a227;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer-author-link:hover,
+    .footer-author-link:focus-visible {
+      color: #e2bc4f;
+      text-decoration: none;
+    }
+
+    .footer-author-link:focus-visible {
+      outline: 2px solid rgba(201, 162, 39, 0.55);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+  </style>
+  <script>
+    window.__ENSAYONESA_FREE_MODE__ = true;
+
+    (function () {
+      const FREE_USER = {
+        id: 'ensayonesa-free-user',
+        email: 'free@ensayonesa.local',
+        role: 'authenticated',
+        app_metadata: { provider: 'free-mode' },
+        user_metadata: { free: true, licensed: true, plan: 'free' }
+      };
+
+      const FREE_SESSION = {
+        access_token: 'free-mode-token',
+        refresh_token: 'free-mode-refresh',
+        expires_in: 315360000,
+        expires_at: Math.floor(Date.now() / 1000) + 315360000,
+        token_type: 'bearer',
+        user: FREE_USER
+      };
+
+      function resolved(payload) {
+        return Promise.resolve(payload);
+      }
+
+      function buildRow() {
+        return {
+          id: 'ensayonesa-free-license',
+          app: 'ensaYOnesa',
+          product: 'ensaYOnesa',
+          plan: 'free',
+          status: 'active',
+          active: true,
+          valid: true,
+          licensed: true,
+          is_active: true,
+          is_valid: true,
+          has_license: true,
+          license_ok: true,
+          login_ok: true,
+          purchased: true,
+          user_id: FREE_USER.id,
+          email: FREE_USER.email,
+          owner_email: FREE_USER.email,
+          created_at: new Date().toISOString()
+        };
+      }
+
+      function createQueryBuilder() {
+        const singleRow = buildRow();
+        const manyRows = [singleRow];
+
+        const base = {
+          select() { return proxy; },
+          insert() {
+            return resolved({ data: manyRows, error: null, status: 200, statusText: 'OK' });
+          },
+          update() { return proxy; },
+          upsert() {
+            return resolved({ data: manyRows, error: null, status: 200, statusText: 'OK' });
+          },
+          delete() { return proxy; },
+          eq() { return proxy; },
+          neq() { return proxy; },
+          gt() { return proxy; },
+          gte() { return proxy; },
+          lt() { return proxy; },
+          lte() { return proxy; },
+          like() { return proxy; },
+          ilike() { return proxy; },
+          is() { return proxy; },
+          in() { return proxy; },
+          contains() { return proxy; },
+          containedBy() { return proxy; },
+          overlap() { return proxy; },
+          filter() { return proxy; },
+          match() { return proxy; },
+          or() { return proxy; },
+          not() { return proxy; },
+          order() { return proxy; },
+          limit() { return proxy; },
+          range() { return proxy; },
+          textSearch() { return proxy; },
+          maybeSingle() {
+            return resolved({ data: singleRow, error: null, count: 1, status: 200, statusText: 'OK' });
+          },
+          single() {
+            return resolved({ data: singleRow, error: null, count: 1, status: 200, statusText: 'OK' });
+          },
+          then(onFulfilled, onRejected) {
+            return resolved({
+              data: manyRows,
+              error: null,
+              count: manyRows.length,
+              status: 200,
+              statusText: 'OK'
+            }).then(onFulfilled, onRejected);
+          },
+          catch(onRejected) {
+            return resolved({
+              data: manyRows,
+              error: null,
+              count: manyRows.length,
+              status: 200,
+              statusText: 'OK'
+            }).catch(onRejected);
+          },
+          finally(onFinally) {
+            return resolved({
+              data: manyRows,
+              error: null,
+              count: manyRows.length,
+              status: 200,
+              statusText: 'OK'
+            }).finally(onFinally);
+          }
+        };
+
+        const proxy = new Proxy(base, {
+          get(target, prop) {
+            if (prop in target) return target[prop];
+            return function () {
+              return proxy;
+            };
+          }
+        });
+
+        return proxy;
+      }
+
+      const fakeClient = {
+        auth: {
+          getSession: () => resolved({ data: { session: FREE_SESSION }, error: null }),
+          getUser: () => resolved({ data: { user: FREE_USER }, error: null }),
+          getClaims: () => resolved({
+            data: { claims: { sub: FREE_USER.id, email: FREE_USER.email, plan: 'free' } },
+            error: null
+          }),
+          signInWithPassword: () => resolved({ data: { user: FREE_USER, session: FREE_SESSION }, error: null }),
+          signInWithOtp: () => resolved({ data: { user: FREE_USER, session: FREE_SESSION }, error: null }),
+          signInAnonymously: () => resolved({ data: { user: FREE_USER, session: FREE_SESSION }, error: null }),
+          signUp: () => resolved({ data: { user: FREE_USER, session: FREE_SESSION }, error: null }),
+          refreshSession: () => resolved({ data: { user: FREE_USER, session: FREE_SESSION }, error: null }),
+          signOut: () => resolved({ error: null }),
+          onAuthStateChange: (callback) => {
+            try {
+              if (typeof callback === 'function') callback('SIGNED_IN', FREE_SESSION);
+            } catch {
+              /* ignore */
+            }
+            return {
+              data: {
+                subscription: {
+                  unsubscribe() {}
+                }
+              }
+            };
+          }
+        },
+        from: () => createQueryBuilder(),
+        rpc: () => resolved({
+          data: {
+            ok: true,
+            active: true,
+            valid: true,
+            licensed: true,
+            is_active: true,
+            is_valid: true,
+            has_license: true,
+            license_ok: true,
+            login_ok: true,
+            plan: 'free'
+          },
+          error: null
+        }),
+        functions: {
+          invoke: () => resolved({
+            data: {
+              ok: true,
+              active: true,
+              valid: true,
+              licensed: true,
+              is_active: true,
+              is_valid: true,
+              has_license: true,
+              license_ok: true,
+              login_ok: true,
+              plan: 'free'
+            },
+            error: null
+          })
+        },
+        storage: {
+          from: () => ({
+            list: () => resolved({ data: [], error: null }),
+            download: () => resolved({ data: null, error: null }),
+            upload: () => resolved({ data: { path: '' }, error: null }),
+            getPublicUrl: () => ({ data: { publicUrl: '' } })
+          })
+        },
+        channel: () => ({
+          on() { return this; },
+          subscribe() { return this; },
+          unsubscribe() {}
+        }),
+        removeChannel: () => resolved({ error: null })
+      };
+
+      window.supabase = {
+        createClient() {
+          return fakeClient;
+        },
+        auth: fakeClient.auth,
+        from: fakeClient.from,
+        rpc: fakeClient.rpc
+      };
+
+      window.ensaYOnesaAccess = {
+        free: true,
+        licensed: true,
+        loggedIn: true,
+        active: true,
+        valid: true,
+        hasLicense: true,
+        plan: 'free'
+      };
+
+      try {
+        const freeFlags = {
+          'ensaYOnesa:freeMode': '1',
+          'ensaYOnesa:licenseOk': '1',
+          'ensaYOnesa:licensed': '1',
+          'ensaYOnesa:isLoggedIn': '1',
+          licenseOk: '1',
+          licensed: '1',
+          isLoggedIn: '1'
+        };
+
+        [localStorage, sessionStorage].forEach((store) => {
+          Object.entries(freeFlags).forEach(([key, value]) => {
+            store.setItem(key, value);
+          });
+        });
+      } catch {
+        /* ignore */
+      }
+
+      let syncingLegacyGate = false;
+
+      function disableLegacyGate() {
+        if (syncingLegacyGate) return;
+
+        const gate = document.getElementById('licenseGateOverlay');
+        if (!gate) return;
+
+        const wasVisible =
+          gate.hidden === false ||
+          !gate.hasAttribute('hidden') ||
+          gate.classList.contains('is-visible');
+
+        const alreadyDisabled =
+          !wasVisible &&
+          gate.getAttribute('aria-hidden') === 'true' &&
+          gate.style.display === 'none' &&
+          gate.style.pointerEvents === 'none';
+
+        if (alreadyDisabled) return;
+
+        syncingLegacyGate = true;
+        gate.hidden = true;
+        gate.setAttribute('hidden', '');
+        gate.setAttribute('aria-hidden', 'true');
+        gate.classList.remove('is-visible');
+        if (gate.style.display !== 'none') gate.style.display = 'none';
+        if (gate.style.pointerEvents !== 'none') gate.style.pointerEvents = 'none';
+
+        if (wasVisible && document.body) {
+          document.body.classList.remove('overlay-open');
+        }
+        syncingLegacyGate = false;
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        disableLegacyGate();
+
+        const gate = document.getElementById('licenseGateOverlay');
+        if (!gate) return;
+
+        const observer = new MutationObserver(() => {
+          disableLegacyGate();
+        });
+
+        observer.observe(gate, {
+          attributes: true,
+          attributeFilter: ['class', 'hidden', 'style']
+        });
+      });
+    })();
+  </script>
+  <!-- i18n -->
+  <script src="i18n.js" defer></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-root">
+
+    <!-- ====== HEADER OptimeFlow(s) + tagline ensaYOnesa + botón ajustes ====== -->
+    <header class="app-header brand-header" role="banner">
+      <div class="brand">
+        <a
+          class="brand-logo-link"
+          href="https://www.optimeflow.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Ir a OptimeFlow(s)"
+          title="OptimeFlow(s)"
+        >
+          <img
+            id="appLogo"
+            class="brand-logo heat"
+            src="assets/img/logo.png"
+            alt="OptimeFlow(s) logo"
+            data-i18n-alt="app.logoAlt"
+          >
+        </a>
+        <span class="brand-word brand-neon" data-i18n="app.brandName">OptimeFlow(s)</span>
+
+        <!-- Tagline centrada con letras animadas (ensa|YO|nesa) -->
+        <div id="tagline" class="tagline" aria-hidden="true">
+          <!-- ensa -->
+          <span class="glyph frag-white">e</span>
+          <span class="glyph frag-silver">n</span>
+          <span class="glyph frag-white">s</span>
+          <span class="glyph frag-silver">a</span>
+          <!-- YO -->
+          <span class="glyph orb-blue rotate-z">Y</span>
+          <span class="glyph orb-dawn">O</span>
+          <!-- nesa -->
+          <span class="glyph frag-white">n</span>
+          <span class="glyph frag-silver">e</span>
+          <span class="glyph frag-white">s</span>
+          <span class="glyph frag-silver">a</span>
+        </div>
+
+        <!-- Solo para accesibilidad -->
+        <span id="i-app-title" class="sr-only" data-i18n="app.brandSrOnly">
+          ensaYOnesa
+        </span>
+
+        <!-- Botón ajustes tipo OptimeFlow(s) -->
+        <div class="quick-controls">
+          <button class="icon-button" id="btnSettings" aria-expanded="false">
+            <span class="sr-only" data-i18n="settings.openButton">Ajustes</span>
+            <span class="icon-gear" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====== SETTINGS SHEET (tema + instalar PWA + idioma) ====== -->
+    <div id="settingsSheet" class="settings-sheet" aria-hidden="true">
+      <div class="settings-card">
+        <div class="settings-row">
+          <label for="themeSelect" data-i18n="settings.themeLabel">
+            Tema
+          </label>
+          <select id="themeSelect" class="sel">
+            <option value="system" data-i18n="settings.themes.system">Sistema</option>
+            <option value="dark" data-i18n="settings.themes.dark">Núcleo oscuro</option>
+            <option value="midnight" data-i18n="settings.themes.midnight">Azul medianoche</option>
+            <option value="nebula" data-i18n="settings.themes.nebula">Nebulosa neón</option>
+            <option value="ocean" data-i18n="settings.themes.ocean">Océano profundo</option>
+            <option value="forest" data-i18n="settings.themes.forest">Bosque esmeralda</option>
+            <option value="amber" data-i18n="settings.themes.amber">Ámbar cálido</option>
+            <option value="violet" data-i18n="settings.themes.violet">Violeta real</option>
+            <option value="mono" data-i18n="settings.themes.mono">Mono noir</option>
+          </select>
+        </div>
+
+        <div class="settings-row">
+          <label for="languageSelect" data-i18n="settings.languageLabel">
+            Idioma
+          </label>
+          <select id="languageSelect" class="sel">
+            <option value="es" data-i18n="settings.languages.es">Español</option>
+            <option value="en" data-i18n="settings.languages.en">Inglés</option>
+            <!-- ✅ FIX: sin corchetes -->
+            <option value="pt-br" data-i18n="settings.languages.pt-br">Portugués (Brasil)</option>
+            <option value="it" data-i18n="settings.languages.it">Italiano</option>
+            <option value="fr" data-i18n="settings.languages.fr">Francés</option>
+            <option value="de" data-i18n="settings.languages.de">Alemán</option>
+            <option value="ko" data-i18n="settings.languages.ko">Coreano</option>
+            <option value="zh" data-i18n="settings.languages.zh">Chino</option>
+            <option value="ja" data-i18n="settings.languages.ja">Japonés</option>
+            <option value="ru" data-i18n="settings.languages.ru">Ruso</option>
+            <option value="hi" data-i18n="settings.languages.hi">Hindi</option>
+            <option value="ar" data-i18n="settings.languages.ar">Árabe</option>
+          </select>
+        </div>
+
+        <div class="settings-row">
+          <label for="dictationLanguageSelect" data-i18n="settings.dictationLanguageLabel">
+            Idioma de dictado
+          </label>
+          <select id="dictationLanguageSelect" class="sel">
+            <option value="es" data-i18n="settings.languages.es">Español</option>
+            <option value="en" data-i18n="settings.languages.en">Inglés</option>
+            <!-- ✅ FIX: sin corchetes -->
+            <option value="pt-br" data-i18n="settings.languages.pt-br">Portugués (Brasil)</option>
+            <option value="it" data-i18n="settings.languages.it">Italiano</option>
+            <option value="fr" data-i18n="settings.languages.fr">Francés</option>
+            <option value="de" data-i18n="settings.languages.de">Alemán</option>
+            <option value="ko" data-i18n="settings.languages.ko">Coreano</option>
+            <option value="zh" data-i18n="settings.languages.zh">Chino</option>
+            <option value="ja" data-i18n="settings.languages.ja">Japonés</option>
+            <option value="ru" data-i18n="settings.languages.ru">Ruso</option>
+            <option value="hi" data-i18n="settings.languages.hi">Hindi</option>
+            <option value="ar" data-i18n="settings.languages.ar">Árabe</option>
+          </select>
+        </div>
+
+        <div class="settings-row">
+          <button id="installBtn" class="btn primary" data-i18n="settings.installButton">
+            Instalar app
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== CONTENEDOR PRINCIPAL ====== -->
+    <main class="hero">
+      <div class="nes-shell">
+        <section
+          class="app-shell"
+          aria-label="Generador de ensayos ensaYOnesa"
+          data-i18n-aria-label="app.shellAriaLabel"
+        >
+          <div class="editor-stack">
+
+            <!-- ====== NAV PASOS ====== -->
+            <nav class="steps">
+              <button class="step-btn active" data-target="#panel1" data-i18n="nav.step1">1. Portada y metadatos</button>
+              <button class="step-btn" data-target="#panel2" data-i18n="nav.step2">2. Ajustes y estilos</button>
+              <button class="step-btn" data-target="#panel3" data-i18n="nav.step3">3. Contenido</button>
+              <button class="step-btn" data-target="#panel4" data-i18n="nav.step4">4. Exportar</button>
+            </nav>
+
+            <!-- ====== PANELS ====== -->
+            <div class="panels">
+              <!-- Panel 1: Portada y Metadatos -->
+              <section
+                id="panel1"
+                class="panel active"
+                aria-label="Portada y metadatos"
+                data-i18n-aria-label="panels.panel1Label"
+              >
+                <div class="panel-inner">
+                  <div class="twocol">
+                    <div class="col">
+                      <div class="field">
+                        <label for="titulo" data-i18n="panel1.titleLabel">Título</label>
+                        <input
+                          id="titulo"
+                          type="text"
+                          placeholder="ensaYOnesa"
+                          data-i18n-placeholder="panel1.titlePlaceholder"
+                        />
+                      </div>
+                      <div class="field">
+                        <label for="subtitulo" data-i18n="panel1.subtitleLabel">Subtítulo (opcional)</label>
+                        <input
+                          id="subtitulo"
+                          type="text"
+                          placeholder="Subtítulo del ensayo"
+                          data-i18n-placeholder="panel1.subtitlePlaceholder"
+                        />
+                      </div>
+                      <div class="field">
+                        <label for="autor" data-i18n="panel1.authorLabel">Autor</label>
+                        <input
+                          id="autor"
+                          type="text"
+                          placeholder="Nombre del autor"
+                          data-i18n-placeholder="panel1.authorPlaceholder"
+                        />
+                      </div>
+                      <div class="field">
+                        <label for="licencia" data-i18n="panel1.licenseLabel">Licencia (opcional)</label>
+                        <input
+                          id="licencia"
+                          type="text"
+                          placeholder="p. ej. CC BY 4.0"
+                          data-i18n-placeholder="panel1.licensePlaceholder"
+                        />
+                      </div>
+                      <div class="field">
+                        <label for="email" data-i18n="panel1.emailLabel">Correspondencia / Email (opcional)</label>
+                        <input
+                          id="email"
+                          type="email"
+                          placeholder="autor@ejemplo.com"
+                          data-i18n-placeholder="panel1.emailPlaceholder"
+                        />
+                      </div>
+                      <div class="field">
+                        <label for="fechaPublicacion" data-i18n="panel1.dateLabel">Fecha de publicación (opcional)</label>
+                        <input id="fechaPublicacion" type="date" />
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="field">
+                        <label for="safeCreative" data-i18n="panel1.safeCreativeLabel">Safe Creative ID (opcional)</label>
+                        <input
+                          id="safeCreative"
+                          type="text"
+                          placeholder="SC-XXXXXXXX"
+                          data-i18n-placeholder="panel1.safeCreativePlaceholder"
+                        />
+                      </div>
+                      <div class="field">
+                        <label for="doi" data-i18n="panel1.doiLabel">DOI (Zenodo) (opcional)</label>
+                        <input
+                          id="doi"
+                          type="text"
+                          placeholder="10.5281/zenodo.xxxxxxx"
+                          data-i18n-placeholder="panel1.doiPlaceholder"
+                        />
+                      </div>
+
+                      <!-- === Nota con dictado === -->
+                      <div class="field">
+                        <div class="field-head">
+                          <label for="nota" data-i18n="panel1.noteLabel">Nota (opcional)</label>
+                          <div class="voice-controls" data-for="nota">
+                            <button
+                              type="button"
+                              class="btn-icon mic"
+                              aria-label="Empezar dictado (nota)"
+                              title="Empezar dictado"
+                              data-action="start"
+                              data-i18n-aria-label="dictation.noteStart"
+                              data-i18n-title="dictation.noteStart"
+                            >
+                              🎙️
+                            </button>
+                            <button
+                              type="button"
+                              class="btn-icon stop"
+                              aria-label="Parar dictado (nota)"
+                              title="Parar dictado"
+                              data-action="stop"
+                              disabled
+                              data-i18n-aria-label="dictation.noteStop"
+                              data-i18n-title="dictation.noteStop"
+                            >
+                              ⏹️
+                            </button>
+                            <span
+                              class="voice-indicator"
+                              data-state="idle"
+                              aria-label="Estado de dictado"
+                              title="Inactivo"
+                              data-i18n-title="dictation.noteIndicatorIdle"
+                            ></span>
+                          </div>
+                        </div>
+                        <textarea
+                          id="nota"
+                          rows="5"
+                          placeholder="Observaciones / dedicatorias / etc."
+                          data-i18n-placeholder="panel1.notePlaceholder"
+                        ></textarea>
+                      </div>
+
+                      <!-- === Resumen con dictado === -->
+                      <div class="field">
+                        <div class="field-head">
+                          <label for="resumen" data-i18n="panel1.summaryLabel">Resumen (opcional)</label>
+                          <div class="voice-controls" data-for="resumen">
+                            <button
+                              type="button"
+                              class="btn-icon mic"
+                              aria-label="Empezar dictado (resumen)"
+                              title="Empezar dictado"
+                              data-action="start"
+                              data-i18n-aria-label="dictation.summaryStart"
+                              data-i18n-title="dictation.summaryStart"
+                            >
+                              🎙️
+                            </button>
+                            <button
+                              type="button"
+                              class="btn-icon stop"
+                              aria-label="Parar dictado (resumen)"
+                              title="Parar dictado"
+                              data-action="stop"
+                              disabled
+                              data-i18n-aria-label="dictation.summaryStop"
+                              data-i18n-title="dictation.summaryStop"
+                            >
+                              ⏹️
+                            </button>
+                            <span
+                              class="voice-indicator"
+                              data-state="idle"
+                              aria-label="Estado de dictado"
+                              title="Inactivo"
+                              data-i18n-title="dictation.summaryIndicatorIdle"
+                            ></span>
+                          </div>
+                        </div>
+                        <textarea
+                          id="resumen"
+                          rows="9"
+                          placeholder="Resumen del ensayo…"
+                          data-i18n-placeholder="panel1.summaryPlaceholder"
+                        ></textarea>
+                      </div>
+
+                      <div class="field">
+                        <label for="palabrasClave" data-i18n="panel1.keywordsLabel">Palabras clave (opcional)</label>
+                        <input
+                          id="palabrasClave"
+                          type="text"
+                          placeholder="palabra1; palabra2; palabra3"
+                          data-i18n-placeholder="panel1.keywordsPlaceholder"
+                        />
+                      </div>
+<!-- ===== Secciones finales (NO van en portada; van al final del PDF) ===== -->
+<div class="field">
+  <p class="hint" data-i18n="panel1.endMatterHint">
+    Estos campos se exportan al final del documento, en una página posterior a la bibliografía.
+  </p>
+</div>
+
+<div class="field">
+  <label for="notaEditorial" data-i18n="panel1.editorialNoteLabel">Nota editorial (opcional)</label>
+  <textarea
+    id="notaEditorial"
+    rows="5"
+    placeholder="Nota editorial…"
+    data-i18n-placeholder="panel1.editorialNotePlaceholder"
+  ></textarea>
+</div>
+
+<div class="field">
+  <label for="agradecimientos" data-i18n="panel1.acknowledgmentsLabel">Agradecimientos (opcional)</label>
+  <textarea
+    id="agradecimientos"
+    rows="5"
+    placeholder="Agradecimientos…"
+    data-i18n-placeholder="panel1.acknowledgmentsPlaceholder"
+  ></textarea>
+</div>
+
+<div class="field">
+  <label for="financiacion" data-i18n="panel1.fundingLabel">Financiación (opcional)</label>
+  <textarea
+    id="financiacion"
+    rows="4"
+    placeholder="Financiación…"
+    data-i18n-placeholder="panel1.fundingPlaceholder"
+  ></textarea>
+</div>
+
+<div class="field">
+  <label for="conflictosInteres" data-i18n="panel1.conflictsLabel">Conflictos de interés (opcional)</label>
+  <textarea
+    id="conflictosInteres"
+    rows="4"
+    placeholder="Conflictos de interés…"
+    data-i18n-placeholder="panel1.conflictsPlaceholder"
+  ></textarea>
+</div>
+
+<div class="field">
+  <label for="comoCitar" data-i18n="panel1.howToCiteLabel">Cómo citar (opcional)</label>
+  <textarea
+    id="comoCitar"
+    rows="5"
+    placeholder="Cómo citar este trabajo…"
+    data-i18n-placeholder="panel1.howToCitePlaceholder"
+  ></textarea>
+</div>
+
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Panel 2: Ajustes y estilos -->
+              <section
+                id="panel2"
+                class="panel"
+                aria-label="Ajustes y estilos"
+                data-i18n-aria-label="panels.panel2Label"
+              >
+                <div class="panel-inner">
+                  <div class="tabs">
+                    <button class="tab-btn active" data-tab="#tab-cabpie" data-i18n="panel2.tabs.headerFooter">Cabecero y pie de página</button>
+                    <button class="tab-btn" data-tab="#tab-formatos" data-i18n="panel2.tabs.formats">Formatos</button>
+                    <button class="tab-btn" data-tab="#tab-indice" data-i18n="panel2.tabs.toc">Índice</button>
+                  </div>
+
+                  <div class="tab-content">
+                    <!-- Cabecero y Pie -->
+                    <div id="tab-cabpie" class="tab-pane active">
+                      <div class="split">
+                        <div class="half">
+                          <h3 data-i18n="panel2.header.heading">Cabecero</h3>
+
+                          <div class="field inline">
+                            <label>
+                              <input type="checkbox" id="cabEnabled">
+                              <span data-i18n="panel2.header.enable">Activar cabecero</span>
+                            </label>
+                          </div>
+
+                          <div class="field">
+                            <label for="cabEstiloLinea" data-i18n="panel2.lineStyle.label">Estilo de línea</label>
+                            <select id="cabEstiloLinea">
+                              <option value="none" data-i18n="panel2.lineStyle.none">Sin línea</option>
+                              <option value="solid" data-i18n="panel2.lineStyle.solid">Línea continua</option>
+                              <option value="dashed" data-i18n="panel2.lineStyle.dashed">Línea discontinua</option>
+                              <option value="dotted" data-i18n="panel2.lineStyle.dotted">Punteada</option>
+                            </select>
+                          </div>
+
+                          <p class="hint" data-i18n="panel2.header.hint">
+                            El cabecero utiliza el título del ensayo y el nombre del autor, respetando los márgenes definidos.
+                          </p>
+                        </div>
+
+                        <div class="half">
+                          <h3 data-i18n="panel2.footer.heading">Pie de página</h3>
+
+                          <div class="field inline">
+                            <label>
+                              <input type="checkbox" id="pieEnabled">
+                              <span data-i18n="panel2.footer.enable">Activar pie de página</span>
+                            </label>
+                          </div>
+
+                          <div class="field inline">
+                            <label>
+                              <input type="checkbox" id="pieCitasEnabled">
+                              <span data-i18n="panel2.footer.citationsInFooter">Citaciones en el pie de página</span>
+                            </label>
+                          </div>
+
+                          <div class="field">
+                            <label for="pieEstiloLinea" data-i18n="panel2.lineStyle.label">Estilo de línea</label>
+                            <select id="pieEstiloLinea">
+                              <option value="none" data-i18n="panel2.lineStyle.none">Sin línea</option>
+                              <option value="solid" data-i18n="panel2.lineStyle.solid">Línea continua</option>
+                              <option value="dashed" data-i18n="panel2.lineStyle.dashed">Línea discontinua</option>
+                              <option value="dotted" data-i18n="panel2.lineStyle.dotted">Punteada</option>
+                            </select>
+                          </div>
+
+                          <div class="field">
+                            <label for="pieTexto" data-i18n="panel2.footer.textLabel">Texto de pie</label>
+                            <input
+                              id="pieTexto"
+                              type="text"
+                              placeholder="Texto de referencia / web / etc."
+                              data-i18n-placeholder="panel2.footer.textPlaceholder"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="split">
+                        <div class="half">
+                          <h3 data-i18n="panel2.pageNumbers.heading">Número de página</h3>
+
+                          <div class="field inline">
+                            <label>
+                              <input type="checkbox" id="numEnabled">
+                              <span data-i18n="panel2.pageNumbers.enable">Numerar páginas</span>
+                            </label>
+                          </div>
+
+                          <div class="field">
+                            <label for="numPos" data-i18n="panel2.pageNumbers.locationLabel">Ubicación</label>
+                            <select id="numPos">
+                              <option value="top-left" data-i18n="panel2.pageNumbers.positionTopLeft">Superior izquierda</option>
+                              <option value="top-right" data-i18n="panel2.pageNumbers.positionTopRight">Superior derecha</option>
+                              <option value="bottom-left" data-i18n="panel2.pageNumbers.positionBottomLeft">Inferior izquierda</option>
+                              <option value="bottom-right" data-i18n="panel2.pageNumbers.positionBottomRight">Inferior derecha</option>
+                              <option value="bottom-center" data-i18n="panel2.pageNumbers.positionBottomCenter">Abajo centrado (bajo el pie)</option>
+                            </select>
+                          </div>
+
+                          <p class="hint" data-i18n="panel2.pageNumbers.hint">
+                            Arriba hereda estilo del cabecero; abajo, del pie. Oculto en portada e índice.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Formatos -->
+                    <div id="tab-formatos" class="tab-pane">
+                      <div class="format-grid">
+                        <div class="format-card">
+                          <h4 data-i18n="panel2.formatCards.header">Cabecero</h4>
+                          <div class="row">
+                            <label data-i18n="formats.labels.font">Font</label>
+                            <select id="fmtCabFont">
+                              <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+                              <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+                              <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+                            </select>
+                          </div>
+                          <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtCabSize" min="8" max="72" value="12"></div>
+                          <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtCabColor" value="#111111"></div>
+                          <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtCabAlpha" min="0" max="100" value="100"></div>
+                          <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtCabLeading" step="0.1" min="1" max="3" value="1.3"></div>
+                        </div>
+
+                        <div class="format-card">
+                          <h4 data-i18n="panel2.formatCards.footer">Pie</h4>
+                          <div class="row">
+                            <label data-i18n="formats.labels.font">Font</label>
+                            <select id="fmtPieFont">
+                              <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+                              <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+                              <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+                            </select>
+                          </div>
+                          <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtPieSize" min="8" max="72" value="10"></div>
+                          <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtPieColor" value="#111111"></div>
+                          <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtPieAlpha" min="0" max="100" value="100"></div>
+                          <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtPieLeading" step="0.1" min="1" max="3" value="1.2"></div>
+                        </div>
+
+                        <div class="format-card">
+                          <h4 data-i18n="panel2.formatCards.title">Título</h4>
+                          <div class="row">
+                            <label data-i18n="formats.labels.font">Font</label>
+                            <select id="fmtTitFont">
+                              <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+                              <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+                              <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+                            </select>
+                          </div>
+                          <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtTitSize" min="10" max="96" value="28"></div>
+                          <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtTitColor" value="#111111"></div>
+                          <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtTitAlpha" min="0" max="100" value="100"></div>
+                          <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtTitLeading" step="0.1" min="1" max="3" value="1.4"></div>
+                        </div>
+
+                        <div class="format-card">
+                          <h4 data-i18n="panel2.formatCards.subtitle">Subtítulo</h4>
+                          <div class="row">
+                            <label data-i18n="formats.labels.font">Font</label>
+                            <select id="fmtSubFont">
+                              <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+                              <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+                              <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+                            </select>
+                          </div>
+                          <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtSubSize" min="10" max="64" value="18"></div>
+                          <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtSubColor" value="#333333"></div>
+                          <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtSubAlpha" min="0" max="100" value="100"></div>
+                          <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtSubLeading" step="0.1" min="1" max="3" value="1.3"></div>
+                        </div>
+
+                        <div class="format-card">
+                          <h4 data-i18n="panel2.formatCards.author">Autor</h4>
+                          <div class="row">
+                            <label data-i18n="formats.labels.font">Font</label>
+                            <select id="fmtAutFont">
+                              <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+                              <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+                              <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+                            </select>
+                          </div>
+                          <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtAutSize" min="10" max="48" value="14"></div>
+                          <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtAutColor" value="#111111"></div>
+                          <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtAutAlpha" min="0" max="100" value="100"></div>
+                          <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtAutLeading" step="0.1" min="1" max="3" value="1.2"></div>
+                        </div>
+
+                        <div class="format-card">
+                          <h4 data-i18n="panel2.formatCards.meta">Metadatos</h4>
+                          <div class="row">
+                            <label data-i18n="formats.labels.font">Font</label>
+                            <select id="fmtMetaFont">
+                              <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+                              <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+                              <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+                            </select>
+                          </div>
+                          <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtMetaSize" min="8" max="32" value="11"></div>
+                          <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtMetaColor" value="#111111"></div>
+                          <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtMetaAlpha" min="0" max="100" value="100"></div>
+                          <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtMetaLeading" step="0.1" min="1" max="3" value="1.4"></div>
+                        </div>
+<!-- ✅ NUEVO: Secciones finales (última página del PDF) -->
+<div class="format-card">
+  <h4 data-i18n="panel2.formatCards.endMatterHeading">Secciones finales (título de página)</h4>
+  <div class="row">
+    <label data-i18n="formats.labels.font">Font</label>
+    <select id="fmtEndHeadFont">
+      <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+      <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+      <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+    </select>
+  </div>
+  <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtEndHeadSize" min="8" max="72" value="18"></div>
+  <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtEndHeadColor" value="#111111"></div>
+  <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtEndHeadAlpha" min="0" max="100" value="100"></div>
+  <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtEndHeadLeading" step="0.1" min="1" max="3" value="1.35"></div>
+</div>
+
+<div class="format-card">
+  <h4 data-i18n="panel2.formatCards.endMatterLabel">Secciones finales (títulos)</h4>
+  <div class="row">
+    <label data-i18n="formats.labels.font">Font</label>
+    <select id="fmtEndLabelFont">
+      <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+      <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+      <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+    </select>
+  </div>
+  <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtEndLabelSize" min="8" max="72" value="12"></div>
+  <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtEndLabelColor" value="#111111"></div>
+  <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtEndLabelAlpha" min="0" max="100" value="100"></div>
+  <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtEndLabelLeading" step="0.1" min="1" max="3" value="1.35"></div>
+</div>
+
+<div class="format-card">
+  <h4 data-i18n="panel2.formatCards.endMatterBody">Secciones finales (contenido)</h4>
+  <div class="row">
+    <label data-i18n="formats.labels.font">Font</label>
+    <select id="fmtEndBodyFont">
+      <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+      <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+      <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+    </select>
+  </div>
+  <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtEndBodySize" min="8" max="72" value="11"></div>
+  <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtEndBodyColor" value="#111111"></div>
+  <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtEndBodyAlpha" min="0" max="100" value="100"></div>
+  <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtEndBodyLeading" step="0.1" min="1" max="3" value="1.45"></div>
+</div>
+
+                      </div>
+                    </div>
+
+                    <!-- Índice -->
+                    <div id="tab-indice" class="tab-pane">
+                      <div class="field inline">
+                        <label>
+                          <input type="checkbox" id="idxEnabled">
+                          <span data-i18n="panel2.toc.enable">Activar índice</span>
+                        </label>
+                      </div>
+                      <div class="field">
+                        <label for="idxCount" data-i18n="panel2.toc.countLabel">Cantidad de capítulos/puntos</label>
+                        <select id="idxCount"></select>
+                      </div>
+                      <div id="idxCampos" class="idx-campos"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Panel 3: Contenido -->
+              <section
+                id="panel3"
+                class="panel"
+                aria-label="Contenido"
+                data-i18n-aria-label="panels.panel3Label"
+              >
+                <div class="panel-inner">
+                  <div class="content-controls">
+
+                    <!-- Numeración -->
+                    <div class="field cc-numbering">
+                      <label for="chapterNumberingStyle" data-i18n="panel3.numbering.label">Numeración de capítulos</label>
+                      <select
+                        id="chapterNumberingStyle"
+                        class="sel"
+                        aria-label="Numeración de capítulos"
+                        data-i18n-aria-label="panel3.numbering.label"
+                      >
+                        <option value="roman" data-i18n="panel2.numbering.roman">Romanos (I, II, III)</option>
+                        <option value="arabic" data-i18n="panel2.numbering.arabic">Arábigos (1, 2, 3)</option>
+                      </select>
+                    </div>
+
+                    <!-- Capítulo/punto -->
+                    <div class="field cc-chapterpoint">
+                      <label for="selCapitulo" data-i18n="panel3.chapterPointLabel">Capítulo / punto</label>
+                      <select id="selCapitulo"></select>
+                    </div>
+
+                    <!-- Aplicar -->
+                    <button
+                      id="btnApplyChapterNumberingStyle"
+                      type="button"
+                      class="btn ghost cc-apply-numbering"
+                      data-i18n="panel3.numbering.applyButton"
+                    >
+                      Aplicar
+                    </button>
+
+                    <!-- Nº subsecciones -->
+                    <div class="field cc-subcount">
+                      <label for="numSubsecciones" data-i18n="panel3.subsectionCountLabel">Número de subsecciones</label>
+                      <select id="numSubsecciones"></select>
+                    </div>
+
+                    <div id="subsectionTitles" class="subtitles"></div>
+
+                    <div class="field" id="subSelField">
+                      <label for="selSubseccion" data-i18n="panel3.subsectionSelectLabel">Subsección</label>
+                      <select id="selSubseccion"></select>
+                    </div>
+
+                    <div class="field wide" id="contenidoField">
+                      <div class="field-head">
+                        <label for="contenidoTexto" data-i18n="panel3.contentLabel">Contenido</label>
+
+                        <!-- Citas -->
+<div class="citation-controls" style="display:flex; gap:8px; align-items:center; flex-wrap:wrap">
+  <select
+    id="selCita"
+    class="sel"
+    aria-label="Citas guardadas"
+    title="Citas guardadas"
+    data-i18n-aria-label="citations.selectPlaceholder"
+    data-i18n-title="citations.selectPlaceholder"
+    style="min-width:220px"
+    hidden
+  ></select>
+
+  <input
+    id="citaTexto"
+    type="text"
+    placeholder="Contenido de la cita…"
+    data-i18n-placeholder="citations.textPlaceholder"
+    aria-label="Contenido de la cita"
+    title="Contenido de la cita"
+    data-i18n-aria-label="citations.textPlaceholder"
+    data-i18n-title="citations.textPlaceholder"
+    style="min-width:260px"
+    hidden
+  />
+
+  <!-- ✅ NUEVO: tipo de nota al pie -->
+<select
+  id="citaTipo"
+  class="sel"
+  aria-label="Tipo de nota al pie"
+  title="Tipo de nota al pie"
+  data-i18n-aria-label="citations.typeSelectAria"
+  data-i18n-title="citations.typeSelectAria"
+  style="min-width:320px"
+>
+  <option value="bibliographic" data-i18n="citations.types.bibliographic">
+    Nota bibliográfica
+  </option>
+  <option value="explanatory" data-i18n="citations.types.explanatory">
+    Explicativa o de contenido
+  </option>
+  <option value="authorComment" data-i18n="citations.types.authorComment">
+    Comentario del autor
+  </option>
+</select>
+
+
+  <!-- ✅ NUEVO: incluir esa nota en la página final de Citas -->
+  <label style="display:flex; gap:6px; align-items:center; user-select:none">
+    <input type="checkbox" id="citaInCitasEnabled" checked>
+    <span data-i18n="citations.includeInCitationsPage">Incluir en Anexo terminológico/conceptual</span>
+  </label>
+
+  <button id="btnAddCita" type="button" class="btn ghost" data-i18n="citations.addButton">Añadir Cita</button>
+  <button id="btnDelCita" type="button" class="btn ghost" data-i18n="citations.removeButton">Eliminar Cita</button>
+</div>
+
+                      </div>
+
+                      <textarea
+                        id="contenidoTexto"
+                        rows="14"
+                        placeholder="Escribe aquí el contenido de la subsección seleccionada…"
+                        data-i18n-placeholder="panel3.contentPlaceholder"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div class="format-per-sub">
+                    <h3 data-i18n="panel3.formatsHeading">Formatos por capítulo / subsección</h3>
+
+                    <div class="format-row">
+                      <div class="format-card">
+                        <h4 data-i18n="panel3.formatCards.chapterTitle">Título del capítulo</h4>
+                        <div class="row">
+                          <label data-i18n="formats.labels.font">Font</label>
+                          <select id="fmtCapFont">
+                            <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+                            <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+                            <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+                          </select>
+                        </div>
+                        <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtCapSize" min="12" max="96" value="24"></div>
+                        <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtCapColor" value="#111111"></div>
+                        <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtCapAlpha" min="0" max="100" value="100"></div>
+                        <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtCapLeading" step="0.1" min="1" max="3" value="1.6"></div>
+                        <button id="aplicarCapTodos" class="ghost" data-i18n="panel3.applyAllInChapterButton">Aplicar a todas (capítulo)</button>
+                      </div>
+
+                      <div class="format-card">
+                        <h4 data-i18n="panel3.formatCards.subsectionTitle">Título de subsección</h4>
+                        <div class="row">
+                          <label data-i18n="formats.labels.font">Font</label>
+                          <select id="fmtSubsecFont">
+                            <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+                            <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+                            <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+                          </select>
+                        </div>
+                        <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtSubsecSize" min="10" max="64" value="18"></div>
+                        <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtSubsecColor" value="#111111"></div>
+                        <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtSubsecAlpha" min="0" max="100" value="100"></div>
+                        <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtSubsecLeading" step="0.1" min="1" max="3" value="1.8"></div>
+                        <button id="aplicarSubsecTodos" class="ghost" data-i18n="panel3.applyAllInChapterButton">Aplicar a todas (capítulo)</button>
+                      </div>
+
+                      <div class="format-card">
+                        <h4 data-i18n="panel3.formatCards.content">Contenido</h4>
+                        <div class="row">
+                          <label data-i18n="formats.labels.font">Font</label>
+                          <select id="fmtContFont">
+                            <option value="serif" data-i18n="formats.fonts.serif">Serif</option>
+                            <option value="sans-serif" data-i18n="formats.fonts.sans">Sans</option>
+                            <option value="monospace" data-i18n="formats.fonts.monospace">Monospace</option>
+                          </select>
+                        </div>
+                        <div class="row"><label data-i18n="formats.labels.sizePx">Tamaño (px)</label><input type="number" id="fmtContSize" min="9" max="48" value="14"></div>
+                        <div class="row"><label data-i18n="formats.labels.color">Color</label><input type="color" id="fmtContColor" value="#111111"></div>
+                        <div class="row"><label data-i18n="formats.labels.alphaPercent">Alfa (%)</label><input type="range" id="fmtContAlpha" min="0" max="100" value="100"></div>
+                        <div class="row"><label data-i18n="formats.labels.leading">Interlineado (×)</label><input type="number" id="fmtContLeading" step="0.1" min="1" max="3" value="1.4"></div>
+                        <button id="aplicarContTodos" class="ghost" data-i18n="panel3.applyAllInChapterButton">Aplicar a todas (capítulo)</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Panel 4: Exportar -->
+              <section
+                id="panel4"
+                class="panel"
+                aria-label="Exportar"
+                data-i18n-aria-label="panels.panel4Label"
+              >
+                <div class="panel-inner">
+                  <div class="export-grid">
+                    <div class="field">
+                      <label for="tamPagina" data-i18n="panel4.ui.sizeLabel">Tamaño</label>
+                      <select id="tamPagina">
+                        <option value="A4" data-i18n="panel4.ui.pageSizes.A4">A4 (210 x 297 mm)</option>
+                        <option value="A5" data-i18n="panel4.ui.pageSizes.A5">A5 (148 x 210 mm)</option>
+                        <option value="KDP6x9" data-i18n="panel4.ui.pageSizes.KDP6x9">Kindle/Amazon 6”×9” (152.4 × 228.6 mm)</option>
+                      </select>
+                    </div>
+
+                    <div class="field compact">
+                      <label data-i18n="panel4.ui.marginsLabel">Márgenes (mm)</label>
+                      <div class="margins-labels">
+                        <span data-i18n="panel4.ui.margins.top">Superior</span>
+                        <span data-i18n="panel4.ui.margins.bottom">Inferior</span>
+                        <span data-i18n="panel4.ui.margins.left">Izquierdo</span>
+                        <span data-i18n="panel4.ui.margins.right">Derecho</span>
+                      </div>
+                      <div class="margins">
+                        <input type="number" id="margenSup" min="5" max="60" value="25" title="Superior" data-i18n-title="panel4.ui.margins.top">
+                        <input type="number" id="margenInf" min="5" max="60" value="25" title="Inferior" data-i18n-title="panel4.ui.margins.bottom">
+                        <input type="number" id="margenIzq" min="5" max="60" value="25" title="Izquierdo" data-i18n-title="panel4.ui.margins.left">
+                        <input type="number" id="margenDer" min="5" max="60" value="20" title="Derecho" data-i18n-title="panel4.ui.margins.right">
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label for="gapCabTexto" data-i18n="panel4.ui.headerGapLabel">Distancia cabecero → texto (mm)</label>
+                      <input type="number" id="gapCabTexto" min="0" max="40" value="6">
+                    </div>
+
+                    <!-- salto de página por capítulo -->
+                    <div class="field inline">
+                      <label>
+                        <input type="checkbox" id="breakOnChapter">
+                        <span data-i18n="panel4.ui.breakOnChapterLabel">Nueva página al iniciar cada capítulo</span>
+                      </label>
+                    </div>
+                        <!-- ✅ NUEVO: página final de Citas -->
+<div class="field inline">
+  <label>
+    <input type="checkbox" id="endCitesEnabled">
+    <span data-i18n="panel4.ui.endCitesLabel">Anexo de términos citados (al final)</span>
+  </label>
+</div>
+
+<!-- ✅ NUEVO: Bibliografía -->
+<div class="field inline">
+  <label>
+    <input type="checkbox" id="endBibliographyEnabled">
+    <span data-i18n="panel4.ui.bibliographyLabel">Bibliografía</span>
+  </label>
+</div>
+
+                    <div class="field">
+                      <label for="nombreArchivo" data-i18n="panel4.ui.pdfFileNameLabel">Nombre del archivo PDF</label>
+                      <input id="nombreArchivo" type="text" value="ensayo.pdf">
+                    </div>
+                  </div>
+
+                  <div class="actions">
+                    <button id="btnGuardar" data-i18n="panel4.ui.actions.saveJson">Guardar (JSON)</button>
+                    <button id="btnCargar" class="ghost" data-i18n="panel4.ui.actions.load">Cargar</button>
+                    <button id="btnLimpiar" class="danger" data-i18n="panel4.ui.actions.clear">Limpiar (campos + base de datos)</button>
+                    <button id="btnDemo" class="ghost" data-i18n="panel4.ui.actions.demo">Cargar demo (ensayo completo)</button>
+                    <button id="btnGuardarPlantilla" class="ghost" data-i18n="panel4.ui.actions.saveTemplate">Guardar plantilla (solo estilos)</button>
+                    <button id="btnCargarPlantilla" class="ghost" data-i18n="panel4.ui.actions.loadTemplate">Cargar plantilla</button>
+                    <div class="plantillas">
+                      <select id="selPlantillas"></select>
+                      <button id="btnExportarPlantilla" class="ghost" data-i18n="panel4.ui.actions.exportTemplate">Exportar plantilla</button>
+                    </div>
+                    <button id="btnExportar" class="primary" data-i18n="panel4.ui.actions.export">Exportar</button>
+                  </div>
+                </div>
+              </section>
+            </div> <!-- .panels -->
+
+          </div> <!-- .editor-stack -->
+        </section>
+      </div>
+    </main>
+
+    <!-- ====== FOOTER OptimeFlow(s) ====== -->
+    <footer class="brand-footer" id="siteFooter" role="contentinfo">
+      <div class="footer-left">
+        <div class="f-left-row1">
+          <strong data-i18n="footer.brand">OptimeFlow(s)®</strong>
+          <span class="sep">•</span>
+          <span id="footerAppName" data-i18n="footer.appName">ensaYOnesa</span>
+        </div>
+        <div class="f-left-row2">
+          <span id="f-year" data-i18n="footer.year">2025</span>
+          <span class="sep">•</span>
+          <a
+            id="f-author"
+            class="footer-author-link"
+            href="https://orcid.org/0009-0005-4079-7418"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="ORCID de Andrés Calvo Espinosa"
+            title="ORCID de Andrés Calvo Espinosa"
+            data-i18n="footer.author"
+          >Andrés Calvo Espinosa</a>
+        </div>
+      </div>
+
+      <div class="footer-center">
+        <button
+          type="button"
+          class="footer-logo-btn"
+          id="coherenceLink"
+          aria-label="Coherencia Universal"
+          data-i18n-aria-label="footer.coherenceButtonAria"
+        >
+          <img
+            class="tag-logo footer-logo heat"
+            src="assets/img/ensayonesa512.png"
+            alt="ensaYOnesa"
+          >
+        </button>
+      </div>
+
+      <div class="footer-right">
+        <button
+          class="btn ghost"
+          id="licenseLink"
+          aria-label="Licencia MIT"
+          data-i18n-aria-label="footer.licenseButtonAria"
+          data-i18n="footer.licenseButton"
+        >
+          Licencia
+        </button>
+        <button class="btn ghost" id="privacyLink" data-i18n="footer.privacyButton">
+          Privacidad
+        </button>
+      </div>
+    </footer>
+
+    <!-- ====== Overlay legacy de control de licencia (desactivado en modo gratuito) ====== -->
+    <div
+      class="overlay"
+      id="licenseGateOverlay"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="licenseGateTitle"
+      aria-describedby="licenseGateMessage"
+      aria-hidden="true"
+      style="display:none !important; pointer-events:none !important"
+    >
+      <div class="box">
+        <h2 id="licenseGateTitle"></h2>
+        <p id="licenseGateMessage" class="small" style="line-height:1.55"></p>
+        <div class="overlay-actions" id="licenseGateActions"></div>
+      </div>
+    </div>
+
+    <!-- ====== Overlay Licencia MIT ====== -->
+    <div class="overlay" id="licenseOverlay" hidden>
+      <div class="box">
+        <h2 data-i18n="licenseOverlay.title">Licencia MIT</h2>
+
+        <pre id="licenseText" class="license-text">MIT License
+
+Copyright (c) 2025 OptimeFlow(s) by Andrés Calvo Espinosa
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+
+        <div class="overlay-actions">
+          <button class="btn ghost" data-close="licenseOverlay" data-i18n="common.close">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== Overlay Política de privacidad ====== -->
+    <div class="overlay" id="privacyOverlay" hidden>
+      <div class="box">
+        <h2 id="ppTitle" data-i18n="privacy.title">
+          Política de privacidad
+        </h2>
+                <div
+          id="ppBody"
+          class="small"
+          style="line-height:1.55"
+        >
+          <p><b>ensaYOnesa</b> funciona principalmente en tu navegador y en el almacenamiento local de tu dispositivo. El contenido del ensayo, la previsualización y la exportación a PDF se procesan localmente en la propia app.</p>
+          <ul>
+            <li><b>Datos locales:</b> la app puede guardar proyecto, ajustes, idioma, plantillas y algunos recursos locales en LocalStorage, SessionStorage, IndexedDB y cachés del navegador para recordar tus preferencias y funcionar offline.</li>
+            <li><b>Dictado por voz:</b> el dictado usa la API de reconocimiento de voz del navegador. Según el navegador, el dispositivo y su configuración, el audio puede procesarse localmente o enviarse al servicio de reconocimiento del proveedor del navegador o del sistema. <b>ensaYOnesa</b> no sube ese audio ni el contenido de tus archivos a servidores propios de OptimeFlow(s).</li>
+            <li><b>Acceso:</b> esta versión puede usarse sin iniciar sesión.</li>
+            <li><b>Cookies y seguimiento:</b> no usamos cookies de seguimiento ni analítica publicitaria en la app.</li>
+            <li><b>Borrado:</b> el botón “Limpiar” reinicia el proyecto guardado por la app. Para eliminar también cachés y otros datos del sitio, usa la opción de borrar datos del sitio en tu navegador.</li>
+            <li><b>Licencia:</b> el software se ofrece “tal cual”, sin garantías.</li>
+          </ul>
+          <p><b>Autor:</b> Andrés Calvo Espinosa. <br>Última actualización: 2026-03-16.</p>
+        </div>
+        <div class="overlay-actions">
+          <button class="btn ghost" data-close="privacyOverlay" data-i18n="common.close">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== Overlay Coherencia Universal ====== -->
+    <div class="overlay" id="coherenceOverlay" hidden>
+      <div class="box">
+        <h2 data-i18n="coherence.title">Coherencia Universal</h2>
+        <p class="small" style="line-height:1.55" data-i18n="coherence.body">
+          Que esta obra sirva como agradecimiento y como compromiso: pensar, sentir y actuar en la misma dirección, sin "adornos"; seguir creando con ética, con alegría y con respeto por todo lo que nos conecta.
+        </p>
+        <div class="overlay-actions">
+          <button class="btn ghost" data-close="coherenceOverlay" data-i18n="common.close">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS principal de la app -->
+    <script src="app.js" defer></script>
+    <script src="./dictado.js"></script>
+    <!-- Panel 4 (Exportar) separado -->
+    <script src="export.js" defer></script>
+     <script src="preview.js" defer></script>
+    <!-- JS ligero para header/footer + ajustes -->
+    <script>
+      (function () {
+        const root = document.documentElement;
+        const settingsBtn = document.getElementById('btnSettings');
+        const settingsSheet = document.getElementById('settingsSheet');
+        const licenseLink = document.getElementById('licenseLink');
+        const privacyLink = document.getElementById('privacyLink');
+        const coherenceLink = document.getElementById('coherenceLink');
+        const licenseTextEl = document.getElementById('licenseText');
+        const privacyBodyEl = document.getElementById('ppBody');
+
+        function openOverlay(id) {
+          const el = document.getElementById(id);
+          if (!el) return;
+          el.hidden = false;
+          el.classList.add('is-visible');
+          document.body.classList.add('overlay-open');
+        }
+
+        function closeOverlay(id) {
+          const el = document.getElementById(id);
+          if (!el) return;
+          el.hidden = true;
+          el.classList.remove('is-visible');
+          document.body.classList.remove('overlay-open');
+        }
+
+        function getI18nLegalString(key) {
+          try {
+            if (window.i18n && typeof window.i18n.t === 'function') {
+              const value = window.i18n.t(key);
+              if (value != null && value !== '' && value !== key) {
+                return String(value);
+              }
+            }
+          } catch {
+            /* ignore */
+          }
+          return '';
+        }
+
+        function syncLegalOverlaysFromI18n() {
+          const licenseText = getI18nLegalString('licenseOverlay.text');
+          if (licenseTextEl && licenseText) {
+            licenseTextEl.textContent = licenseText;
+          }
+
+          const privacyHtml = getI18nLegalString('privacy.body');
+          if (privacyBodyEl && privacyHtml) {
+            privacyBodyEl.innerHTML = privacyHtml;
+          }
+        }
+
+        // Hoja de ajustes
+        if (settingsBtn && settingsSheet) {
+          const toggleSheet = () => {
+            const isOpen = settingsSheet.classList.toggle('is-open');
+            settingsSheet.setAttribute('aria-hidden', String(!isOpen));
+            settingsBtn.setAttribute('aria-expanded', String(isOpen));
+          };
+          settingsBtn.addEventListener('click', toggleSheet);
+          settingsSheet.addEventListener('click', (ev) => {
+            if (ev.target === settingsSheet) {
+              toggleSheet();
+            }
+          });
+        }
+
+        // Overlays de footer
+        licenseLink && licenseLink.addEventListener('click', () => {
+          syncLegalOverlaysFromI18n();
+          openOverlay('licenseOverlay');
+        });
+        privacyLink && privacyLink.addEventListener('click', () => {
+          syncLegalOverlaysFromI18n();
+          openOverlay('privacyOverlay');
+        });
+        coherenceLink && coherenceLink.addEventListener('click', () => openOverlay('coherenceOverlay'));
+
+        document.addEventListener('click', (ev) => {
+          const target = ev.target;
+          if (target.matches('[data-close]')) {
+            const id = target.getAttribute('data-close');
+            closeOverlay(id);
+          }
+        });
+
+        // === Tema (con 'system' y temas personalizados) ===
+        const themeSelect = document.getElementById('themeSelect');
+        const THEME_KEY = 'ef-ensayo-theme';
+
+        function applyTheme(value) {
+          if (!value || value === 'system') {
+            root.removeAttribute('data-theme');
+          } else {
+            root.setAttribute('data-theme', value);
+          }
+        }
+
+        if (themeSelect) {
+          const stored = localStorage.getItem(THEME_KEY);
+          const initial = stored || 'system';
+          themeSelect.value = initial;
+          applyTheme(initial);
+
+          themeSelect.addEventListener('change', () => {
+            const value = themeSelect.value;
+            try {
+              localStorage.setItem(THEME_KEY, value);
+            } catch {
+              /* ignore */
+            }
+            applyTheme(value);
+          });
+        }
+
+        // =========================
+        // Idioma (auto 1ª vez + UI)
+        // =========================
+        const LANG_KEY = 'ensaYOnesa:lang';
+        const DICT_LANG_KEY = 'ensaYOnesa:dictLang';
+
+        const SUPPORTED_LANGS = [
+          'es', 'en', 'pt-br', 'it', 'fr', 'de', 'ko', 'zh', 'ja', 'ru', 'hi', 'ar'
+        ];
+
+        function normalizeAppLang(raw) {
+          const s = String(raw || '').trim().toLowerCase().replace('_', '-');
+          if (!s) return null;
+
+          if (SUPPORTED_LANGS.includes(s)) return s;
+
+          const primary = s.split('-')[0];
+
+          if (SUPPORTED_LANGS.includes(primary)) return primary;
+
+          if (primary === 'pt') return 'pt-br';
+          if (primary === 'zh') return 'zh';
+
+          return null;
+        }
+
+        function detectSystemAppLang() {
+          const candidates = [];
+
+          if (Array.isArray(navigator.languages)) {
+            candidates.push(...navigator.languages);
+          }
+          if (navigator.language) candidates.push(navigator.language);
+          if (navigator.userLanguage) candidates.push(navigator.userLanguage);
+
+          for (const c of candidates) {
+            const n = normalizeAppLang(c);
+            if (n) return n;
+          }
+          return 'es';
+        }
+
+        function setHtmlLang(appLang) {
+          const n = normalizeAppLang(appLang) || 'es';
+          document.documentElement.lang = (n === 'pt-br') ? 'pt-BR' : n;
+        }
+
+        function ensureInitialLanguageOnce() {
+          let stored = null;
+          try {
+            stored = localStorage.getItem(LANG_KEY);
+          } catch {
+            stored = null;
+          }
+
+          stored = normalizeAppLang(stored);
+
+          if (!stored) {
+            stored = detectSystemAppLang();
+            try {
+              localStorage.setItem(LANG_KEY, stored);
+            } catch {
+              /* ignore */
+            }
+          } else {
+            try {
+              localStorage.setItem(LANG_KEY, stored);
+            } catch {
+              /* ignore */
+            }
+          }
+
+          setHtmlLang(stored);
+          return stored;
+        }
+
+        const initialAppLang = ensureInitialLanguageOnce();
+
+        function ensureInitialDictationLangOnce(fallbackAppLang) {
+          let stored = null;
+          try {
+            stored = localStorage.getItem(DICT_LANG_KEY);
+          } catch {
+            stored = null;
+          }
+
+          stored = normalizeAppLang(stored);
+
+          if (!stored) {
+            stored = normalizeAppLang(fallbackAppLang) || 'es';
+            try {
+              localStorage.setItem(DICT_LANG_KEY, stored);
+            } catch {
+              /* ignore */
+            }
+          } else {
+            try {
+              localStorage.setItem(DICT_LANG_KEY, stored);
+            } catch {
+              /* ignore */
+            }
+          }
+          return stored;
+        }
+
+        const initialDictLang = ensureInitialDictationLangOnce(initialAppLang);
+
+        function setSelectIfHasOption(selectEl, value) {
+          if (!selectEl) return false;
+          const v = normalizeAppLang(value);
+          if (!v) return false;
+          const opt = selectEl.querySelector('option[value="' + v + '"]');
+          if (!opt) return false;
+          selectEl.value = v;
+          return true;
+        }
+
+        // === Idioma (i18n) ===
+        const languageSelect = document.getElementById('languageSelect');
+
+        function applyAppLanguage(lang) {
+          const value = normalizeAppLang(lang) || 'es';
+
+          try {
+            localStorage.setItem(LANG_KEY, value);
+          } catch {
+            /* ignore */
+          }
+
+          setSelectIfHasOption(languageSelect, value);
+          setHtmlLang(value);
+
+          if (window.i18n && typeof window.i18n.changeLanguage === 'function') {
+            window.i18n.changeLanguage(value);
+          }
+        }
+
+        function bindLanguageSelect() {
+          if (!languageSelect) return;
+
+          setSelectIfHasOption(languageSelect, initialAppLang);
+
+          languageSelect.addEventListener('change', () => {
+            applyAppLanguage(languageSelect.value);
+          });
+
+          document.addEventListener('DOMContentLoaded', () => {
+            let stored = initialAppLang;
+            try {
+              stored = normalizeAppLang(localStorage.getItem(LANG_KEY)) || stored;
+            } catch {
+              /* ignore */
+            }
+
+            if (window.i18n && typeof window.i18n.changeLanguage === 'function') {
+              window.i18n.changeLanguage(stored);
+            }
+
+            syncLegalOverlaysFromI18n();
+
+            if (window.i18n && typeof window.i18n.getLanguage === 'function') {
+              const current = normalizeAppLang(window.i18n.getLanguage());
+              if (current) {
+                setSelectIfHasOption(languageSelect, current);
+                setHtmlLang(current);
+              }
+            }
+
+            if (window.i18n && typeof window.i18n.onChange === 'function') {
+              window.i18n.onChange((lng) => {
+                const n = normalizeAppLang(lng);
+                if (!n) return;
+
+                setSelectIfHasOption(languageSelect, n);
+                setHtmlLang(n);
+
+                try {
+                  localStorage.setItem(LANG_KEY, n);
+                } catch {
+                  /* ignore */
+                }
+
+                syncLegalOverlaysFromI18n();
+
+                // ✅ IMPORTANTE: refrescar UI dinámica que genera app.js (labels, selects, etc.)
+                // (si existe; en scripts normales, estas funciones suelen estar en window)
+                try {
+                  const prevCap = (typeof window.currentCapIdx === 'function') ? window.currentCapIdx() : null;
+                  const prevSub = (typeof window.currentSubIdx === 'function') ? window.currentSubIdx() : null;
+
+                  if (typeof window.hydrateUIFromState === 'function') {
+                    window.hydrateUIFromState();
+                  }
+
+                  // restaurar selección cap/sub si existe
+                  if (prevCap != null && typeof window.onCapituloChange === 'function') {
+                    const capSel = document.getElementById('selCapitulo');
+                    if (capSel) {
+                      capSel.value = String(prevCap);
+                      window.onCapituloChange();
+
+                      const subSel = document.getElementById('selSubseccion');
+                      if (subSel && prevSub != null) {
+                        subSel.value = String(prevSub);
+                        if (typeof window.loadSubsecAndContentFormats === 'function') {
+                          window.loadSubsecAndContentFormats();
+                        }
+                      }
+                    }
+                  }
+                } catch {
+                  /* ignore */
+                }
+              });
+            }
+          });
+        }
+
+        bindLanguageSelect();
+
+        // =========================
+        // Idioma de dictado
+        // =========================
+        const dictationLanguageSelect = document.getElementById('dictationLanguageSelect');
+
+        function dispatchDictLangChanged(appLang) {
+          const n = normalizeAppLang(appLang) || 'es';
+          try {
+            window.dispatchEvent(
+              new CustomEvent('ensaYOnesa:dictLangChanged', { detail: { lang: n } })
+            );
+          } catch {
+            /* ignore */
+          }
+        }
+
+        function bindDictationLanguageSelect() {
+          if (!dictationLanguageSelect) return;
+
+          setSelectIfHasOption(dictationLanguageSelect, initialDictLang);
+
+          dictationLanguageSelect.addEventListener('change', () => {
+            const value = normalizeAppLang(dictationLanguageSelect.value) || 'es';
+            try {
+              localStorage.setItem(DICT_LANG_KEY, value);
+            } catch {
+              /* ignore */
+            }
+            setSelectIfHasOption(dictationLanguageSelect, value);
+
+            dispatchDictLangChanged(value);
+          });
+        }
+
+        bindDictationLanguageSelect();
+
+        // PWA install
+        let deferredPrompt = null;
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+        });
+
+        const installBtn = document.getElementById('installBtn');
+        if (installBtn) {
+          installBtn.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            await deferredPrompt.userChoice;
+            deferredPrompt = null;
+          });
+        }
+      })();
+    </script>
+
+    <!-- Filtro “heat waves” -->
+    <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+      <filter id="heat-waves">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="1" seed="3">
+          <animate attributeName="baseFrequency"
+                   dur="7.5s"
+                   values="0.012 0.02; 0.02 0.04; 0.012 0.02; 0.012 0.02"
+                   keyTimes="0;0.3;0.6;1"
+                   calcMode="spline"
+                   keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0 0 1 1"
+                   repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="0">
+          <animate attributeName="scale"
+                   dur="7.5s"
+                   values="0;28;0;0"
+                   keyTimes="0;0.3;0.6;1"
+                   calcMode="spline"
+                   keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0 0 1 1"
+                   repeatCount="indefinite" />
+        </feDisplacementMap>
+      </filter>
+    </svg>
+
+  </div> <!-- .page-root -->
+</body>
+</html>

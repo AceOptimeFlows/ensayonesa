@@ -1,0 +1,499 @@
+{
+  "app": {
+    "title": "ensaYOnesa — 오프라인 PWA",
+    "logoAlt": "OptimeFlow(s) 로고",
+    "brandName": "OptimeFlow(s)",
+    "brandSrOnly": "ensaYOnesa",
+    "shellAriaLabel": "ensaYOnesa 에세이 생성기",
+    "windowTitleTemplate": "{{title}} — ensaYOnesa"
+  },
+  "nav": {
+    "step1": "1. 표지와 메타데이터",
+    "step2": "2. 설정과 스타일",
+    "step3": "3. 내용",
+    "step4": "4. 내보내기",
+    "step5": "5. 미리보기"
+  },
+  "panels": {
+    "panel1Label": "표지와 메타데이터",
+    "panel2Label": "설정과 스타일",
+    "panel3Label": "내용",
+    "panel4Label": "내보내기",
+    "panel5Label": "미리보기"
+  },
+  "settings": {
+    "openButton": "설정",
+    "themeLabel": "테마",
+    "themes": {
+      "system": "시스템",
+      "dark": "다크 코어",
+      "midnight": "미드나이트 블루",
+      "nebula": "네온 성운",
+      "ocean": "심해",
+      "forest": "에메랄드 숲",
+      "amber": "따뜻한 앰버",
+      "violet": "로열 바이올렛",
+      "mono": "Mono noir"
+    },
+    "languageLabel": "언어",
+    "dictationLanguageLabel": "음성 입력 언어",
+    "languages": {
+      "es": "스페인어",
+      "en": "영어",
+      "pt-br": "포르투갈어(브라질)",
+      "it": "이탈리아어",
+      "fr": "프랑스어",
+      "de": "독일어",
+      "ko": "한국어",
+      "zh": "중국어",
+      "ja": "일본어",
+      "ru": "러시아어",
+      "hi": "힌디어",
+      "ar": "아랍어"
+    },
+    "installButton": "앱 설치"
+  },
+  "formats": {
+    "labels": {
+      "font": "글꼴",
+      "sizePx": "크기 (px)",
+      "color": "색상",
+      "alphaPercent": "알파 (%)",
+      "leading": "줄간격 (×)"
+    },
+    "fonts": {
+      "serif": "세리프",
+      "sans": "산세리프",
+      "monospace": "고정폭"
+    }
+  },
+  "panel1": {
+    "titleLabel": "제목",
+    "titlePlaceholder": "ensaYOnesa",
+    "subtitleLabel": "부제목 (선택 사항)",
+    "subtitlePlaceholder": "에세이 부제목",
+    "authorLabel": "저자",
+    "authorPlaceholder": "저자 이름",
+    "licenseLabel": "라이선스 (선택 사항)",
+    "licensePlaceholder": "예: CC BY 4.0",
+    "emailLabel": "연락처 / Email (선택 사항)",
+    "emailPlaceholder": "author@example.com",
+    "dateLabel": "발행일 (선택 사항)",
+    "safeCreativeLabel": "Safe Creative ID (선택 사항)",
+    "safeCreativePlaceholder": "SC-XXXXXXXX",
+    "doiLabel": "DOI (Zenodo) (선택 사항)",
+    "doiPlaceholder": "10.5281/zenodo.xxxxxxx",
+    "noteLabel": "메모 (선택 사항)",
+    "notePlaceholder": "비고 / 헌사 / 기타",
+    "summaryLabel": "요약 (선택 사항)",
+    "summaryPlaceholder": "에세이 요약…",
+    "keywordsLabel": "키워드 (선택 사항)",
+    "keywordsPlaceholder": "키워드1; 키워드2; 키워드3",
+    "endMatterHint": "이 항목들 중 하나라도 입력하면 PDF 마지막(참고문헌 뒤)에 추가 페이지가 생성됩니다.",
+    "editorialNoteLabel": "편집자 주 (선택 사항)",
+    "editorialNotePlaceholder": "편집자 주…",
+    "acknowledgmentsLabel": "감사의 말 (선택 사항)",
+    "acknowledgmentsPlaceholder": "감사의 말…",
+    "fundingLabel": "연구비 지원 (선택 사항)",
+    "fundingPlaceholder": "연구비 지원…",
+    "conflictsLabel": "이해상충 (선택 사항)",
+    "conflictsPlaceholder": "이해상충…",
+    "howToCiteLabel": "인용 방법 (선택 사항)",
+    "howToCitePlaceholder": "이 작업을 인용하는 방법…"
+  },
+  "panel2": {
+    "tabs": {
+      "headerFooter": "헤더와 푸터",
+      "formats": "형식",
+      "toc": "목차"
+    },
+    "lineStyle": {
+      "label": "선 스타일",
+      "none": "선 없음",
+      "solid": "실선",
+      "dashed": "파선",
+      "dotted": "점선"
+    },
+    "header": {
+      "heading": "헤더",
+      "enable": "헤더 사용",
+      "hint": "헤더에는 에세이 제목과 저자 이름이 사용되며, 설정한 여백을 따릅니다."
+    },
+    "footer": {
+      "heading": "푸터",
+      "enable": "푸터 사용",
+      "citationsInFooter": "푸터에 인용 표시",
+      "textLabel": "푸터 텍스트",
+      "textPlaceholder": "참고 텍스트 / 웹사이트 / 기타"
+    },
+    "pageNumbers": {
+      "heading": "페이지 번호",
+      "enable": "페이지 번호 표시",
+      "locationLabel": "위치",
+      "positionTopLeft": "왼쪽 위",
+      "positionTopRight": "오른쪽 위",
+      "positionBottomLeft": "왼쪽 아래",
+      "positionBottomRight": "오른쪽 아래",
+      "positionBottomCenter": "아래 중앙 (푸터 아래)",
+      "hint": "위쪽은 헤더 스타일을, 아래쪽은 푸터 스타일을 따릅니다. 표지와 목차에서는 숨겨집니다."
+    },
+    "toc": {
+      "enable": "목차 사용",
+      "countLabel": "장 / 항목 수",
+      "chapterDefaultTitle": "{{index}}장",
+      "chapterTitlePlaceholder": "{{index}}장 제목"
+    },
+    "numbering": {
+      "roman": "로마 숫자 (I, II, III)",
+      "arabic": "아라비아 숫자 (1, 2, 3)"
+    },
+    "formatCards": {
+      "header": "헤더",
+      "footer": "푸터",
+      "title": "제목",
+      "subtitle": "부제목",
+      "author": "저자",
+      "meta": "메타데이터",
+      "endMatterHeading": "마지막 섹션 (페이지 제목)",
+      "endMatterLabel": "마지막 섹션 (제목)",
+      "endMatterBody": "마지막 섹션 (내용)"
+    }
+  },
+  "panel3": {
+    "inlineFmt": {
+      "label": "서식:",
+      "bold": "굵게 (Ctrl+B)",
+      "italic": "기울임꼴 (Ctrl+I)",
+      "underline": "밑줄 (Ctrl+U)",
+      "hint": "단축키: Ctrl/Cmd + B / I / U"
+    },
+    "numbering": {
+      "label": "장 번호 형식",
+      "applyButton": "적용"
+    },
+    "chapterPointLabel": "장 / 항목",
+    "subsectionCountLabel": "하위 섹션 수",
+    "subsectionSelectLabel": "하위 섹션",
+    "contentLabel": "내용",
+    "contentPlaceholder": "선택한 하위 섹션의 내용을 여기에 입력하세요…",
+    "formatsHeading": "장 / 하위 섹션별 서식",
+    "formatCards": {
+      "chapterTitle": "장 제목",
+      "subsectionTitle": "하위 섹션 제목",
+      "content": "내용"
+    },
+    "applyAllInChapterButton": "모두에 적용 (장)",
+    "noChaptersOption": "— 장 없음 —",
+    "chapterDefaultTitle": "{{index}}장",
+    "sectionDefaultTitle": "{{index}}절",
+    "subsectionBaseLabel": "기본 하위 섹션",
+    "subsectionLabel": "하위 섹션 제목 {{index}}",
+    "subsectionSelectBasePrefix": "(기본) "
+  },
+  "panel4": {
+    "ui": {
+      "sizeLabel": "크기",
+      "pageSizes": {
+        "A4": "A4 (210 x 297 mm)",
+        "A5": "A5 (148 x 210 mm)",
+        "KDP6x9": "Kindle/Amazon 6”×9” (152.4 × 228.6 mm)"
+      },
+      "marginsLabel": "여백 (mm)",
+      "margins": {
+        "top": "위",
+        "bottom": "아래",
+        "left": "왼쪽",
+        "right": "오른쪽"
+      },
+      "headerGapLabel": "헤더 → 본문 간격 (mm)",
+      "breakOnChapterLabel": "각 장 시작 시 새 페이지",
+      "endCitesLabel": "인용 용어 부록 (문서 끝)",
+      "bibliographyLabel": "참고문헌",
+      "pdfFileNameLabel": "PDF 파일 이름",
+      "actions": {
+        "saveJson": "저장 (JSON)",
+        "load": "불러오기",
+        "clear": "초기화 (필드 + 로컬 데이터베이스)",
+        "demo": "데모 불러오기 (완성된 에세이)",
+        "saveTemplate": "템플릿 저장 (스타일만)",
+        "loadTemplate": "템플릿 불러오기",
+        "exportTemplate": "템플릿 내보내기",
+        "export": "내보내기"
+      }
+    },
+    "defaultProjectFileName": "essay.json",
+    "defaultPdfFileName": "essay.pdf",
+    "defaultTemplateBaseFileName": "template",
+    "defaultTemplateNameShort": "템플릿 {{index}}",
+    "defaultTemplateNameWithDate": "템플릿 {{datetime}}",
+    "noTemplatesOption": "— 저장된 템플릿 없음 —",
+    "prompts": {
+      "templateName": "스타일 템플릿 이름 (제목과 내용은 포함되지 않음):"
+    },
+    "alerts": {
+      "projectLoaded": "프로젝트를 불러왔습니다.",
+      "invalidProjectJson": "유효하지 않은 JSON입니다.",
+      "confirmClearAll": "모든 필드를 지우고 로컬 데이터베이스를 비우시겠습니까?",
+      "demoConfirm": "현재 내용이 데모 에세이로 바뀝니다. 계속할까요?",
+      "demoLoaded": "데모 에세이를 불러왔습니다.",
+      "templateSaved": "템플릿을 저장했습니다.",
+      "templateNotDetected": "이 JSON은 템플릿으로 보이지 않습니다.",
+      "templateApplied": "템플릿을 적용했습니다.",
+      "invalidTemplateJson": "템플릿 JSON이 유효하지 않습니다.",
+      "selectTemplate": "템플릿을 선택하세요."
+    },
+    "errors": {
+      "popupBlocked": "내보내기를 위해 팝업을 허용하세요."
+    }
+  },
+  "citations": {
+    "selectPlaceholder": "저장된 인용",
+    "textPlaceholder": "인용 내용…",
+    "addButton": "인용 추가",
+    "removeButton": "인용 삭제",
+    "untitledWord": "(단어 없음)",
+    "alertSelectText": "인용을 추가하려면 내용에서 단어(또는 텍스트)를 선택하세요.",
+    "alertNoCitations": "저장된 인용이 아직 없습니다.",
+    "alertNoCitation": "선택한 영역에서 인용이 감지되지 않았습니다. ^(N)이 있는 단어 또는 그 주변을 선택하세요.",
+    "confirmDelete": "인용 ({{number}})을 삭제하고 나머지를 다시 번호 매길까요?",
+    "typeSelectAria": "각주 유형",
+    "includeInCitationsPage": "용어/개념 부록에 포함",
+    "types": {
+      "bibliographic": "서지 각주",
+      "explanatory": "설명 또는 내용 각주",
+      "authorComment": "저자 코멘트"
+    }
+  },
+  "dictation": {
+    "noteStart": "음성 입력 시작 (메모)",
+    "noteStop": "음성 입력 중지 (메모)",
+    "noteIndicatorIdle": "대기 중",
+    "summaryStart": "음성 입력 시작 (요약)",
+    "summaryStop": "음성 입력 중지 (요약)",
+    "summaryIndicatorIdle": "대기 중",
+    "controls": {
+      "start": "음성 입력 시작",
+      "pause": "음성 입력 중지"
+    },
+    "status": {
+      "notSupported": "이 브라우저에서는 음성 입력을 지원하지 않습니다",
+      "notSupportedShort": "지원되지 않음",
+      "listening": "음성을 듣는 중",
+      "error": "음성 입력 오류",
+      "idle": "대기 중",
+      "webviewUnsupported": "WebView에서는 음성 입력을 사용할 수 없습니다. 전사를 하려면 Chrome/Edge에서 앱을 여세요.",
+      "needsHttps": "음성 입력에는 HTTPS(보안 컨텍스트)가 필요합니다.",
+      "noAudioEvents": "음성 입력은 시작되었지만 오디오 이벤트가 도착하지 않습니다. 이 기기/브라우저에서는 지원되지 않을 수 있습니다.",
+      "noResults": "음성 입력 결과를 받지 못했습니다. Chrome/Edge를 사용하거나 시스템 음성 인식 서비스를 확인하세요."
+    },
+    "error": {
+      "noSpeech": "음성이 감지되지 않았습니다. 마이크에 더 가까이 말하고 다시 시도하세요.",
+      "audioCapture": "마이크에 접근할 수 없습니다. 권한과 다른 앱 사용 여부를 확인하세요.",
+      "notAllowed": "마이크 권한이 거부되었거나 브라우저에서 차단되었습니다.",
+      "serviceNotAllowed": "이 기기/브라우저에서는 음성 인식 서비스를 사용할 수 없습니다.",
+      "network": "음성 입력 중 네트워크 오류가 발생했습니다. 연결을 확인하세요.",
+      "languageNotSupported": "이 기기에서는 선택한 음성 입력 언어를 지원하지 않습니다.",
+      "badGrammar": "음성 입력 내부 오류 (bad-grammar).",
+      "generic": "음성 입력 오류."
+    }
+  },
+  "licenseGuard": {
+    "checking": {
+      "title": "라이선스를 확인하는 중…",
+      "body": "잠시만요. ensaYOnesa 라이선스를 확인하고 있습니다."
+    },
+    "needsOnline": {
+      "title": "인터넷 연결이 필요합니다",
+      "body": "ensaYOnesa를 처음 활성화하려면 인터넷 연결이 필요합니다. 온라인 상태에서 앱을 다시 열어 주세요."
+    },
+    "noSession": {
+      "title": "앱을 활성화하려면 로그인하세요",
+      "body": "OptimeFlow(s) 메인 웹사이트에서 계정을 열고 로그인한 뒤 ensaYOnesa 라이선스를 활성화하세요."
+    },
+    "noLicense": {
+      "title": "활성 라이선스를 찾을 수 없습니다",
+      "body": "계정에 활성 ensaYOnesa 라이선스가 없습니다. OptimeFlow(s) 스토어에서 앱을 구매한 후 다시 열어 주세요."
+    },
+    "error": {
+      "title": "라이선스를 확인할 수 없습니다",
+      "body": "라이선스 확인 중 문제가 발생했습니다. 연결을 확인하고 다시 시도하세요."
+    },
+    "configError": {
+      "title": "설정 오류",
+      "body": "앱이 Supabase에 연결할 수 없습니다. 프로젝트 설정을 확인하거나 개발자에게 문의하세요."
+    },
+    "buttons": {
+      "openAccount": "내 계정 열기",
+      "goToStore": "스토어로 이동",
+      "retry": "다시 시도"
+    }
+  },
+  "export": {
+    "footer": {
+      "licenseLabel": "라이선스:",
+      "publicationDateLabel": "발행일"
+    },
+    "bibliography": {
+      "heading": "참고문헌",
+      "empty": "(참고문헌 없음)"
+    },
+    "endMatter": {
+      "heading": "편집자 주 및 선언",
+      "editorialNote": "편집자 주",
+      "acknowledgments": "감사의 말",
+      "funding": "연구비 지원",
+      "conflicts": "이해상충",
+      "howToCite": "인용 방법"
+    },
+    "meta": {
+      "license": "라이선스",
+      "email": "Email",
+      "note": "메모",
+      "summary": "요약",
+      "keywords": "키워드",
+      "safeCreativeId": "Safe Creative ID",
+      "doi": "DOI (Zenodo)"
+    },
+    "license": {
+      "heading": "라이선스"
+    },
+    "index": {
+      "heading": "목차",
+      "defaultPagePlaceholder": "—",
+      "empty": "(장 없음)"
+    },
+    "citations": {
+      "heading": "부록 - 용어 및 개념 해설",
+      "pageLabel": "쪽",
+      "empty": "(인용 없음)",
+      "pageUnknown": "—",
+      "missingText": "—"
+    },
+    "errors": {
+      "popupBlocked": "내보내기를 위해 팝업을 허용하세요."
+    }
+  },
+  "demo": {
+    "meta": {
+      "title": "데모 에세이: 일관성과 형식",
+      "subtitle": "ensaYOnesa 표준 템플릿",
+      "author": "OptimeFlow(s) · 예시",
+      "license": "CC BY-NC-SA 4.0 (예시)",
+      "email": "author@example.com",
+      "note": "이 문서는 ensaYOnesa 내부 템플릿으로 생성된 데모 에세이입니다. 안심하고 위에 덮어써도 됩니다. 모든 내용은 가상이며 형식을 시험해 보기 위해서만 준비되었습니다.",
+      "summary": "이 데모 에세이의 목적은 ensaYOnesa의 표준 형식이 어떻게 보이는지 보여 주는 것입니다. 표지, 목차, 장, 하위 섹션, 양쪽 맞춤 본문을 확인할 수 있습니다. 코드를 건드리지 않고도 제목, 텍스트, 스타일을 수정할 수 있습니다.",
+      "keywords": "데모; 템플릿; 일관성; 예시",
+      "safeCreativeId": "SC-DEMO-000000",
+      "doi": "10.0000/demo.ensayonesa"
+    },
+    "footer": {
+      "text": "ensaYOnesa · optimeflow.com · 데모 템플릿"
+    },
+    "ch1": {
+      "title": "I. 출발점",
+      "s0": {
+        "title": "I. 출발점",
+        "body": "이 첫 번째 데모 장은 단순하고 읽기 쉬운 에세이라는 아이디어를 요약합니다. 표지, 목차, 본문은 서로 잘 맞물리도록 설계되어 있어, 사용자가 별도로 조판을 걱정할 필요가 없습니다.\n\n이 장은 초안처럼 활용할 수 있습니다. 제목을 바꾸고, 자신의 문단을 추가해 보며 템플릿이 표준 형식을 어떻게 유지하는지 확인해 보세요."
+      },
+      "s1": {
+        "title": "I.1. 첫 질문",
+        "body": "여기에는 이 장의 첫 번째 실제 하위 섹션이 들어갈 수 있습니다. 좋은 시작은 보통 세 가지 질문에 답합니다. 무엇을 말하고 싶은가, 누구를 위해 쓰는가, 그리고 천천히 이해되게 하려면 어떤 형식이 필요한가 하는 질문입니다.\n\n이 예시에서는 흐름 자체를 보여 주는 데 초점을 둡니다. 표지 → 목차 → 장 → 하위 섹션. 여기서부터 쓰는 모든 내용은 곧 당신 자신의 에세이가 됩니다."
+      },
+      "s2": {
+        "title": "I.2. 맥락과 방법론 메모",
+        "body": "이 두 번째 예시 하위 섹션은 문단이 여러 줄로 이어질 때 텍스트가 어떻게 배치되는지를 보여 줍니다. 줄간격과 양쪽 맞춤은 화면과 종이 모두에서 편하게 읽을 수 있도록 설정되어 있어, 따로 조정할 필요가 없습니다.\n\n원한다면 이 하위 섹션을 사용해 자신의 에세이 맥락을 설명할 수 있습니다. 아이디어가 어디서 시작되었는지, 어떤 자료를 염두에 두고 있는지, 그리고 이 글이 무엇을 하려는 것은 아닌지 등을 말할 수 있습니다."
+      }
+    },
+    "ch2": {
+      "title": "II. 본론",
+      "s0": {
+        "title": "II. 본론",
+        "body": "이 예시 장은 텍스트의 중심부를 나타냅니다. 즉, 논지와 장면, 데이터가 전개되는 자리입니다. 필요한 만큼 하위 섹션으로 나눌 수 있으며, 여기서는 기본 동작을 보여 주기 위해 두 개만 제시합니다."
+      },
+      "s1": {
+        "title": "II.1. 핵심 전개",
+        "body": "본론의 첫 하위 섹션에는 보통 가장 강한 주장 부분이 들어갑니다. 독자가 훑어보기만 하더라도 기억해 주었으면 하는 부분입니다.\n\n이 공간에서는 긴 문단과 짧은 문단을 함께 사용할 수 있습니다. 여백, 타이포그래피, 양쪽 맞춤은 템플릿이 자동으로 유지합니다."
+      },
+      "s2": {
+        "title": "II.2. 뉘앙스와 예시",
+        "body": "여기에는 구체적인 예시, 작은 장면, 데이터, 참고 자료 등을 넣을 수 있습니다. 문단들이 차분하게 이어질 때, 읽기의 느낌은 흩어진 아이디어 목록이 아니라 하나의 연속된 흐름이 됩니다.\n\n이 텍스트를 지우고 바로 자신의 글을 써도 됩니다. 장과 하위 섹션의 구조는 그대로 유지됩니다."
+      }
+    },
+    "ch3": {
+      "title": "III. 마무리와 다음 단계",
+      "s0": {
+        "title": "III. 마무리와 다음 단계",
+        "body": "이 예시의 마지막 장은 결론을 위해 마련되어 있습니다. 이 과정을 통해 무엇을 가져가게 되는지, 독자에게 무엇을 건네는지, 그리고 텍스트 이후 어떤 길이 열리는지를 적는 곳입니다.\n\n명확한 마무리는 에세이가 단지 흥미로운 생각들의 나열에 머무르지 않고, 다시 찾아 읽고 공유할 수 있는 형식이 되도록 도와줍니다."
+      },
+      "s1": {
+        "title": "III.1. 종합",
+        "body": "종합 부분에서는 에세이의 핵심 흐름을 두세 개의 문단으로 모을 수 있습니다. 처음 질문은 무엇이었는지, 무엇을 발견했는지, 그리고 무엇이 여전히 열려 있는지를 정리하는 것입니다.\n\n이곳만 곧바로 읽은 사람도 몇 줄 안에 글의 뼈대를 이해할 수 있도록 하는 것이 목적입니다."
+      },
+      "s2": {
+        "title": "III.2. 독자에게 보내는 초대",
+        "body": "마지막으로 이 공간은 초대의 자리가 될 수 있습니다. 이 글을 읽은 사람이 이제 무엇을 할 수 있는지, 어떤 작은 행동을 시도할 수 있는지, 혹은 어떤 대화를 열 수 있는지를 제안할 수 있습니다.\n\n좋은 결론은 모든 것을 닫아 버리지는 않지만, 그래도 가능한 다음 한 걸음을 가리켜 줍니다."
+      }
+    },
+    "citations": {
+      "wordPrefix": "demo-",
+      "c1": "데모 인용 1: 푸터를 시험하기 위한 짧은 참고문헌.",
+      "c2": "데모 인용 2: 푸터 줄바꿈과 여백을 확인하기 위한 조금 더 긴 참고문헌.",
+      "c3": "데모 인용 3: 같은 페이지에 여러 인용이 쌓여 보이는지 확인하기 위한 또 다른 참고문헌.",
+      "c4": "데모 인용 4: 중간 길이의 인용 예시(문서 끝 인용 부록 테스트용).",
+      "c5": "데모 인용 5: 테스트용 인용.",
+      "c6": "데모 인용 6: 줄바꿈을 확인하기 위한 조금 더 긴 테스트용 인용.",
+      "c7": "데모 인용 7: 테스트용 인용.",
+      "c8": "데모 인용 8: 테스트용 인용.",
+      "c9": "데모 인용 9: 테스트용 인용.",
+      "defaultText": "데모 인용 {{number}}: 테스트용 인용."
+    },
+    "export": {
+      "fileName": "demo-essay.pdf"
+    }
+  },
+  "footer": {
+    "brand": "OptimeFlow(s)®",
+    "appName": "ensaYOnesa",
+    "year": "2025",
+    "author": "Andrés Calvo Espinosa",
+    "coherenceButtonAria": "보편적 일관성",
+    "licenseButtonAria": "MIT 라이선스",
+    "licenseButton": "라이선스",
+    "privacyButton": "개인정보"
+  },
+  "licenseOverlay": {
+    "title": "MIT 라이선스",
+    "text": "MIT 라이선스\n\nCopyright (c) 2025 OptimeFlow(s) by Andrés Calvo Espinosa\n\n본 소프트웨어 및 관련 문서 파일(이하 \"소프트웨어\")의 사본을 얻은\n모든 사람에게, 소프트웨어를 제한 없이 다룰 수 있는 권리를 무상으로\n허가합니다. 여기에는 사용, 복제, 수정, 병합, 게시, 배포,\n재라이선스 및/또는 판매할 권리와, 소프트웨어를 제공받은 사람에게\n동일한 행위를 허가할 권리가 포함됩니다. 단, 다음 조건을 따라야 합니다.\n\n위의 저작권 고지와 본 허가 고지는 소프트웨어의 모든 사본 또는 중요한\n부분에 포함되어야 합니다.\n\n소프트웨어는 \"있는 그대로\" 제공되며, 상품성, 특정 목적 적합성,\n비침해에 대한 보증을 포함하되 이에 한정되지 않는 어떠한 명시적 또는\n묵시적 보증도 제공하지 않습니다. 어떠한 경우에도 저작자 또는 저작권\n보유자는 계약, 불법행위 또는 기타 여부와 관계없이 소프트웨어 또는 그\n사용, 기타 거래로부터 발생하거나 이와 관련된 어떠한 청구, 손해 또는\n기타 책임에 대해서도 책임을 지지 않습니다."
+  },
+  "privacy": {
+    "title": "개인정보 처리방침",
+    "body": "<p><b>ensaYOnesa</b>는 주로 브라우저와 기기 로컬 저장소에서 작동합니다. 에세이 내용, 미리보기, PDF 내보내기는 앱 내부에서 로컬로 처리됩니다.</p><ul><li><b>로컬 데이터:</b> 앱은 프로젝트, 설정, 언어, 템플릿 및 일부 로컬 리소스를 LocalStorage, SessionStorage, IndexedDB, 브라우저 캐시에 저장할 수 있습니다. 이는 사용자의 환경설정을 기억하고 오프라인에서도 작동하기 위한 것입니다.</li><li><b>음성 입력:</b> 음성 입력 기능은 브라우저의 음성 인식 API를 사용합니다. 브라우저, 기기, 설정에 따라 오디오가 로컬에서 처리될 수도 있고 브라우저 또는 시스템 제공자의 인식 서비스로 전송될 수도 있습니다. <b>ensaYOnesa</b>는 해당 오디오나 파일 내용을 OptimeFlow(s) 자체 서버로 업로드하지 않습니다.</li><li><b>접근:</b> 이 버전은 로그인 없이 사용할 수 있습니다.</li><li><b>쿠키 및 추적:</b> 앱에서는 추적 쿠키나 광고 분석을 사용하지 않습니다.</li><li><b>삭제:</b> “초기화” 버튼은 앱이 저장한 프로젝트를 재설정합니다. 캐시와 기타 사이트 데이터까지 삭제하려면 브라우저의 사이트 데이터 삭제 기능을 사용하세요.</li><li><b>라이선스:</b> 소프트웨어는 “있는 그대로” 제공되며 어떠한 보증도 없습니다.</li></ul><p><b>저자:</b> Andrés Calvo Espinosa. <br>최종 업데이트: 2026-03-16.</p>"
+  },
+  "coherence": {
+    "title": "보편적 일관성",
+    "body": "이 작품이 감사이자 다짐이 되기를 바랍니다. 같은 방향으로 생각하고, 느끼고, 행동하며, \"장식\"이 아니라 본질을 따르는 것. 우리를 이어 주는 모든 것에 대한 존중과 기쁨, 윤리를 품고 계속 창조하는 것."
+  },
+  "common": {
+    "close": "닫기"
+  },
+  "panel5": {
+    "heading": "미리보기",
+    "hint": "현재 설정으로 내보냈을 때 문서가 어떻게 보이는지 여기서 확인할 수 있습니다.",
+    "toolbar": {
+      "aria": "미리보기 컨트롤",
+      "zoomOutAria": "축소",
+      "zoomInAria": "확대",
+      "zoomRangeAria": "줌",
+      "fit": "너비에 맞춤",
+      "actual": "100%",
+      "refresh": "새로고침"
+    },
+    "viewportAria": "문서 미리보기",
+    "frameTitle": "미리보기된 문서",
+    "status": {
+      "loading": "미리보기를 생성하는 중…",
+      "ready": "미리보기가 업데이트되었습니다.",
+      "error": "미리보기를 생성할 수 없습니다."
+    }
+  }
+}

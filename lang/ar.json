@@ -1,0 +1,441 @@
+{
+  "app": {
+    "title": "ensaYOnesa — PWA بدون اتصال",
+    "logoAlt": "شعار OptimeFlow(s)",
+    "brandName": "OptimeFlow(s)",
+    "brandSrOnly": "ensaYOnesa",
+    "shellAriaLabel": "مولّد مقالات ensaYOnesa",
+    "windowTitleTemplate": "{{title}} — ensaYOnesa"
+  },
+  "nav": {
+    "step1": "1. الغلاف والبيانات الوصفية",
+    "step2": "2. الإعدادات والأنماط",
+    "step3": "3. المحتوى",
+    "step4": "4. التصدير",
+    "step5": "5. المعاينة"
+  },
+  "panels": {
+    "panel1Label": "الغلاف والبيانات الوصفية",
+    "panel2Label": "الإعدادات والأنماط",
+    "panel3Label": "المحتوى",
+    "panel4Label": "التصدير",
+    "panel5Label": "المعاينة"
+  },
+  "settings": {
+    "openButton": "الإعدادات",
+    "themeLabel": "السمة",
+    "themes": {
+      "system": "النظام",
+      "dark": "نواة داكنة",
+      "midnight": "أزرق منتصف الليل",
+      "nebula": "سديم نيون",
+      "ocean": "محيط عميق",
+      "forest": "غابة زمردية",
+      "amber": "عنبر دافئ",
+      "violet": "بنفسجي ملكي",
+      "mono": "Mono noir"
+    },
+    "languageLabel": "اللغة",
+    "dictationLanguageLabel": "لغة الإملاء الصوتي",
+    "languages": {
+      "es": "الإسبانية",
+      "en": "الإنجليزية",
+      "pt-br": "البرتغالية (البرازيل)",
+      "it": "الإيطالية",
+      "fr": "الفرنسية",
+      "de": "الألمانية",
+      "ko": "الكورية",
+      "zh": "الصينية",
+      "ja": "اليابانية",
+      "ru": "الروسية",
+      "hi": "الهندية",
+      "ar": "العربية"
+    },
+    "installButton": "تثبيت التطبيق"
+  },
+  "formats": {
+    "labels": {
+      "font": "الخط",
+      "sizePx": "الحجم (px)",
+      "color": "اللون",
+      "alphaPercent": "الشفافية (%)",
+      "leading": "تباعد الأسطر (×)"
+    },
+    "fonts": {
+      "serif": "Serif",
+      "sans": "Sans",
+      "monospace": "Monospace"
+    }
+  },
+  "panel1": {
+    "titleLabel": "العنوان",
+    "titlePlaceholder": "ensaYOnesa",
+    "subtitleLabel": "العنوان الفرعي (اختياري)",
+    "subtitlePlaceholder": "العنوان الفرعي للمقال",
+    "authorLabel": "المؤلف",
+    "authorPlaceholder": "اسم المؤلف",
+    "licenseLabel": "الرخصة (اختياري)",
+    "licensePlaceholder": "مثال: CC BY 4.0",
+    "emailLabel": "مراسلة / بريد إلكتروني (اختياري)",
+    "emailPlaceholder": "autor@ejemplo.com",
+    "dateLabel": "تاريخ النشر (اختياري)",
+    "safeCreativeLabel": "Safe Creative ID (اختياري)",
+    "safeCreativePlaceholder": "SC-XXXXXXXX",
+    "doiLabel": "DOI (Zenodo) (اختياري)",
+    "doiPlaceholder": "10.5281/zenodo.xxxxxxx",
+    "noteLabel": "ملاحظة (اختياري)",
+    "notePlaceholder": "ملاحظات / إهداءات / إلخ",
+    "summaryLabel": "ملخص (اختياري)",
+    "summaryPlaceholder": "ملخص المقال…",
+    "keywordsLabel": "كلمات مفتاحية (اختياري)",
+    "keywordsPlaceholder": "palabra1; palabra2; palabra3"
+  },
+  "panel2": {
+    "tabs": {
+      "headerFooter": "الترويسة والتذييل",
+      "formats": "التنسيقات",
+      "toc": "الفهرس"
+    },
+    "lineStyle": {
+      "label": "نمط الخط",
+      "none": "بدون خط",
+      "solid": "خط متصل",
+      "dashed": "خط متقطع",
+      "dotted": "منقّط"
+    },
+    "header": {
+      "heading": "الترويسة",
+      "enable": "تفعيل الترويسة",
+      "hint": "تستخدم الترويسة عنوان المقال واسم المؤلف مع احترام الهوامش المحددة."
+    },
+    "footer": {
+      "heading": "التذييل",
+      "enable": "تفعيل التذييل",
+      "citationsInFooter": "الاستشهادات في التذييل",
+      "textLabel": "نص التذييل",
+      "textPlaceholder": "نص مرجعي / ويب / إلخ"
+    },
+    "pageNumbers": {
+      "heading": "رقم الصفحة",
+      "enable": "ترقيم الصفحات",
+      "locationLabel": "الموضع",
+      "positionTopLeft": "أعلى اليسار",
+      "positionTopRight": "أعلى اليمين",
+      "positionBottomLeft": "أسفل اليسار",
+      "positionBottomRight": "أسفل اليمين",
+      "positionBottomCenter": "أسفل الوسط (تحت التذييل)",
+      "hint": "الأعلى يرث نمط الترويسة؛ والأسفل يرث نمط التذييل. مخفي في الغلاف والفهرس."
+    },
+    "toc": {
+      "enable": "تفعيل الفهرس",
+      "countLabel": "عدد الفصول/النقاط",
+      "chapterDefaultTitle": "الفصل {{index}}",
+      "chapterTitlePlaceholder": "عنوان الفصل {{index}}"
+    },
+    "numbering": {
+      "roman": "روماني (I, II, III)",
+      "arabic": "عربي (1, 2, 3)"
+    },
+    "formatCards": {
+      "header": "الترويسة",
+      "footer": "التذييل",
+      "title": "العنوان",
+      "subtitle": "العنوان الفرعي",
+      "author": "المؤلف",
+      "meta": "البيانات الوصفية"
+    }
+  },
+  "panel3": {
+    "inlineFmt": {
+      "label": "التنسيق:",
+      "bold": "عريض (Ctrl+B)",
+      "italic": "مائل (Ctrl+I)",
+      "underline": "تحته خط (Ctrl+U)",
+      "hint": "الاختصارات: Ctrl/Cmd + B / I / U"
+    },
+    "numbering": {
+      "label": "ترقيم الفصول",
+      "applyButton": "تطبيق"
+    },
+    "chapterPointLabel": "فصل / نقطة",
+    "subsectionCountLabel": "عدد الأقسام الفرعية",
+    "subsectionSelectLabel": "قسم فرعي",
+    "contentLabel": "المحتوى",
+    "contentPlaceholder": "اكتب هنا محتوى القسم الفرعي المحدد…",
+    "formatsHeading": "تنسيقات حسب الفصل / القسم الفرعي",
+    "formatCards": {
+      "chapterTitle": "عنوان الفصل",
+      "subsectionTitle": "عنوان القسم الفرعي",
+      "content": "المحتوى"
+    },
+    "applyAllInChapterButton": "تطبيق على الكل (الفصل)",
+    "noChaptersOption": "— بدون فصول —",
+    "chapterDefaultTitle": "الفصل {{index}}",
+    "sectionDefaultTitle": "القسم {{index}}",
+    "subsectionBaseLabel": "قسم فرعي أساسي",
+    "subsectionLabel": "عنوان القسم الفرعي {{index}}",
+    "subsectionSelectBasePrefix": "(أساسي) "
+  },
+  "panel4": {
+    "ui": {
+      "sizeLabel": "الحجم",
+      "pageSizes": {
+        "A4": "A4 (210 x 297 mm)",
+        "A5": "A5 (148 x 210 mm)",
+        "KDP6x9": "Kindle/Amazon 6”×9” (152.4 × 228.6 mm)"
+      },
+      "marginsLabel": "الهوامش (mm)",
+      "margins": {
+        "top": "أعلى",
+        "bottom": "أسفل",
+        "left": "يسار",
+        "right": "يمين"
+      },
+      "headerGapLabel": "المسافة من الترويسة → النص (mm)",
+      "breakOnChapterLabel": "صفحة جديدة عند بدء كل فصل",
+      "endCitesLabel": "ملحق المصطلحات المُستشهد بها (في النهاية)",
+      "bibliographyLabel": "المراجع",
+      "pdfFileNameLabel": "اسم ملف PDF",
+      "actions": {
+        "saveJson": "حفظ (JSON)",
+        "load": "تحميل",
+        "clear": "مسح (الحقول + قاعدة البيانات)",
+        "demo": "تحميل العرض (مقال كامل)",
+        "saveTemplate": "حفظ القالب (الأنماط فقط)",
+        "loadTemplate": "تحميل القالب",
+        "exportTemplate": "تصدير القالب",
+        "export": "تصدير"
+      }
+    },
+    "defaultProjectFileName": "ensayo.json",
+    "defaultPdfFileName": "ensayo.pdf",
+    "defaultTemplateBaseFileName": "plantilla",
+    "defaultTemplateNameShort": "Plantilla {{index}}",
+    "defaultTemplateNameWithDate": "Plantilla {{datetime}}",
+    "noTemplatesOption": "— لا توجد قوالب محفوظة —",
+    "prompts": {
+      "templateName": "اسم قالب الأنماط (لا يشمل العناوين أو المحتوى):"
+    },
+    "alerts": {
+      "projectLoaded": "تم تحميل المشروع.",
+      "invalidProjectJson": "JSON غير صالح.",
+      "confirmClearAll": "هل أنت متأكد أنك تريد مسح جميع الحقول وتفريغ قاعدة البيانات المحلية؟",
+      "demoConfirm": "سيستبدل هذا المحتوى الحالي بمقال تجريبي. هل تريد المتابعة؟",
+      "demoLoaded": "تم تحميل المقال التجريبي.",
+      "templateSaved": "تم حفظ القالب.",
+      "templateNotDetected": "هذا JSON لا يبدو كقالب.",
+      "templateApplied": "تم تطبيق القالب.",
+      "invalidTemplateJson": "JSON القالب غير صالح.",
+      "selectTemplate": "اختر قالبًا."
+    },
+    "errors": {
+      "popupBlocked": "اسمح بالنوافذ المنبثقة للتصدير."
+    }
+  },
+  "citations": {
+    "selectPlaceholder": "استشهادات محفوظة",
+    "textPlaceholder": "محتوى الاستشهاد…",
+    "addButton": "إضافة استشهاد",
+    "removeButton": "حذف الاستشهاد",
+    "untitledWord": "(بدون كلمة)",
+    "alertSelectText": "حدّد كلمة (أو نصًا) في المحتوى لإضافة استشهاد.",
+    "alertNoCitations": "لا توجد استشهادات محفوظة بعد.",
+    "alertNoCitation": "لم يتم العثور على أي استشهاد في التحديد. حدّد الكلمة التي تحتوي على ^(N) أو حولها مباشرةً.",
+    "confirmDelete": "هل تريد حذف الاستشهاد ({{number}}) وإعادة ترقيم الباقي؟",
+    "typeSelectAria": "نوع الحاشية",
+    "includeInCitationsPage": "إدراج في الملحق المصطلحي/المفاهيمي",
+    "types": {
+      "bibliographic": "حاشية ببليوغرافية",
+      "explanatory": "حاشية تفسيرية أو محتوى",
+      "authorComment": "تعليق المؤلف"
+    }
+  },
+  "dictation": {
+    "noteStart": "بدء الإملاء (ملاحظة)",
+    "noteStop": "إيقاف الإملاء (ملاحظة)",
+    "noteIndicatorIdle": "غير نشط",
+    "summaryStart": "بدء الإملاء (ملخص)",
+    "summaryStop": "إيقاف الإملاء (ملخص)",
+    "summaryIndicatorIdle": "غير نشط",
+    "status": {
+      "notSupported": "الإملاء غير مدعوم في هذا المتصفح",
+      "notSupportedShort": "غير مدعوم",
+      "listening": "يستمع",
+      "error": "خطأ في الإملاء",
+      "idle": "غير نشط"
+    }
+  },
+  "licenseGuard": {
+    "checking": {
+      "title": "جارٍ التحقق من الرخصة…",
+      "body": "لحظة، نحن نتحقق من رخصة ensaYOnesa الخاصة بك."
+    },
+    "needsOnline": {
+      "title": "يلزم اتصال",
+      "body": "لتفعيل ensaYOnesa لأول مرة تحتاج إلى اتصال بالإنترنت. افتح التطبيق مجددًا عندما تكون متصلًا."
+    },
+    "noSession": {
+      "title": "سجّل الدخول لتفعيل التطبيق",
+      "body": "افتح حساب OptimeFlow(s) الخاص بك على الموقع الرئيسي لتسجيل الدخول وتفعيل رخصة ensaYOnesa."
+    },
+    "noLicense": {
+      "title": "لم يتم العثور على رخصة نشطة",
+      "body": "حسابك لا يحتوي على رخصة ensaYOnesa نشطة. اشترِ التطبيق من متجر OptimeFlow(s) ثم افتحه مجددًا."
+    },
+    "error": {
+      "title": "تعذر التحقق من الرخصة",
+      "body": "حدثت مشكلة أثناء التحقق من الرخصة. راجع اتصالك وحاول مرة أخرى."
+    },
+    "configError": {
+      "title": "خطأ في الإعداد",
+      "body": "لا يمكن للتطبيق الاتصال بـ Supabase. راجع إعدادات المشروع أو تواصل مع المطوّر."
+    },
+    "buttons": {
+      "openAccount": "فتح حسابي",
+      "goToStore": "الذهاب إلى المتجر",
+      "retry": "إعادة المحاولة"
+    }
+  },
+  "export": {
+    "footer": {
+      "licenseLabel": "الرخصة:",
+      "publicationDateLabel": "تاريخ النشر"
+    },
+    "bibliography": {
+      "heading": "المراجع",
+      "empty": "(بدون مراجع)"
+    },
+    "meta": {
+      "license": "الرخصة",
+      "email": "Email",
+      "note": "ملاحظة",
+      "summary": "ملخص",
+      "keywords": "كلمات مفتاحية",
+      "safeCreativeId": "Safe Creative ID",
+      "doi": "DOI (Zenodo)"
+    },
+    "license": {
+      "heading": "الرخص"
+    },
+    "index": {
+      "heading": "الفهرس",
+      "defaultPagePlaceholder": "—",
+      "empty": "(بدون فصول)"
+    },
+    "citations": {
+      "heading": "ملحق - توضيحات مصطلحية ومفاهيمية",
+      "pageLabel": "ص.",
+      "empty": "(بدون استشهادات)",
+      "pageUnknown": "—",
+      "missingText": "—"
+    },
+    "errors": {
+      "popupBlocked": "اسمح بالنوافذ المنبثقة للتصدير."
+    }
+  },
+  "demo": {
+    "meta": {
+      "title": "مقال تجريبي: الاتساق والشكل",
+      "subtitle": "قالب ensaYOnesa القياسي",
+      "author": "OptimeFlow(s) · مثال",
+      "license": "CC BY-NC-SA 4.0 (مثال)",
+      "email": "autor@ejemplo.com",
+      "note": "هذا مقال تجريبي تم توليده بواسطة القالب الداخلي لـ ensaYOnesa. يمكنك الكتابة فوقه دون قلق: كل المحتوى خيالي ومخصص فقط لاختبار التنسيق.",
+      "summary": "هدف هذا المقال التجريبي هو إظهار كيف يبدو التنسيق القياسي لـ ensaYOnesa: الغلاف، الفهرس، الفصول، الأقسام الفرعية، والنص المحاذى. يمكنك تعديل العناوين والنصوص والأنماط دون لمس الشفرة.",
+      "keywords": "demo; plantilla; coherencia; ejemplo"
+    },
+    "footer": {
+      "text": "ensaYOnesa · optimeflow.com · قالب تجريبي"
+    },
+    "ch1": {
+      "title": "I. نقطة الانطلاق",
+      "s0": {
+        "title": "I. نقطة الانطلاق",
+        "body": "تلخّص هذه الفصل التجريبي الأول فكرة مقال بسيط وسهل القراءة. صُمّم الغلاف والفهرس ونصّ المقال للعمل معًا دون أن تقلق بشأن التنسيق.\n\nيمكنك استخدام هذا الفصل كمسودة: غيّر العناوين، أضف فقراتك، وتحقق كيف يحافظ القالب على التنسيق القياسي."
+      },
+      "s1": {
+        "title": "I.1. السؤال الأولي",
+        "body": "هنا ستكون أول قسم فرعي حقيقي في الفصل. البداية الجيدة تجيب عادةً عن ثلاثة أسئلة: ماذا أريد أن أقول، لمن أكتب، وما الشكل الذي أحتاجه ليُفهم بهدوء.\n\nفي هذا المثال، التركيز على إظهار التدفق: الغلاف → الفهرس → الفصل → الأقسام الفرعية. من هنا فصاعدًا، كل ما تكتبه سيكون مقالك الخاص."
+      },
+      "s2": {
+        "title": "I.2. السياق وملاحظة منهجية",
+        "body": "يوضح هذا القسم الفرعي الثاني كيف يتوزع النص عندما تمتد الفقرات على عدة أسطر. تم ضبط تباعد الأسطر والمحاذاة للقراءة على الشاشة والورق دون الحاجة لأي تعديل.\n\nإذا أردت، يمكنك استخدام هذا القسم لشرح سياق مقالك: من أين جاءت الفكرة، ما المصادر التي تضعها في اعتبارك، وما الذي لا يهدف نصك إلى فعله."
+      }
+    },
+    "ch2": {
+      "title": "II. جسم المقال",
+      "s0": {
+        "title": "II. جسم المقال",
+        "body": "يمثل هذا الفصل التجريبي قلب النص: المكان الذي تطور فيه حجتك أو مشاهدك أو بياناتك. يمكنك تقسيمه إلى عدد الأقسام الفرعية التي تحتاجها؛ هنا نعرض قسمين لتوضيح السلوك الأساسي."
+      },
+      "s1": {
+        "title": "II.1. التطوير الرئيسي",
+        "body": "غالبًا ما يحتوي أول قسم فرعي في جسم المقال على الجزء الأقوى من الحجة: ما تريد أن تتذكره القارئة حتى لو تصفحت النص بسرعة.\n\nفي هذا المكان يمكنك المزج بين فقرات طويلة وأخرى قصيرة. يتكفل القالب بالحفاظ على الهوامش والطباعة والمحاذاة."
+      },
+      "s2": {
+        "title": "II.2. الفروق والأمثلة",
+        "body": "هنا يمكنك إضافة أمثلة ملموسة، مشاهد صغيرة، بيانات أو مراجع. عندما تتصل الفقرات بهدوء، تبدو القراءة كخيط متصل لا كقائمة أفكار متفرقة.\n\nيمكنك حذف هذا النص والكتابة فوقه مباشرةً: ستستمر بنية الفصل والأقسام الفرعية بالعمل كما هي."
+      }
+    },
+    "ch3": {
+      "title": "III. الخاتمة والخطوات التالية",
+      "s0": {
+        "title": "III. الخاتمة والخطوات التالية",
+        "body": "الفصل الأخير في هذا المثال مخصص لخاتمتك: ماذا تأخذ من العملية، ماذا تقدم لمن يقرأ، وأي طرق تفتح بعد النص.\n\nتساعد خاتمة واضحة على ألا يبقى المقال مجرد سلسلة أفكار مثيرة، بل شكلاً يمكن الرجوع إليه ومشاركته."
+      },
+      "s1": {
+        "title": "III.1. خلاصة",
+        "body": "في الخلاصة يمكنك جمع الخطوط الرئيسية للمقال في بضعة فقرات: ما كان السؤال الأولي، ماذا اكتشفت، وما الذي بقي مفتوحًا.\n\nالفكرة أن أي شخص يصل مباشرةً إلى هنا يستطيع فهم هيكل النص في بضعة أسطر."
+      },
+      "s2": {
+        "title": "III.2. دعوة للقارئ",
+        "body": "أخيرًا، يمكن أن يكون هذا المكان دعوة: ماذا يمكن أن يفعل الشخص بعد قراءة المقال، ما الحركة الصغيرة التي يمكن أن يجربها، أو أي محادثة يمكن أن يفتحها.\n\nالخاتمة الجيدة لا تغلق كل شيء، لكنها تشير إلى خطوة تالية ممكنة."
+      }
+    }
+  },
+  "footer": {
+    "brand": "OptimeFlow(s)®",
+    "appName": "ensaYOnesa",
+    "year": "2025",
+    "author": "Andrés Calvo Espinosa",
+    "coherenceButtonAria": "الاتساق الكوني",
+    "licenseButtonAria": "رخصة COF",
+    "licenseButton": "COF",
+    "privacyButton": "الخصوصية"
+  },
+  "licenseOverlay": {
+    "title": "رخصة COF",
+    "text": "رخصة COF\nرخصة OptimeFlow(s) المتسقة\n\nCopyright © 2025 OptimeFlow(s) by Andrés Calvo Espinosa\n\nيُمنح الإذن مجانًا ووفق الشروط التالية لأي شخص يحصل على\nنسخة من هذه Progressive Web App (PWA) عبر شراء شرعي من https://optimeflow.com (أو النطاقات الفرعية):\n\n1. استخدام غير محدود وبدون اتصال على جميع أجهزة المشتري.\n2. تثبيت وتشغيل النسخة الدقيقة التي تم شراؤها.\n3. استلام التحديثات طالما يتم الحفاظ على المنتج.\n\nيُحظر صراحةً دون إذن خطي مسبق:\n- إعادة توزيع أو إعادة بيع أو مشاركة الـ PWA أو شفرتها المصدرية.\n- تعديل الشفرة لأغراض التوزيع.\n- إزالة أو تغيير إشعارات حقوق النشر أو هذه الرخصة.\n\nهذه الرخصة شخصية وغير قابلة للتحويل ومرتبطة بحساب المشتري في OptimeFlow(s).\n\nيتم توفير البرنامج «كما هو»، دون أي ضمان من أي نوع."
+  },
+  "privacy": {
+    "title": "سياسة الخصوصية",
+    "body": "<p><b>ensaYOnesa</b> يعمل بنسبة 100% داخل متصفحك. لا نرسل ملفاتك أو بياناتك إلى أي خادم.</p><ul><li><b>البيانات المحلية:</b> يتم حفظ الإعدادات/القوالب في LocalStorage لراحتك.</li><li><b>التحكم:</b> يمكنك حذف بياناتك من داخل التطبيق (زر “Limpiar”).</li><li><b>ملفات تعريف الارتباط:</b> لا نستخدم كوكيز للتتبع.</li><li><b>الرخصة:</b> يتم توفير البرنامج “كما هو” دون ضمانات.</li></ul><p><b>المؤلف:</b> Andrés Calvo Espinosa. <br>آخر تحديث: 2025-10-18.</p>"
+  },
+  "coherence": {
+    "title": "الاتساق الكوني",
+    "body": "لتكن هذه الأعمال شكرًا والتزامًا: أن نفكر ونشعر ونعمل في الاتجاه نفسه، بلا \"زينة\"؛ وأن نواصل الإبداع بأخلاق وفرح واحترام لكل ما يربطنا."
+  },
+  "common": {
+    "close": "إغلاق"
+  },
+  "panel5": {
+    "heading": "المعاينة",
+    "hint": "هنا يمكنك رؤية المستند كما سيتم تصديره بالإعدادات الحالية.",
+    "toolbar": {
+      "aria": "عناصر التحكم في المعاينة",
+      "zoomOutAria": "تصغير",
+      "zoomInAria": "تكبير",
+      "zoomRangeAria": "تكبير/تصغير",
+      "fit": "ملاءمة للعرض",
+      "actual": "100%",
+      "refresh": "تحديث"
+    },
+    "viewportAria": "معاينة المستند",
+    "frameTitle": "المستند المُعاين",
+    "status": {
+      "loading": "جارٍ إنشاء المعاينة…",
+      "ready": "تم تحديث المعاينة.",
+      "error": "تعذر إنشاء المعاينة."
+    }
+  }
+}

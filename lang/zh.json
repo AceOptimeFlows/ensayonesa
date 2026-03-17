@@ -1,0 +1,499 @@
+{
+  "app": {
+    "title": "ensaYOnesa — 离线 PWA",
+    "logoAlt": "OptimeFlow(s) 标志",
+    "brandName": "OptimeFlow(s)",
+    "brandSrOnly": "ensaYOnesa",
+    "shellAriaLabel": "ensaYOnesa 文章生成器",
+    "windowTitleTemplate": "{{title}} — ensaYOnesa"
+  },
+  "nav": {
+    "step1": "1. 封面与元数据",
+    "step2": "2. 设置与样式",
+    "step3": "3. 内容",
+    "step4": "4. 导出",
+    "step5": "5. 预览"
+  },
+  "panels": {
+    "panel1Label": "封面与元数据",
+    "panel2Label": "设置与样式",
+    "panel3Label": "内容",
+    "panel4Label": "导出",
+    "panel5Label": "预览"
+  },
+  "settings": {
+    "openButton": "设置",
+    "themeLabel": "主题",
+    "themes": {
+      "system": "系统",
+      "dark": "深色核心",
+      "midnight": "午夜蓝",
+      "nebula": "霓虹星云",
+      "ocean": "深海",
+      "forest": "翡翠森林",
+      "amber": "暖琥珀",
+      "violet": "皇家紫",
+      "mono": "Mono noir"
+    },
+    "languageLabel": "语言",
+    "dictationLanguageLabel": "语音听写语言",
+    "languages": {
+      "es": "西班牙语",
+      "en": "英语",
+      "pt-br": "葡萄牙语（巴西）",
+      "it": "意大利语",
+      "fr": "法语",
+      "de": "德语",
+      "ko": "韩语",
+      "zh": "中文",
+      "ja": "日语",
+      "ru": "俄语",
+      "hi": "印地语",
+      "ar": "阿拉伯语"
+    },
+    "installButton": "安装应用"
+  },
+  "formats": {
+    "labels": {
+      "font": "字体",
+      "sizePx": "大小 (px)",
+      "color": "颜色",
+      "alphaPercent": "透明度 (%)",
+      "leading": "行距 (×)"
+    },
+    "fonts": {
+      "serif": "衬线",
+      "sans": "无衬线",
+      "monospace": "等宽"
+    }
+  },
+  "panel1": {
+    "titleLabel": "标题",
+    "titlePlaceholder": "ensaYOnesa",
+    "subtitleLabel": "副标题（可选）",
+    "subtitlePlaceholder": "文章副标题",
+    "authorLabel": "作者",
+    "authorPlaceholder": "作者姓名",
+    "licenseLabel": "许可证（可选）",
+    "licensePlaceholder": "例如：CC BY 4.0",
+    "emailLabel": "联系 / Email（可选）",
+    "emailPlaceholder": "author@example.com",
+    "dateLabel": "发布日期（可选）",
+    "safeCreativeLabel": "Safe Creative ID（可选）",
+    "safeCreativePlaceholder": "SC-XXXXXXXX",
+    "doiLabel": "DOI (Zenodo)（可选）",
+    "doiPlaceholder": "10.5281/zenodo.xxxxxxx",
+    "noteLabel": "备注（可选）",
+    "notePlaceholder": "说明 / 致谢 / 等",
+    "summaryLabel": "摘要（可选）",
+    "summaryPlaceholder": "文章摘要…",
+    "keywordsLabel": "关键词（可选）",
+    "keywordsPlaceholder": "关键词1; 关键词2; 关键词3",
+    "endMatterHint": "如果填写了这些字段中的任意一项，PDF 末尾（参考文献之后）会新增一页。",
+    "editorialNoteLabel": "编辑说明（可选）",
+    "editorialNotePlaceholder": "编辑说明…",
+    "acknowledgmentsLabel": "致谢（可选）",
+    "acknowledgmentsPlaceholder": "致谢…",
+    "fundingLabel": "资助信息（可选）",
+    "fundingPlaceholder": "资助信息…",
+    "conflictsLabel": "利益冲突（可选）",
+    "conflictsPlaceholder": "利益冲突…",
+    "howToCiteLabel": "引用方式（可选）",
+    "howToCitePlaceholder": "如何引用本作品…"
+  },
+  "panel2": {
+    "tabs": {
+      "headerFooter": "页眉和页脚",
+      "formats": "格式",
+      "toc": "目录"
+    },
+    "lineStyle": {
+      "label": "线条样式",
+      "none": "无线条",
+      "solid": "实线",
+      "dashed": "虚线",
+      "dotted": "点线"
+    },
+    "header": {
+      "heading": "页眉",
+      "enable": "启用页眉",
+      "hint": "页眉会使用文章标题和作者姓名，并遵循已设置的页边距。"
+    },
+    "footer": {
+      "heading": "页脚",
+      "enable": "启用页脚",
+      "citationsInFooter": "在页脚显示引文",
+      "textLabel": "页脚文本",
+      "textPlaceholder": "参考文本 / 网站 / 等"
+    },
+    "pageNumbers": {
+      "heading": "页码",
+      "enable": "显示页码",
+      "locationLabel": "位置",
+      "positionTopLeft": "左上",
+      "positionTopRight": "右上",
+      "positionBottomLeft": "左下",
+      "positionBottomRight": "右下",
+      "positionBottomCenter": "底部居中（页脚下方）",
+      "hint": "上方位置继承页眉样式；下方位置继承页脚样式。封面和目录中隐藏。"
+    },
+    "toc": {
+      "enable": "启用目录",
+      "countLabel": "章节/条目数量",
+      "chapterDefaultTitle": "第 {{index}} 章",
+      "chapterTitlePlaceholder": "第 {{index}} 章标题"
+    },
+    "numbering": {
+      "roman": "罗马数字 (I, II, III)",
+      "arabic": "阿拉伯数字 (1, 2, 3)"
+    },
+    "formatCards": {
+      "header": "页眉",
+      "footer": "页脚",
+      "title": "标题",
+      "subtitle": "副标题",
+      "author": "作者",
+      "meta": "元数据",
+      "endMatterHeading": "结尾部分（页面标题）",
+      "endMatterLabel": "结尾部分（小标题）",
+      "endMatterBody": "结尾部分（内容）"
+    }
+  },
+  "panel3": {
+    "inlineFmt": {
+      "label": "格式：",
+      "bold": "加粗 (Ctrl+B)",
+      "italic": "斜体 (Ctrl+I)",
+      "underline": "下划线 (Ctrl+U)",
+      "hint": "快捷键：Ctrl/Cmd + B / I / U"
+    },
+    "numbering": {
+      "label": "章节编号",
+      "applyButton": "应用"
+    },
+    "chapterPointLabel": "章节 / 条目",
+    "subsectionCountLabel": "小节数量",
+    "subsectionSelectLabel": "小节",
+    "contentLabel": "内容",
+    "contentPlaceholder": "在这里输入所选小节的内容…",
+    "formatsHeading": "按章节 / 小节设置格式",
+    "formatCards": {
+      "chapterTitle": "章节标题",
+      "subsectionTitle": "小节标题",
+      "content": "内容"
+    },
+    "applyAllInChapterButton": "应用到全部（本章）",
+    "noChaptersOption": "— 无章节 —",
+    "chapterDefaultTitle": "第 {{index}} 章",
+    "sectionDefaultTitle": "第 {{index}} 节",
+    "subsectionBaseLabel": "基础小节",
+    "subsectionLabel": "小节标题 {{index}}",
+    "subsectionSelectBasePrefix": "(基础) "
+  },
+  "panel4": {
+    "ui": {
+      "sizeLabel": "尺寸",
+      "pageSizes": {
+        "A4": "A4 (210 x 297 mm)",
+        "A5": "A5 (148 x 210 mm)",
+        "KDP6x9": "Kindle/Amazon 6”×9” (152.4 × 228.6 mm)"
+      },
+      "marginsLabel": "页边距 (mm)",
+      "margins": {
+        "top": "上",
+        "bottom": "下",
+        "left": "左",
+        "right": "右"
+      },
+      "headerGapLabel": "页眉 → 正文距离 (mm)",
+      "breakOnChapterLabel": "每章开始时新起一页",
+      "endCitesLabel": "引用术语附录（文末）",
+      "bibliographyLabel": "参考文献",
+      "pdfFileNameLabel": "PDF 文件名",
+      "actions": {
+        "saveJson": "保存 (JSON)",
+        "load": "加载",
+        "clear": "清空（字段 + 本地数据库）",
+        "demo": "加载演示（完整文章）",
+        "saveTemplate": "保存模板（仅样式）",
+        "loadTemplate": "加载模板",
+        "exportTemplate": "导出模板",
+        "export": "导出"
+      }
+    },
+    "defaultProjectFileName": "essay.json",
+    "defaultPdfFileName": "essay.pdf",
+    "defaultTemplateBaseFileName": "template",
+    "defaultTemplateNameShort": "模板 {{index}}",
+    "defaultTemplateNameWithDate": "模板 {{datetime}}",
+    "noTemplatesOption": "— 没有已保存的模板 —",
+    "prompts": {
+      "templateName": "样式模板名称（不包含标题和内容）："
+    },
+    "alerts": {
+      "projectLoaded": "项目已加载。",
+      "invalidProjectJson": "JSON 无效。",
+      "confirmClearAll": "确定要清空所有字段并清除本地数据库吗？",
+      "demoConfirm": "这将用演示文章替换当前内容。是否继续？",
+      "demoLoaded": "演示文章已加载。",
+      "templateSaved": "模板已保存。",
+      "templateNotDetected": "这个 JSON 看起来不像模板。",
+      "templateApplied": "模板已应用。",
+      "invalidTemplateJson": "模板 JSON 无效。",
+      "selectTemplate": "请选择一个模板。"
+    },
+    "errors": {
+      "popupBlocked": "请允许弹出窗口以进行导出。"
+    }
+  },
+  "citations": {
+    "selectPlaceholder": "已保存引文",
+    "textPlaceholder": "引文内容…",
+    "addButton": "添加引文",
+    "removeButton": "删除引文",
+    "untitledWord": "（无词条）",
+    "alertSelectText": "请在内容中选择一个词（或文本）以添加引文。",
+    "alertNoCitations": "目前还没有保存的引文。",
+    "alertNoCitation": "未在所选内容中检测到引文。请选择带有 ^(N) 的词，或其附近的文本。",
+    "confirmDelete": "删除引文（{{number}}）并重新编号其余引文？",
+    "typeSelectAria": "脚注类型",
+    "includeInCitationsPage": "包含在术语/概念附录中",
+    "types": {
+      "bibliographic": "书目注释",
+      "explanatory": "说明性或内容性注释",
+      "authorComment": "作者评论"
+    }
+  },
+  "dictation": {
+    "noteStart": "开始语音听写（备注）",
+    "noteStop": "停止语音听写（备注）",
+    "noteIndicatorIdle": "空闲",
+    "summaryStart": "开始语音听写（摘要）",
+    "summaryStop": "停止语音听写（摘要）",
+    "summaryIndicatorIdle": "空闲",
+    "controls": {
+      "start": "开始听写",
+      "pause": "停止听写"
+    },
+    "status": {
+      "notSupported": "此浏览器不支持语音听写",
+      "notSupportedShort": "不支持",
+      "listening": "正在收音",
+      "error": "听写出错",
+      "idle": "空闲",
+      "webviewUnsupported": "WebView 中无法使用语音听写。请在 Chrome/Edge 中打开应用以进行转写。",
+      "needsHttps": "语音听写需要 HTTPS（安全上下文）。",
+      "noAudioEvents": "听写已启动，但未收到音频事件。在此设备/浏览器上可能不受支持。",
+      "noResults": "未收到听写结果。请尝试 Chrome/Edge，或检查系统语音识别服务。"
+    },
+    "error": {
+      "noSpeech": "未检测到语音。请靠近麦克风后重试。",
+      "audioCapture": "无法访问麦克风。请检查权限，并确认没有其他应用正在使用它。",
+      "notAllowed": "麦克风权限被拒绝或被浏览器阻止。",
+      "serviceNotAllowed": "此设备/浏览器上无法使用语音识别服务。",
+      "network": "听写时发生网络错误。请检查连接。",
+      "languageNotSupported": "此设备不支持当前听写语言。",
+      "badGrammar": "听写内部错误 (bad-grammar)。",
+      "generic": "听写出错。"
+    }
+  },
+  "licenseGuard": {
+    "checking": {
+      "title": "正在检查许可证…",
+      "body": "请稍候，我们正在验证你的 ensaYOnesa 许可证。"
+    },
+    "needsOnline": {
+      "title": "需要联网",
+      "body": "首次激活 ensaYOnesa 需要互联网连接。请在联网后重新打开应用。"
+    },
+    "noSession": {
+      "title": "请登录以激活应用",
+      "body": "请在主站点打开你的 OptimeFlow(s) 账户，登录并激活 ensaYOnesa 许可证。"
+    },
+    "noLicense": {
+      "title": "未找到有效许可证",
+      "body": "你的账户没有有效的 ensaYOnesa 许可证。请在 OptimeFlow(s) 商店购买该应用后重新打开。"
+    },
+    "error": {
+      "title": "无法验证许可证",
+      "body": "验证许可证时出现问题。请检查网络连接后重试。"
+    },
+    "configError": {
+      "title": "配置错误",
+      "body": "应用无法连接到 Supabase。请检查项目配置或联系开发者。"
+    },
+    "buttons": {
+      "openAccount": "打开我的账户",
+      "goToStore": "前往商店",
+      "retry": "重试"
+    }
+  },
+  "export": {
+    "footer": {
+      "licenseLabel": "许可证：",
+      "publicationDateLabel": "发布日期"
+    },
+    "bibliography": {
+      "heading": "参考文献",
+      "empty": "（无参考文献）"
+    },
+    "endMatter": {
+      "heading": "编辑说明与声明",
+      "editorialNote": "编辑说明",
+      "acknowledgments": "致谢",
+      "funding": "资助信息",
+      "conflicts": "利益冲突",
+      "howToCite": "引用方式"
+    },
+    "meta": {
+      "license": "许可证",
+      "email": "Email",
+      "note": "备注",
+      "summary": "摘要",
+      "keywords": "关键词",
+      "safeCreativeId": "Safe Creative ID",
+      "doi": "DOI (Zenodo)"
+    },
+    "license": {
+      "heading": "许可证"
+    },
+    "index": {
+      "heading": "目录",
+      "defaultPagePlaceholder": "—",
+      "empty": "（无章节）"
+    },
+    "citations": {
+      "heading": "附录 - 术语与概念说明",
+      "pageLabel": "页",
+      "empty": "（无引文）",
+      "pageUnknown": "—",
+      "missingText": "—"
+    },
+    "errors": {
+      "popupBlocked": "请允许弹出窗口以进行导出。"
+    }
+  },
+  "demo": {
+    "meta": {
+      "title": "演示文章：一致性与形式",
+      "subtitle": "ensaYOnesa 标准模板",
+      "author": "OptimeFlow(s) · 示例",
+      "license": "CC BY-NC-SA 4.0（示例）",
+      "email": "author@example.com",
+      "note": "这是一篇由 ensaYOnesa 内置模板生成的演示文章。你可以放心直接在上面改写：所有内容均为虚构，仅用于测试版式。",
+      "summary": "这篇演示文章的目的，是展示 ensaYOnesa 的标准格式：封面、目录、章节、小节以及两端对齐的正文。你可以修改标题、文本和样式，而无需改动代码。",
+      "keywords": "演示; 模板; 一致性; 示例",
+      "safeCreativeId": "SC-DEMO-000000",
+      "doi": "10.0000/demo.ensayonesa"
+    },
+    "footer": {
+      "text": "ensaYOnesa · optimeflow.com · 演示模板"
+    },
+    "ch1": {
+      "title": "I. 起点",
+      "s0": {
+        "title": "I. 起点",
+        "body": "这个演示的第一章概括了简洁、易读文章的理念。封面、目录和正文彼此协同设计，因此你无需担心排版问题。\n\n你可以把这一章当作草稿使用：修改标题，加入自己的段落，并观察模板如何保持标准格式。"
+      },
+      "s1": {
+        "title": "I.1. 初始问题",
+        "body": "这里本应是本章的第一个真正小节。一个好的开头通常会回答三个问题：我想表达什么、我是写给谁看的，以及我需要什么样的形式，才能让内容被从容地理解。\n\n在这个示例中，重点是展示流程：封面 → 目录 → 章节 → 小节。从这里开始，你写下的内容就会成为你自己的文章。"
+      },
+      "s2": {
+        "title": "I.2. 背景与方法说明",
+        "body": "这个第二示例小节展示了当段落延伸为多行时，文本会如何分布。行距和两端对齐都经过设置，适合屏幕与纸面阅读，而无需你额外调整。\n\n如果愿意，你也可以用这个小节来说明自己文章的背景：灵感来自哪里、参考了哪些资料，以及你的文本并不打算实现什么。"
+      }
+    },
+    "ch2": {
+      "title": "II. 正文部分",
+      "s0": {
+        "title": "II. 正文部分",
+        "body": "这一示例章节代表了文章的核心：你在这里展开论点、场景或数据。你可以根据需要把它拆分成任意多个小节；这里展示两个小节，只是为了让你看到基本行为。"
+      },
+      "s1": {
+        "title": "II.1. 主要展开",
+        "body": "正文的第一个小节通常承载文章最有力的部分：即使读者只是略读，也希望他们能记住的内容。\n\n在这里，你可以把较长的段落与较短的段落结合起来。模板会自动保持页边距、字体排版和两端对齐。"
+      },
+      "s2": {
+        "title": "II.2. 细节与示例",
+        "body": "在这里，你可以加入具体示例、小场景、数据或参考资料。当段落之间以平稳的方式连接起来时，阅读体验会像一条连续的线，而不是一串零散的想法。\n\n你可以删除这段文字并直接写上自己的内容：章节与小节的结构仍会正常工作。"
+      }
+    },
+    "ch3": {
+      "title": "III. 结尾与下一步",
+      "s0": {
+        "title": "III. 结尾与下一步",
+        "body": "这一示例的最后一章适合用来写结论：你从这一过程带走了什么、你向读者提供了什么，以及在文本之后还有哪些路径可以展开。\n\n清晰的结尾能帮助文章不只是停留在一连串有趣的想法上，而成为一种可以被再次阅读和分享的形式。"
+      },
+      "s1": {
+        "title": "III.1. 综合总结",
+        "body": "在总结部分，你可以用一两段话回收文章的主要脉络：最初的问题是什么、你发现了什么、还有什么保持开放。\n\n这样一来，即使有人直接读到这里，也能在几行之内理解整篇文章的骨架。"
+      },
+      "s2": {
+        "title": "III.2. 给读者的邀请",
+        "body": "最后，这个空间也可以作为一种邀请：读完这篇文章后，读者现在可以做什么、可以尝试什么小小的行动，或者可以开启怎样的一场对话。\n\n好的结论不会把一切都封死，但会指出一个可能的下一步。"
+      }
+    },
+    "citations": {
+      "wordPrefix": "demo-",
+      "c1": "演示引文 1：用于测试页脚的简短参考。",
+      "c2": "演示引文 2：稍长一点的参考，用来强制页脚换行并检查页边距。",
+      "c3": "演示引文 3：另一条参考，用来查看同一页中多条引文的堆叠效果。",
+      "c4": "演示引文 4：中等长度引文示例（用于测试文末引文附录）。",
+      "c5": "演示引文 5：测试引文。",
+      "c6": "演示引文 6：稍长一点的测试引文，用于检查自动换行。",
+      "c7": "演示引文 7：测试引文。",
+      "c8": "演示引文 8：测试引文。",
+      "c9": "演示引文 9：测试引文。",
+      "defaultText": "演示引文 {{number}}：测试引文。"
+    },
+    "export": {
+      "fileName": "demo-essay.pdf"
+    }
+  },
+  "footer": {
+    "brand": "OptimeFlow(s)®",
+    "appName": "ensaYOnesa",
+    "year": "2025",
+    "author": "Andrés Calvo Espinosa",
+    "coherenceButtonAria": "普遍一致性",
+    "licenseButtonAria": "MIT 许可证",
+    "licenseButton": "许可证",
+    "privacyButton": "隐私"
+  },
+  "licenseOverlay": {
+    "title": "MIT 许可证",
+    "text": "MIT 许可证\n\nCopyright (c) 2025 OptimeFlow(s) by Andrés Calvo Espinosa\n\n兹免费授予任何获得本软件及其相关文档文件（以下简称“软件”）\n副本的人不受限制地处理本软件的权利，包括但不限于使用、复制、\n修改、合并、发布、分发、再许可和/或销售本软件副本的权利，以及\n允许被提供本软件的人这样做，但须符合以下条件：\n\n上述版权声明和本许可声明应包含在本软件的所有副本或重要部分中。\n\n本软件按“原样”提供，不作任何形式的明示或暗示保证，包括但不限于\n适销性、特定用途适用性和非侵权的保证。在任何情况下，作者或版权\n持有人均不对因本软件或本软件的使用或其他交易而产生、源于或与之\n相关的任何索赔、损害或其他责任承担责任，无论其属于合同诉讼、\n侵权行为还是其他形式。"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "body": "<p><b>ensaYOnesa</b> 主要在你的浏览器和设备本地存储中运行。文章内容、预览和 PDF 导出都在应用本地处理。</p><ul><li><b>本地数据：</b>应用可能会将项目、设置、语言、模板以及部分本地资源保存到 LocalStorage、SessionStorage、IndexedDB 和浏览器缓存中，以便记住你的偏好并支持离线使用。</li><li><b>语音听写：</b>听写功能使用浏览器的语音识别 API。根据浏览器、设备及其配置，音频可能在本地处理，也可能发送到浏览器或系统提供方的识别服务。<b>ensaYOnesa</b> 不会将这些音频或你的文件内容上传到 OptimeFlow(s) 自有服务器。</li><li><b>访问：</b>此版本无需登录即可使用。</li><li><b>Cookie 与跟踪：</b>本应用不使用跟踪型 Cookie，也不使用广告分析。</li><li><b>删除：</b>“清空”按钮会重置应用保存的项目。如需同时删除缓存和站点其他数据，请使用浏览器中的“清除站点数据”功能。</li><li><b>许可证：</b>软件按“原样”提供，不附带任何保证。</li></ul><p><b>作者：</b>Andrés Calvo Espinosa。<br>最后更新：2026-03-16。</p>"
+  },
+  "coherence": {
+    "title": "普遍一致性",
+    "body": "愿这部作品既是感谢，也是承诺：在同一方向上去思考、感受并行动，不加“装饰”；继续以伦理、喜悦和对一切联结我们的事物的尊重来创造。"
+  },
+  "common": {
+    "close": "关闭"
+  },
+  "panel5": {
+    "heading": "预览",
+    "hint": "你可以在这里看到文档在当前设置下导出后的样子。",
+    "toolbar": {
+      "aria": "预览控制",
+      "zoomOutAria": "缩小",
+      "zoomInAria": "放大",
+      "zoomRangeAria": "缩放",
+      "fit": "适应宽度",
+      "actual": "100%",
+      "refresh": "刷新"
+    },
+    "viewportAria": "文档预览",
+    "frameTitle": "预览文档",
+    "status": {
+      "loading": "正在生成预览…",
+      "ready": "预览已更新。",
+      "error": "无法生成预览。"
+    }
+  }
+}

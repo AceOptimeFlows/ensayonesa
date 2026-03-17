@@ -1,0 +1,499 @@
+{
+  "app": {
+    "title": "ensaYOnesa — Offline-PWA",
+    "logoAlt": "Logo von OptimeFlow(s)",
+    "brandName": "OptimeFlow(s)",
+    "brandSrOnly": "ensaYOnesa",
+    "shellAriaLabel": "Essay-Generator ensaYOnesa",
+    "windowTitleTemplate": "{{title}} — ensaYOnesa"
+  },
+  "nav": {
+    "step1": "1. Titelseite und Metadaten",
+    "step2": "2. Einstellungen und Stile",
+    "step3": "3. Inhalt",
+    "step4": "4. Exportieren",
+    "step5": "5. Vorschau"
+  },
+  "panels": {
+    "panel1Label": "Titelseite und Metadaten",
+    "panel2Label": "Einstellungen und Stile",
+    "panel3Label": "Inhalt",
+    "panel4Label": "Exportieren",
+    "panel5Label": "Vorschau"
+  },
+  "settings": {
+    "openButton": "Einstellungen",
+    "themeLabel": "Design",
+    "themes": {
+      "system": "System",
+      "dark": "Dunkler Kern",
+      "midnight": "Mitternachtsblau",
+      "nebula": "Neon-Nebel",
+      "ocean": "Tiefer Ozean",
+      "forest": "Smaragdwald",
+      "amber": "Warmes Amber",
+      "violet": "Königsviolett",
+      "mono": "Mono noir"
+    },
+    "languageLabel": "Sprache",
+    "dictationLanguageLabel": "Diktatsprache",
+    "languages": {
+      "es": "Spanisch",
+      "en": "Englisch",
+      "pt-br": "Portugiesisch (Brasilien)",
+      "it": "Italienisch",
+      "fr": "Französisch",
+      "de": "Deutsch",
+      "ko": "Koreanisch",
+      "zh": "Chinesisch",
+      "ja": "Japanisch",
+      "ru": "Russisch",
+      "hi": "Hindi",
+      "ar": "Arabisch"
+    },
+    "installButton": "App installieren"
+  },
+  "formats": {
+    "labels": {
+      "font": "Schriftart",
+      "sizePx": "Größe (px)",
+      "color": "Farbe",
+      "alphaPercent": "Alpha (%)",
+      "leading": "Zeilenabstand (×)"
+    },
+    "fonts": {
+      "serif": "Serif",
+      "sans": "Sans",
+      "monospace": "Monospace"
+    }
+  },
+  "panel1": {
+    "titleLabel": "Titel",
+    "titlePlaceholder": "ensaYOnesa",
+    "subtitleLabel": "Untertitel (optional)",
+    "subtitlePlaceholder": "Untertitel des Essays",
+    "authorLabel": "Autor",
+    "authorPlaceholder": "Name des Autors",
+    "licenseLabel": "Lizenz (optional)",
+    "licensePlaceholder": "z. B. CC BY 4.0",
+    "emailLabel": "Kontakt / E-Mail (optional)",
+    "emailPlaceholder": "autor@beispiel.com",
+    "dateLabel": "Veröffentlichungsdatum (optional)",
+    "safeCreativeLabel": "Safe-Creative-ID (optional)",
+    "safeCreativePlaceholder": "SC-XXXXXXXX",
+    "doiLabel": "DOI (Zenodo) (optional)",
+    "doiPlaceholder": "10.5281/zenodo.xxxxxxx",
+    "noteLabel": "Anmerkung (optional)",
+    "notePlaceholder": "Anmerkungen / Widmungen / usw.",
+    "summaryLabel": "Zusammenfassung (optional)",
+    "summaryPlaceholder": "Zusammenfassung des Essays…",
+    "keywordsLabel": "Schlüsselwörter (optional)",
+    "keywordsPlaceholder": "stichwort1; stichwort2; stichwort3",
+    "endMatterHint": "Wenn du eines dieser Felder ausfüllst, wird dem PDF eine Schlussseite hinzugefügt (nach der Bibliografie).",
+    "editorialNoteLabel": "Redaktionelle Notiz (optional)",
+    "editorialNotePlaceholder": "Redaktionelle Notiz…",
+    "acknowledgmentsLabel": "Danksagungen (optional)",
+    "acknowledgmentsPlaceholder": "Danksagungen…",
+    "fundingLabel": "Finanzierung (optional)",
+    "fundingPlaceholder": "Finanzierung…",
+    "conflictsLabel": "Interessenkonflikte (optional)",
+    "conflictsPlaceholder": "Interessenkonflikte…",
+    "howToCiteLabel": "Zitierweise (optional)",
+    "howToCitePlaceholder": "So zitierst du diese Arbeit…"
+  },
+  "panel2": {
+    "tabs": {
+      "headerFooter": "Kopf- und Fußzeile",
+      "formats": "Formate",
+      "toc": "Inhaltsverzeichnis"
+    },
+    "lineStyle": {
+      "label": "Linienstil",
+      "none": "Keine Linie",
+      "solid": "Durchgezogene Linie",
+      "dashed": "Gestrichelte Linie",
+      "dotted": "Gepunktete Linie"
+    },
+    "header": {
+      "heading": "Kopfzeile",
+      "enable": "Kopfzeile aktivieren",
+      "hint": "Die Kopfzeile verwendet den Titel des Essays und den Namen des Autors und berücksichtigt die festgelegten Ränder."
+    },
+    "footer": {
+      "heading": "Fußzeile",
+      "enable": "Fußzeile aktivieren",
+      "citationsInFooter": "Zitate in der Fußzeile",
+      "textLabel": "Fußzeilentext",
+      "textPlaceholder": "Referenztext / Website / usw."
+    },
+    "pageNumbers": {
+      "heading": "Seitenzahl",
+      "enable": "Seiten nummerieren",
+      "locationLabel": "Position",
+      "positionTopLeft": "Oben links",
+      "positionTopRight": "Oben rechts",
+      "positionBottomLeft": "Unten links",
+      "positionBottomRight": "Unten rechts",
+      "positionBottomCenter": "Unten zentriert (unter der Fußzeile)",
+      "hint": "Oben übernimmt sie den Stil der Kopfzeile, unten den der Fußzeile. Auf Titelseite und im Inhaltsverzeichnis ausgeblendet."
+    },
+    "toc": {
+      "enable": "Inhaltsverzeichnis aktivieren",
+      "countLabel": "Anzahl der Kapitel/Punkte",
+      "chapterDefaultTitle": "Kapitel {{index}}",
+      "chapterTitlePlaceholder": "Titel des Kapitels {{index}}"
+    },
+    "numbering": {
+      "roman": "Römisch (I, II, III)",
+      "arabic": "Arabisch (1, 2, 3)"
+    },
+    "formatCards": {
+      "header": "Kopfzeile",
+      "footer": "Fußzeile",
+      "title": "Titel",
+      "subtitle": "Untertitel",
+      "author": "Autor",
+      "meta": "Metadaten",
+      "endMatterHeading": "Schlussabschnitte (Seitentitel)",
+      "endMatterLabel": "Schlussabschnitte (Überschriften)",
+      "endMatterBody": "Schlussabschnitte (Inhalt)"
+    }
+  },
+  "panel3": {
+    "inlineFmt": {
+      "label": "Format:",
+      "bold": "Fett (Strg+B)",
+      "italic": "Kursiv (Strg+I)",
+      "underline": "Unterstrichen (Strg+U)",
+      "hint": "Tastenkürzel: Strg/Cmd + B / I / U"
+    },
+    "numbering": {
+      "label": "Kapitelnummerierung",
+      "applyButton": "Anwenden"
+    },
+    "chapterPointLabel": "Kapitel / Punkt",
+    "subsectionCountLabel": "Anzahl der Unterabschnitte",
+    "subsectionSelectLabel": "Unterabschnitt",
+    "contentLabel": "Inhalt",
+    "contentPlaceholder": "Schreibe hier den Inhalt des ausgewählten Unterabschnitts…",
+    "formatsHeading": "Formate nach Kapitel / Unterabschnitt",
+    "formatCards": {
+      "chapterTitle": "Kapiteltitel",
+      "subsectionTitle": "Titel des Unterabschnitts",
+      "content": "Inhalt"
+    },
+    "applyAllInChapterButton": "Auf alle anwenden (Kapitel)",
+    "noChaptersOption": "— Keine Kapitel —",
+    "chapterDefaultTitle": "Kapitel {{index}}",
+    "sectionDefaultTitle": "Abschnitt {{index}}",
+    "subsectionBaseLabel": "Basis-Unterabschnitt",
+    "subsectionLabel": "Titel des Unterabschnitts {{index}}",
+    "subsectionSelectBasePrefix": "(Basis) "
+  },
+  "panel4": {
+    "ui": {
+      "sizeLabel": "Format",
+      "pageSizes": {
+        "A4": "A4 (210 x 297 mm)",
+        "A5": "A5 (148 x 210 mm)",
+        "KDP6x9": "Kindle/Amazon 6”×9” (152.4 × 228.6 mm)"
+      },
+      "marginsLabel": "Ränder (mm)",
+      "margins": {
+        "top": "Oben",
+        "bottom": "Unten",
+        "left": "Links",
+        "right": "Rechts"
+      },
+      "headerGapLabel": "Abstand Kopfzeile → Text (mm)",
+      "breakOnChapterLabel": "Neue Seite beim Beginn jedes Kapitels",
+      "endCitesLabel": "Anhang der zitierten Begriffe (am Ende)",
+      "bibliographyLabel": "Bibliografie",
+      "pdfFileNameLabel": "Name der PDF-Datei",
+      "actions": {
+        "saveJson": "Speichern (JSON)",
+        "load": "Laden",
+        "clear": "Leeren (Felder + Datenbank)",
+        "demo": "Demo laden (vollständiger Essay)",
+        "saveTemplate": "Vorlage speichern (nur Stile)",
+        "loadTemplate": "Vorlage laden",
+        "exportTemplate": "Vorlage exportieren",
+        "export": "Exportieren"
+      }
+    },
+    "defaultProjectFileName": "essay.json",
+    "defaultPdfFileName": "essay.pdf",
+    "defaultTemplateBaseFileName": "vorlage",
+    "defaultTemplateNameShort": "Vorlage {{index}}",
+    "defaultTemplateNameWithDate": "Vorlage {{datetime}}",
+    "noTemplatesOption": "— Keine gespeicherten Vorlagen —",
+    "prompts": {
+      "templateName": "Name der Stilvorlage (enthält keine Titel oder Inhalte):"
+    },
+    "alerts": {
+      "projectLoaded": "Projekt geladen.",
+      "invalidProjectJson": "Die JSON-Datei ist nicht gültig.",
+      "confirmClearAll": "Möchtest du wirklich alle Felder leeren und die lokale Datenbank löschen?",
+      "demoConfirm": "Dadurch wird der aktuelle Inhalt durch einen Demo-Essay ersetzt. Fortfahren?",
+      "demoLoaded": "Demo-Essay geladen.",
+      "templateSaved": "Vorlage gespeichert.",
+      "templateNotDetected": "Diese JSON-Datei scheint keine Vorlage zu sein.",
+      "templateApplied": "Vorlage angewendet.",
+      "invalidTemplateJson": "Die Vorlagen-JSON ist nicht gültig.",
+      "selectTemplate": "Wähle eine Vorlage aus."
+    },
+    "errors": {
+      "popupBlocked": "Erlaube Pop-up-Fenster zum Exportieren."
+    }
+  },
+  "citations": {
+    "selectPlaceholder": "Gespeicherte Zitate",
+    "textPlaceholder": "Inhalt des Zitats…",
+    "addButton": "Zitat hinzufügen",
+    "removeButton": "Zitat löschen",
+    "untitledWord": "(ohne Wort)",
+    "alertSelectText": "Wähle im Inhalt ein Wort (oder Text) aus, um ein Zitat hinzuzufügen.",
+    "alertNoCitations": "Es gibt noch keine gespeicherten Zitate.",
+    "alertNoCitation": "In der Auswahl wurde kein Zitat erkannt. Wähle das Wort mit ^(N) oder direkt darum herum aus.",
+    "confirmDelete": "Zitat ({{number}}) löschen und die übrigen neu nummerieren?",
+    "typeSelectAria": "Art der Fußnote",
+    "includeInCitationsPage": "In den terminologischen/begrifflichen Anhang aufnehmen",
+    "types": {
+      "bibliographic": "Bibliografische Anmerkung",
+      "explanatory": "Erläuternde oder inhaltliche Anmerkung",
+      "authorComment": "Kommentar des Autors"
+    }
+  },
+  "dictation": {
+    "noteStart": "Diktat starten (Anmerkung)",
+    "noteStop": "Diktat stoppen (Anmerkung)",
+    "noteIndicatorIdle": "Inaktiv",
+    "summaryStart": "Diktat starten (Zusammenfassung)",
+    "summaryStop": "Diktat stoppen (Zusammenfassung)",
+    "summaryIndicatorIdle": "Inaktiv",
+    "controls": {
+      "start": "Diktat starten",
+      "pause": "Diktat stoppen"
+    },
+    "status": {
+      "notSupported": "Diktat wird von diesem Browser nicht unterstützt",
+      "notSupportedShort": "Nicht unterstützt",
+      "listening": "Sprache wird erfasst",
+      "error": "Diktatfehler",
+      "idle": "Inaktiv",
+      "webviewUnsupported": "Diktat ist in WebView nicht verfügbar. Öffne die App in Chrome/Edge, um zu transkribieren.",
+      "needsHttps": "Für Diktat ist HTTPS erforderlich (sicherer Kontext).",
+      "noAudioEvents": "Das Diktat wurde gestartet, aber es kommen keine Audioereignisse an. Auf diesem Gerät/Browser wird es möglicherweise nicht unterstützt.",
+      "noResults": "Es werden keine Diktatergebnisse empfangen. Probiere Chrome/Edge oder überprüfe den Spracherkennungsdienst des Systems."
+    },
+    "error": {
+      "noSpeech": "Es wurde keine Sprache erkannt. Geh näher ans Mikrofon und versuche es erneut.",
+      "audioCapture": "Auf das Mikrofon konnte nicht zugegriffen werden. Prüfe die Berechtigungen und ob es von einer anderen App verwendet wird.",
+      "notAllowed": "Mikrofonberechtigung verweigert oder vom Browser blockiert.",
+      "serviceNotAllowed": "Der Spracherkennungsdienst ist auf diesem Gerät/Browser nicht verfügbar.",
+      "network": "Netzwerkfehler beim Diktat. Überprüfe deine Verbindung.",
+      "languageNotSupported": "Die Diktatsprache wird auf diesem Gerät nicht unterstützt.",
+      "badGrammar": "Interner Diktatfehler (bad-grammar).",
+      "generic": "Diktatfehler."
+    }
+  },
+  "licenseGuard": {
+    "checking": {
+      "title": "Lizenz wird überprüft…",
+      "body": "Einen Moment, wir überprüfen deine ensaYOnesa-Lizenz."
+    },
+    "needsOnline": {
+      "title": "Verbindung erforderlich",
+      "body": "Um ensaYOnesa zum ersten Mal zu aktivieren, benötigst du eine Internetverbindung. Öffne die App erneut, wenn du online bist."
+    },
+    "noSession": {
+      "title": "Melde dich an, um die App zu aktivieren",
+      "body": "Öffne dein OptimeFlow(s)-Konto auf der Hauptwebsite, um dich anzumelden und deine ensaYOnesa-Lizenz zu aktivieren."
+    },
+    "noLicense": {
+      "title": "Keine aktive Lizenz gefunden",
+      "body": "Dein Konto hat keine aktive ensaYOnesa-Lizenz. Kaufe die App im OptimeFlow(s)-Store und öffne sie erneut."
+    },
+    "error": {
+      "title": "Die Lizenz konnte nicht überprüft werden",
+      "body": "Bei der Lizenzprüfung ist ein Problem aufgetreten. Überprüfe deine Verbindung und versuche es erneut."
+    },
+    "configError": {
+      "title": "Konfigurationsfehler",
+      "body": "Die App kann keine Verbindung zu Supabase herstellen. Überprüfe die Projektkonfiguration oder kontaktiere den Entwickler."
+    },
+    "buttons": {
+      "openAccount": "Mein Konto öffnen",
+      "goToStore": "Zum Store",
+      "retry": "Erneut versuchen"
+    }
+  },
+  "export": {
+    "footer": {
+      "licenseLabel": "Lizenz:",
+      "publicationDateLabel": "Veröffentlichungsdatum"
+    },
+    "bibliography": {
+      "heading": "Bibliografie",
+      "empty": "(Keine Bibliografie)"
+    },
+    "endMatter": {
+      "heading": "Redaktionelle Notiz und Erklärungen",
+      "editorialNote": "Redaktionelle Notiz",
+      "acknowledgments": "Danksagungen",
+      "funding": "Finanzierung",
+      "conflicts": "Interessenkonflikte",
+      "howToCite": "Zitierweise"
+    },
+    "meta": {
+      "license": "Lizenz",
+      "email": "E-Mail",
+      "note": "Anmerkung",
+      "summary": "Zusammenfassung",
+      "keywords": "Schlüsselwörter",
+      "safeCreativeId": "Safe-Creative-ID",
+      "doi": "DOI (Zenodo)"
+    },
+    "license": {
+      "heading": "Lizenzen"
+    },
+    "index": {
+      "heading": "Inhaltsverzeichnis",
+      "defaultPagePlaceholder": "—",
+      "empty": "(Keine Kapitel)"
+    },
+    "citations": {
+      "heading": "Anhang - Terminologische und begriffliche Erläuterungen",
+      "pageLabel": "S.",
+      "empty": "(Keine Zitate)",
+      "pageUnknown": "—",
+      "missingText": "—"
+    },
+    "errors": {
+      "popupBlocked": "Erlaube Pop-up-Fenster zum Exportieren."
+    }
+  },
+  "demo": {
+    "meta": {
+      "title": "Demo-Essay: Kohärenz und Form",
+      "subtitle": "Standardvorlage von ensaYOnesa",
+      "author": "OptimeFlow(s) · Beispiel",
+      "license": "CC BY-NC-SA 4.0 (Beispiel)",
+      "email": "autor@beispiel.com",
+      "note": "Dies ist ein Demo-Essay, der mit der internen Vorlage von ensaYOnesa erstellt wurde. Du kannst bedenkenlos darüber schreiben: Der gesamte Inhalt ist fiktiv und dient nur dazu, das Format zu testen.",
+      "summary": "Das Ziel dieses Demo-Essays ist zu zeigen, wie das Standardformat von ensaYOnesa aussieht: Titelseite, Inhaltsverzeichnis, Kapitel, Unterabschnitte und Blocksatz. Du kannst Titel, Texte und Stile ändern, ohne den Code anzufassen.",
+      "keywords": "demo; vorlage; kohärenz; beispiel",
+      "safeCreativeId": "SC-DEMO-000000",
+      "doi": "10.0000/demo.ensayonesa"
+    },
+    "footer": {
+      "text": "ensaYOnesa · optimeflow.com · Demo-Vorlage"
+    },
+    "ch1": {
+      "title": "I. Ausgangspunkt",
+      "s0": {
+        "title": "I. Ausgangspunkt",
+        "body": "Dieses erste Demokapitel fasst die Idee eines einfachen und gut lesbaren Essays zusammen. Titelseite, Inhaltsverzeichnis und Fließtext sind so gestaltet, dass sie zusammenarbeiten, ohne dass du dich um das Layout kümmern musst.\n\nDu kannst dieses Kapitel als Entwurf verwenden: Ändere die Titel, füge deine eigenen Absätze hinzu und sieh dir an, wie die Vorlage das Standardformat beibehält."
+      },
+      "s1": {
+        "title": "I.1. Ausgangsfrage",
+        "body": "Hier würde der erste echte Unterabschnitt des Kapitels stehen. Ein guter Anfang beantwortet meist drei Fragen: Was möchte ich sagen, für wen schreibe ich, und welche Form brauche ich, damit es ruhig und klar verstanden werden kann.\n\nIn diesem Beispiel geht es darum, dir den Ablauf zu zeigen: Titelseite → Inhaltsverzeichnis → Kapitel → Unterabschnitte. Ab hier wird alles, was du schreibst, bereits dein eigener Essay sein."
+      },
+      "s2": {
+        "title": "I.2. Kontext und methodische Notiz",
+        "body": "Dieser zweite Beispiel-Unterabschnitt zeigt, wie sich der Text verteilt, wenn Absätze sich über mehrere Zeilen erstrecken. Zeilenabstand und Blocksatz sind für das Lesen am Bildschirm und auf Papier gedacht, ohne dass du etwas anpassen musst.\n\nDu kannst diesen Unterabschnitt nutzen, um den Kontext deines Essays zu erklären: Woher die Idee kommt, welche Quellen du im Blick hast und was dein Text nicht leisten will."
+      }
+    },
+    "ch2": {
+      "title": "II. Hauptteil des Essays",
+      "s0": {
+        "title": "II. Hauptteil des Essays",
+        "body": "Dieses Beispielkapitel stellt das Herzstück des Textes dar: den Ort, an dem du dein Argument, deine Szenen oder deine Daten entwickelst. Du kannst es in so viele Unterabschnitte unterteilen, wie du brauchst; hier zeigen wir zwei, damit du das Grundverhalten sehen kannst."
+      },
+      "s1": {
+        "title": "II.1. Hauptentwicklung",
+        "body": "Der erste Unterabschnitt des Hauptteils enthält meist den stärksten Teil des Arguments: das, woran sich die Leserin erinnern soll, selbst wenn sie den Text nur überfliegt.\n\nIn diesem Bereich kannst du längere mit kürzeren Absätzen kombinieren. Die Vorlage sorgt dafür, dass Ränder, Typografie und Blocksatz erhalten bleiben."
+      },
+      "s2": {
+        "title": "II.2. Nuancen und Beispiele",
+        "body": "Hier könntest du konkrete Beispiele, kleine Szenen, Daten oder Verweise hinzufügen. Wenn Absätze ruhig miteinander verbunden sind, entsteht beim Lesen der Eindruck eines durchgehenden Fadens statt einer Liste loser Ideen.\n\nDu kannst diesen Text löschen und direkt darüber schreiben: Die Struktur des Kapitels und der Unterabschnitte funktioniert weiterhin genauso."
+      }
+    },
+    "ch3": {
+      "title": "III. Abschluss und nächste Schritte",
+      "s0": {
+        "title": "III. Abschluss und nächste Schritte",
+        "body": "Das letzte Kapitel dieses Beispiels ist für deinen Schluss gedacht: was du aus dem Prozess mitnimmst, was du der lesenden Person anbietest und welche Wege sich nach dem Text öffnen.\n\nEin klarer Abschluss hilft dabei, dass der Essay nicht nur eine Reihe interessanter Ideen bleibt, sondern eine Form, die erneut besucht und geteilt werden kann."
+      },
+      "s1": {
+        "title": "III.1. Synthese",
+        "body": "In der Synthese kannst du die Hauptlinien des Essays in ein paar Absätzen zusammenführen: Was die Ausgangsfrage war, was du entdeckt hast und was offen bleibt.\n\nDie Idee ist, dass jemand, der direkt hier einsteigt, in wenigen Zeilen das Grundgerüst des Textes verstehen kann."
+      },
+      "s2": {
+        "title": "III.2. Einladung an die Leserin",
+        "body": "Schließlich kann dieser Raum als Einladung dienen: Was die Person, die den Essay gelesen hat, jetzt tun kann, welche kleine Geste sie ausprobieren kann oder welches Gespräch sich daraus eröffnen könnte.\n\nEin guter Schluss beendet nicht alles, aber er zeigt einen möglichen nächsten Schritt."
+      }
+    },
+    "citations": {
+      "wordPrefix": "demo-",
+      "c1": "Demo-Zitat 1: kurze Referenz zum Testen der Fußzeile.",
+      "c2": "Demo-Zitat 2: etwas längere Referenz, um einen Zeilenumbruch in der Fußzeile zu erzwingen und die Ränder zu prüfen.",
+      "c3": "Demo-Zitat 3: eine weitere Referenz, um mehrere Zitate auf derselben Seite gestapelt zu sehen.",
+      "c4": "Demo-Zitat 4: Beispiel eines Zitats mittlerer Länge (zum Testen des abschließenden Zitatanhangs).",
+      "c5": "Demo-Zitat 5: Testzitat.",
+      "c6": "Demo-Zitat 6: Testzitat mit etwas mehr Länge, um den Zeilenumbruch zu prüfen.",
+      "c7": "Demo-Zitat 7: Testzitat.",
+      "c8": "Demo-Zitat 8: Testzitat.",
+      "c9": "Demo-Zitat 9: Testzitat.",
+      "defaultText": "Demo-Zitat {{number}}: Testzitat."
+    },
+    "export": {
+      "fileName": "demo-essay.pdf"
+    }
+  },
+  "footer": {
+    "brand": "OptimeFlow(s)®",
+    "appName": "ensaYOnesa",
+    "year": "2025",
+    "author": "Andrés Calvo Espinosa",
+    "coherenceButtonAria": "Universelle Kohärenz",
+    "licenseButtonAria": "MIT-Lizenz",
+    "licenseButton": "Lizenz",
+    "privacyButton": "Datenschutz"
+  },
+  "licenseOverlay": {
+    "title": "MIT-Lizenz",
+    "text": "MIT-Lizenz\n\nCopyright (c) 2025 OptimeFlow(s) by Andrés Calvo Espinosa\n\nHiermit wird unentgeltlich jeder Person, die eine Kopie dieser Software\nund der zugehörigen Dokumentationsdateien (der \"Software\") erhält, die\nErlaubnis erteilt, uneingeschränkt mit der Software zu handeln,\neinschließlich, aber nicht beschränkt auf das Recht, sie zu verwenden,\nzu kopieren, zu ändern, zusammenzuführen, zu veröffentlichen, zu\nvertreiben, unterzulizenzieren und/oder Kopien der Software zu verkaufen,\nund Personen, denen die Software zur Verfügung gestellt wird, dies zu\ngestatten, vorbehaltlich der folgenden Bedingungen:\n\nDer obige Copyright-Hinweis und dieser Erlaubnishinweis sind in allen\nKopien oder wesentlichen Teilen der Software aufzunehmen.\n\nDIE SOFTWARE WIRD \"WIE BESEHEN\" BEREITGESTELLT, OHNE JEGLICHE GARANTIE,\nWEDER AUSDRÜCKLICH NOCH IMPLIZIT, EINSCHLIESSLICH, ABER NICHT BESCHRÄNKT\nAUF DIE GARANTIEN DER MARKTGÄNGIGKEIT, DER EIGNUNG FÜR EINEN BESTIMMTEN\nZWECK UND DER NICHTVERLETZUNG VON RECHTEN. IN KEINEM FALL HAFTEN DIE\nAUTOREN ODER COPYRIGHT-INHABER FÜR IRGENDWELCHE ANSPRÜCHE, SCHÄDEN ODER\nSONSTIGE VERBINDLICHKEITEN, OB IN EINER VERTRAGSKLAGE, AUS UNERLAUBTER\nHANDLUNG ODER ANDERWEITIG, DIE SICH AUS, IM ZUSAMMENHANG MIT ODER AUS DER\nSOFTWARE ODER DER NUTZUNG ODER SONSTIGEN UMGÄNGEN MIT DER SOFTWARE ERGEBEN."
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "body": "<p><b>ensaYOnesa</b> arbeitet hauptsächlich in deinem Browser und im lokalen Speicher deines Geräts. Der Inhalt des Essays, die Vorschau und der PDF-Export werden lokal in der App selbst verarbeitet.</p><ul><li><b>Lokale Daten:</b> Die App kann Projekt, Einstellungen, Sprache, Vorlagen und einige lokale Ressourcen in LocalStorage, SessionStorage, IndexedDB und Browser-Caches speichern, um deine Präferenzen zu merken und offline zu funktionieren.</li><li><b>Sprachdiktat:</b> Das Diktat verwendet die Spracherkennungs-API des Browsers. Je nach Browser, Gerät und Konfiguration kann die Audiodaten lokal verarbeitet oder an den Erkennungsdienst des Browser- oder Systemanbieters gesendet werden. <b>ensaYOnesa</b> lädt diese Audiodaten oder die Inhalte deiner Dateien nicht auf eigene Server von OptimeFlow(s) hoch.</li><li><b>Zugriff:</b> Diese Version kann ohne Anmeldung verwendet werden.</li><li><b>Cookies und Tracking:</b> Wir verwenden in der App keine Tracking-Cookies und keine Werbeanalysen.</li><li><b>Löschen:</b> Die Schaltfläche „Leeren“ setzt das von der App gespeicherte Projekt zurück. Um auch Caches und andere Websitedaten zu löschen, nutze die Option deines Browsers zum Löschen von Websitedaten.</li><li><b>Lizenz:</b> Die Software wird „wie besehen“ und ohne Garantien bereitgestellt.</li></ul><p><b>Autor:</b> Andrés Calvo Espinosa. <br>Letzte Aktualisierung: 2026-03-16.</p>"
+  },
+  "coherence": {
+    "title": "Universelle Kohärenz",
+    "body": "Möge dieses Werk als Dank und als Verpflichtung dienen: in dieselbe Richtung zu denken, zu fühlen und zu handeln, ohne „Verzierungen“; weiter mit Ethik, Freude und Respekt für alles zu schaffen, was uns verbindet."
+  },
+  "common": {
+    "close": "Schließen"
+  },
+  "panel5": {
+    "heading": "Vorschau",
+    "hint": "Hier kannst du das Dokument genau so sehen, wie es mit den aktuellen Einstellungen exportiert wird.",
+    "toolbar": {
+      "aria": "Steuerung der Vorschau",
+      "zoomOutAria": "Verkleinern",
+      "zoomInAria": "Vergrößern",
+      "zoomRangeAria": "Zoom",
+      "fit": "An Breite anpassen",
+      "actual": "100%",
+      "refresh": "Aktualisieren"
+    },
+    "viewportAria": "Dokumentvorschau",
+    "frameTitle": "Vorgeschautes Dokument",
+    "status": {
+      "loading": "Vorschau wird erstellt…",
+      "ready": "Vorschau aktualisiert.",
+      "error": "Die Vorschau konnte nicht erstellt werden."
+    }
+  }
+}

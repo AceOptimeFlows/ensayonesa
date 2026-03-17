@@ -1,0 +1,24 @@
+{
+  "title": "ensaYOnesa",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "mit",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Calvo Espinosa, Andrés",
+      "orcid": "0009-0005-4079-7418"
+    }
+  ],
+  "description": "<p><strong>ensaYOnesa</strong> is an offline-first Progressive Web App for writing, formatting, previewing, and exporting essays as print-ready PDFs. It provides a local-first editorial workspace with cover-page metadata, chapter and subsection structure, inline citations, images, live preview, and browser-based PDF export.</p><p>Source code repository: <a href=\"https://github.com/AceOptimeFlows/ensayonesa\">https://github.com/AceOptimeFlows/ensayonesa</a></p>",
+  "keywords": [
+    "progressive web app",
+    "offline-first",
+    "essay editor",
+    "pdf export",
+    "local-first",
+    "citation management",
+    "speech dictation",
+    "browser-based publishing"
+  ]
+}

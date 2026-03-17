@@ -1,0 +1,499 @@
+{
+  "app": {
+    "title": "ensaYOnesa — オフライン PWA",
+    "logoAlt": "OptimeFlow(s) のロゴ",
+    "brandName": "OptimeFlow(s)",
+    "brandSrOnly": "ensaYOnesa",
+    "shellAriaLabel": "ensaYOnesa エッセイ生成ツール",
+    "windowTitleTemplate": "{{title}} — ensaYOnesa"
+  },
+  "nav": {
+    "step1": "1. 表紙とメタデータ",
+    "step2": "2. 設定とスタイル",
+    "step3": "3. 内容",
+    "step4": "4. エクスポート",
+    "step5": "5. プレビュー"
+  },
+  "panels": {
+    "panel1Label": "表紙とメタデータ",
+    "panel2Label": "設定とスタイル",
+    "panel3Label": "内容",
+    "panel4Label": "エクスポート",
+    "panel5Label": "プレビュー"
+  },
+  "settings": {
+    "openButton": "設定",
+    "themeLabel": "テーマ",
+    "themes": {
+      "system": "システム",
+      "dark": "ダークコア",
+      "midnight": "ミッドナイトブルー",
+      "nebula": "ネオン星雲",
+      "ocean": "深海",
+      "forest": "エメラルドフォレスト",
+      "amber": "ウォームアンバー",
+      "violet": "ロイヤルバイオレット",
+      "mono": "Mono noir"
+    },
+    "languageLabel": "言語",
+    "dictationLanguageLabel": "音声入力の言語",
+    "languages": {
+      "es": "スペイン語",
+      "en": "英語",
+      "pt-br": "ポルトガル語（ブラジル）",
+      "it": "イタリア語",
+      "fr": "フランス語",
+      "de": "ドイツ語",
+      "ko": "韓国語",
+      "zh": "中国語",
+      "ja": "日本語",
+      "ru": "ロシア語",
+      "hi": "ヒンディー語",
+      "ar": "アラビア語"
+    },
+    "installButton": "アプリをインストール"
+  },
+  "formats": {
+    "labels": {
+      "font": "フォント",
+      "sizePx": "サイズ (px)",
+      "color": "色",
+      "alphaPercent": "アルファ (%)",
+      "leading": "行間 (×)"
+    },
+    "fonts": {
+      "serif": "セリフ体",
+      "sans": "サンセリフ体",
+      "monospace": "等幅"
+    }
+  },
+  "panel1": {
+    "titleLabel": "タイトル",
+    "titlePlaceholder": "ensaYOnesa",
+    "subtitleLabel": "サブタイトル（任意）",
+    "subtitlePlaceholder": "エッセイのサブタイトル",
+    "authorLabel": "著者",
+    "authorPlaceholder": "著者名",
+    "licenseLabel": "ライセンス（任意）",
+    "licensePlaceholder": "例: CC BY 4.0",
+    "emailLabel": "連絡先 / Email（任意）",
+    "emailPlaceholder": "author@example.com",
+    "dateLabel": "公開日（任意）",
+    "safeCreativeLabel": "Safe Creative ID（任意）",
+    "safeCreativePlaceholder": "SC-XXXXXXXX",
+    "doiLabel": "DOI (Zenodo)（任意）",
+    "doiPlaceholder": "10.5281/zenodo.xxxxxxx",
+    "noteLabel": "注記（任意）",
+    "notePlaceholder": "備考 / 献辞 / など",
+    "summaryLabel": "要約（任意）",
+    "summaryPlaceholder": "エッセイの要約…",
+    "keywordsLabel": "キーワード（任意）",
+    "keywordsPlaceholder": "キーワード1; キーワード2; キーワード3",
+    "endMatterHint": "これらの項目のいずれかを入力すると、PDF の末尾（参考文献の後）に最終ページが追加されます。",
+    "editorialNoteLabel": "編集注記（任意）",
+    "editorialNotePlaceholder": "編集注記…",
+    "acknowledgmentsLabel": "謝辞（任意）",
+    "acknowledgmentsPlaceholder": "謝辞…",
+    "fundingLabel": "研究助成（任意）",
+    "fundingPlaceholder": "研究助成…",
+    "conflictsLabel": "利益相反（任意）",
+    "conflictsPlaceholder": "利益相反…",
+    "howToCiteLabel": "引用方法（任意）",
+    "howToCitePlaceholder": "この作品の引用方法…"
+  },
+  "panel2": {
+    "tabs": {
+      "headerFooter": "ヘッダーとフッター",
+      "formats": "書式",
+      "toc": "目次"
+    },
+    "lineStyle": {
+      "label": "線のスタイル",
+      "none": "線なし",
+      "solid": "実線",
+      "dashed": "破線",
+      "dotted": "点線"
+    },
+    "header": {
+      "heading": "ヘッダー",
+      "enable": "ヘッダーを有効にする",
+      "hint": "ヘッダーにはエッセイのタイトルと著者名が使用され、設定した余白に従います。"
+    },
+    "footer": {
+      "heading": "フッター",
+      "enable": "フッターを有効にする",
+      "citationsInFooter": "脚注をフッターに表示する",
+      "textLabel": "フッターテキスト",
+      "textPlaceholder": "参照テキスト / ウェブサイト / など"
+    },
+    "pageNumbers": {
+      "heading": "ページ番号",
+      "enable": "ページ番号を付ける",
+      "locationLabel": "位置",
+      "positionTopLeft": "上左",
+      "positionTopRight": "上右",
+      "positionBottomLeft": "下左",
+      "positionBottomRight": "下右",
+      "positionBottomCenter": "下中央（フッターの下）",
+      "hint": "上側はヘッダーのスタイル、下側はフッターのスタイルを継承します。表紙と目次では非表示です。"
+    },
+    "toc": {
+      "enable": "目次を有効にする",
+      "countLabel": "章 / 項目数",
+      "chapterDefaultTitle": "第{{index}}章",
+      "chapterTitlePlaceholder": "第{{index}}章のタイトル"
+    },
+    "numbering": {
+      "roman": "ローマ数字 (I, II, III)",
+      "arabic": "アラビア数字 (1, 2, 3)"
+    },
+    "formatCards": {
+      "header": "ヘッダー",
+      "footer": "フッター",
+      "title": "タイトル",
+      "subtitle": "サブタイトル",
+      "author": "著者",
+      "meta": "メタデータ",
+      "endMatterHeading": "末尾セクション（ページタイトル）",
+      "endMatterLabel": "末尾セクション（見出し）",
+      "endMatterBody": "末尾セクション（内容）"
+    }
+  },
+  "panel3": {
+    "inlineFmt": {
+      "label": "書式:",
+      "bold": "太字 (Ctrl+B)",
+      "italic": "斜体 (Ctrl+I)",
+      "underline": "下線 (Ctrl+U)",
+      "hint": "ショートカット: Ctrl/Cmd + B / I / U"
+    },
+    "numbering": {
+      "label": "章番号",
+      "applyButton": "適用"
+    },
+    "chapterPointLabel": "章 / 項目",
+    "subsectionCountLabel": "小節数",
+    "subsectionSelectLabel": "小節",
+    "contentLabel": "内容",
+    "contentPlaceholder": "選択した小節の内容をここに入力してください…",
+    "formatsHeading": "章 / 小節ごとの書式",
+    "formatCards": {
+      "chapterTitle": "章タイトル",
+      "subsectionTitle": "小節タイトル",
+      "content": "内容"
+    },
+    "applyAllInChapterButton": "すべてに適用（章）",
+    "noChaptersOption": "— 章なし —",
+    "chapterDefaultTitle": "第{{index}}章",
+    "sectionDefaultTitle": "第{{index}}節",
+    "subsectionBaseLabel": "基本小節",
+    "subsectionLabel": "小節タイトル {{index}}",
+    "subsectionSelectBasePrefix": "(基本) "
+  },
+  "panel4": {
+    "ui": {
+      "sizeLabel": "サイズ",
+      "pageSizes": {
+        "A4": "A4 (210 x 297 mm)",
+        "A5": "A5 (148 x 210 mm)",
+        "KDP6x9": "Kindle/Amazon 6”×9” (152.4 × 228.6 mm)"
+      },
+      "marginsLabel": "余白 (mm)",
+      "margins": {
+        "top": "上",
+        "bottom": "下",
+        "left": "左",
+        "right": "右"
+      },
+      "headerGapLabel": "ヘッダー → 本文の距離 (mm)",
+      "breakOnChapterLabel": "各章の開始時に改ページする",
+      "endCitesLabel": "引用語句の付録（末尾）",
+      "bibliographyLabel": "参考文献",
+      "pdfFileNameLabel": "PDF ファイル名",
+      "actions": {
+        "saveJson": "保存 (JSON)",
+        "load": "読み込む",
+        "clear": "クリア（項目 + ローカルデータベース）",
+        "demo": "デモを読み込む（完全なエッセイ）",
+        "saveTemplate": "テンプレートを保存（スタイルのみ）",
+        "loadTemplate": "テンプレートを読み込む",
+        "exportTemplate": "テンプレートをエクスポート",
+        "export": "エクスポート"
+      }
+    },
+    "defaultProjectFileName": "essay.json",
+    "defaultPdfFileName": "essay.pdf",
+    "defaultTemplateBaseFileName": "template",
+    "defaultTemplateNameShort": "テンプレート {{index}}",
+    "defaultTemplateNameWithDate": "テンプレート {{datetime}}",
+    "noTemplatesOption": "— 保存されたテンプレートはありません —",
+    "prompts": {
+      "templateName": "スタイルテンプレート名（タイトルや内容は含まれません）:"
+    },
+    "alerts": {
+      "projectLoaded": "プロジェクトを読み込みました。",
+      "invalidProjectJson": "JSON が無効です。",
+      "confirmClearAll": "すべての項目をクリアし、ローカルデータベースを空にしてもよろしいですか？",
+      "demoConfirm": "現在の内容がデモ用エッセイで置き換えられます。続行しますか？",
+      "demoLoaded": "デモ用エッセイを読み込みました。",
+      "templateSaved": "テンプレートを保存しました。",
+      "templateNotDetected": "この JSON はテンプレートではないようです。",
+      "templateApplied": "テンプレートを適用しました。",
+      "invalidTemplateJson": "テンプレート JSON が無効です。",
+      "selectTemplate": "テンプレートを選択してください。"
+    },
+    "errors": {
+      "popupBlocked": "エクスポートのためにポップアップを許可してください。"
+    }
+  },
+  "citations": {
+    "selectPlaceholder": "保存済み脚注",
+    "textPlaceholder": "脚注の内容…",
+    "addButton": "脚注を追加",
+    "removeButton": "脚注を削除",
+    "untitledWord": "（語句なし）",
+    "alertSelectText": "脚注を追加するには、内容内の語句（またはテキスト）を選択してください。",
+    "alertNoCitations": "保存されている脚注はまだありません。",
+    "alertNoCitation": "選択範囲に脚注が見つかりませんでした。^(N) を含む語句、またはその直前後を選択してください。",
+    "confirmDelete": "脚注（{{number}}）を削除し、残りを再番号付けしますか？",
+    "typeSelectAria": "脚注の種類",
+    "includeInCitationsPage": "用語 / 概念付録に含める",
+    "types": {
+      "bibliographic": "参考文献注",
+      "explanatory": "説明注・内容注",
+      "authorComment": "著者コメント"
+    }
+  },
+  "dictation": {
+    "noteStart": "音声入力を開始（注記）",
+    "noteStop": "音声入力を停止（注記）",
+    "noteIndicatorIdle": "待機中",
+    "summaryStart": "音声入力を開始（要約）",
+    "summaryStop": "音声入力を停止（要約）",
+    "summaryIndicatorIdle": "待機中",
+    "controls": {
+      "start": "音声入力を開始",
+      "pause": "音声入力を停止"
+    },
+    "status": {
+      "notSupported": "このブラウザは音声入力に対応していません",
+      "notSupportedShort": "非対応",
+      "listening": "音声を取得中",
+      "error": "音声入力エラー",
+      "idle": "待機中",
+      "webviewUnsupported": "WebView では音声入力を利用できません。文字起こしするには Chrome/Edge でアプリを開いてください。",
+      "needsHttps": "音声入力には HTTPS（安全なコンテキスト）が必要です。",
+      "noAudioEvents": "音声入力は開始されましたが、音声イベントが届いていません。この端末 / ブラウザでは未対応の可能性があります。",
+      "noResults": "音声入力の結果が返ってきません。Chrome/Edge を試すか、システムの音声認識サービスを確認してください。"
+    },
+    "error": {
+      "noSpeech": "音声が検出されませんでした。マイクに近づいてもう一度試してください。",
+      "audioCapture": "マイクにアクセスできませんでした。権限と、他のアプリが使用していないかを確認してください。",
+      "notAllowed": "マイク権限が拒否されたか、ブラウザによってブロックされています。",
+      "serviceNotAllowed": "この端末 / ブラウザでは音声認識サービスを利用できません。",
+      "network": "音声入力中にネットワークエラーが発生しました。接続を確認してください。",
+      "languageNotSupported": "この端末では選択した音声入力言語はサポートされていません。",
+      "badGrammar": "音声入力の内部エラー (bad-grammar)。",
+      "generic": "音声入力エラー。"
+    }
+  },
+  "licenseGuard": {
+    "checking": {
+      "title": "ライセンスを確認しています…",
+      "body": "少々お待ちください。ensaYOnesa のライセンスを確認しています。"
+    },
+    "needsOnline": {
+      "title": "インターネット接続が必要です",
+      "body": "ensaYOnesa を初めて有効化するにはインターネット接続が必要です。オンラインの状態でアプリを再度開いてください。"
+    },
+    "noSession": {
+      "title": "アプリを有効化するにはログインしてください",
+      "body": "OptimeFlow(s) のメインサイトでアカウントを開き、ログインして ensaYOnesa のライセンスを有効化してください。"
+    },
+    "noLicense": {
+      "title": "有効なライセンスが見つかりません",
+      "body": "あなたのアカウントには有効な ensaYOnesa ライセンスがありません。OptimeFlow(s) ストアでアプリを購入し、再度開いてください。"
+    },
+    "error": {
+      "title": "ライセンスを確認できませんでした",
+      "body": "ライセンス確認中に問題が発生しました。接続を確認して、もう一度お試しください。"
+    },
+    "configError": {
+      "title": "設定エラー",
+      "body": "アプリが Supabase に接続できません。プロジェクト設定を確認するか、開発者に連絡してください。"
+    },
+    "buttons": {
+      "openAccount": "マイアカウントを開く",
+      "goToStore": "ストアへ移動",
+      "retry": "再試行"
+    }
+  },
+  "export": {
+    "footer": {
+      "licenseLabel": "ライセンス:",
+      "publicationDateLabel": "公開日"
+    },
+    "bibliography": {
+      "heading": "参考文献",
+      "empty": "（参考文献なし）"
+    },
+    "endMatter": {
+      "heading": "編集注記と声明",
+      "editorialNote": "編集注記",
+      "acknowledgments": "謝辞",
+      "funding": "研究助成",
+      "conflicts": "利益相反",
+      "howToCite": "引用方法"
+    },
+    "meta": {
+      "license": "ライセンス",
+      "email": "Email",
+      "note": "注記",
+      "summary": "要約",
+      "keywords": "キーワード",
+      "safeCreativeId": "Safe Creative ID",
+      "doi": "DOI (Zenodo)"
+    },
+    "license": {
+      "heading": "ライセンス"
+    },
+    "index": {
+      "heading": "目次",
+      "defaultPagePlaceholder": "—",
+      "empty": "（章なし）"
+    },
+    "citations": {
+      "heading": "付録 - 用語および概念の補足説明",
+      "pageLabel": "頁",
+      "empty": "（脚注なし）",
+      "pageUnknown": "—",
+      "missingText": "—"
+    },
+    "errors": {
+      "popupBlocked": "エクスポートのためにポップアップを許可してください。"
+    }
+  },
+  "demo": {
+    "meta": {
+      "title": "デモエッセイ：一貫性と形式",
+      "subtitle": "ensaYOnesa 標準テンプレート",
+      "author": "OptimeFlow(s) · 例",
+      "license": "CC BY-NC-SA 4.0（例）",
+      "email": "author@example.com",
+      "note": "これは ensaYOnesa の内部テンプレートで生成されたデモ用エッセイです。安心して上書きしてください。内容はすべて架空で、レイアウト確認のためだけに用意されています。",
+      "summary": "このデモ用エッセイの目的は、ensaYOnesa の標準フォーマットがどのように見えるかを示すことです。表紙、目次、章、小節、両端揃えの本文を確認できます。コードに触れなくても、タイトル・本文・スタイルを自由に変更できます。",
+      "keywords": "デモ; テンプレート; 一貫性; 例",
+      "safeCreativeId": "SC-DEMO-000000",
+      "doi": "10.0000/demo.ensayonesa"
+    },
+    "footer": {
+      "text": "ensaYOnesa · optimeflow.com · デモテンプレート"
+    },
+    "ch1": {
+      "title": "I. 出発点",
+      "s0": {
+        "title": "I. 出発点",
+        "body": "この最初のデモ章では、シンプルで読みやすいエッセイの考え方をまとめています。表紙、目次、本文は互いに連携するよう設計されているため、レイアウトを心配する必要はありません。\n\nこの章は下書きとして使えます。タイトルを変えたり、自分の段落を追加したりして、テンプレートが標準フォーマットをどのように保つか確かめてください。"
+      },
+      "s1": {
+        "title": "I.1. 最初の問い",
+        "body": "ここには本来、この章の最初の実質的な小節が入ります。よい導入は通常、三つの問いに答えます。何を語りたいのか、誰のために書くのか、そして落ち着いて理解してもらうためにどのような形が必要なのか、という問いです。\n\nこの例では、流れそのものを見せることに重点があります。表紙 → 目次 → 章 → 小節。ここから先に書く内容は、すでにあなた自身のエッセイになります。"
+      },
+      "s2": {
+        "title": "I.2. 背景と方法論メモ",
+        "body": "この二つ目の例示的小節では、段落が複数行にわたるときに本文がどのように配置されるかを示しています。行間と両端揃えは、画面でも紙でも読みやすいように設定されており、特別な調整は必要ありません。\n\n必要であれば、この小節を使って自分のエッセイの背景を説明できます。発想がどこから生まれたのか、どの資料を念頭に置いているのか、そしてこの文章が何を目指していないのか、などです。"
+      }
+    },
+    "ch2": {
+      "title": "II. 本論",
+      "s0": {
+        "title": "II. 本論",
+        "body": "この例示章は本文の中心部を表しています。つまり、議論や場面、データを展開する場所です。必要に応じて好きなだけ小節を追加できます。ここでは基本的な挙動を見るために二つだけ用意しています。"
+      },
+      "s1": {
+        "title": "II.1. 主な展開",
+        "body": "本論の最初の小節には、通常もっとも強い主張が置かれます。たとえ読者が流し読みしたとしても、覚えていてほしい部分です。\n\nこのスペースでは、長い段落と短い段落を組み合わせることができます。余白、タイポグラフィ、両端揃えはテンプレートが自動で維持します。"
+      },
+      "s2": {
+        "title": "II.2. ニュアンスと例",
+        "body": "ここには、具体例や小さな場面、データ、参照などを加えることができます。段落同士が落ち着いてつながると、読書体験は断片的なアイデアの列ではなく、一本の連続した糸のようになります。\n\nこのテキストは削除して、そのまま自分の文章を上書きできます。章と小節の構造は変わらず機能します。"
+      }
+    },
+    "ch3": {
+      "title": "III. 結びと次の一歩",
+      "s0": {
+        "title": "III. 結びと次の一歩",
+        "body": "この例の最後の章は結論のために用意されています。過程から何を持ち帰るのか、読者に何を差し出すのか、そして本文の後にどんな道が開かれるのかを示す場所です。\n\n明確な結びは、エッセイを単なる興味深い考えの集まりで終わらせず、再び読み返され、共有されうる形へと導いてくれます。"
+      },
+      "s1": {
+        "title": "III.1. 総合",
+        "body": "総合の部分では、エッセイの主要な流れを二、三の段落にまとめることができます。最初の問いは何だったのか、何を発見したのか、そして何が未解決のまま残っているのか、ということです。\n\nここだけを読んだ人でも、数行で文章全体の骨格を理解できるようにするのが目的です。"
+      },
+      "s2": {
+        "title": "III.2. 読者への呼びかけ",
+        "body": "最後に、このスペースは呼びかけの場として使えます。読了後に読者が何をできるのか、どんな小さな行動を試せるのか、あるいはどんな対話を開けるのかを示します。\n\nよい結論はすべてを閉じるのではなく、それでも次の一歩の可能性を指し示します。"
+      }
+    },
+    "citations": {
+      "wordPrefix": "demo-",
+      "c1": "デモ脚注 1: フッターを確認するための短い参照。",
+      "c2": "デモ脚注 2: フッターで改行を発生させ、余白を確認するための少し長めの参照。",
+      "c3": "デモ脚注 3: 同じページに複数の脚注が積み重なる表示を確認するための別の参照。",
+      "c4": "デモ脚注 4: 中程度の長さの脚注例（末尾の脚注付録をテストするためのもの）。",
+      "c5": "デモ脚注 5: テスト用脚注。",
+      "c6": "デモ脚注 6: 折り返しを確認するための少し長めのテスト用脚注。",
+      "c7": "デモ脚注 7: テスト用脚注。",
+      "c8": "デモ脚注 8: テスト用脚注。",
+      "c9": "デモ脚注 9: テスト用脚注。",
+      "defaultText": "デモ脚注 {{number}}: テスト用脚注。"
+    },
+    "export": {
+      "fileName": "demo-essay.pdf"
+    }
+  },
+  "footer": {
+    "brand": "OptimeFlow(s)®",
+    "appName": "ensaYOnesa",
+    "year": "2025",
+    "author": "Andrés Calvo Espinosa",
+    "coherenceButtonAria": "普遍的な一貫性",
+    "licenseButtonAria": "MIT ライセンス",
+    "licenseButton": "ライセンス",
+    "privacyButton": "プライバシー"
+  },
+  "licenseOverlay": {
+    "title": "MIT ライセンス",
+    "text": "MIT ライセンス\n\nCopyright (c) 2025 OptimeFlow(s) by Andrés Calvo Espinosa\n\n本ソフトウェアおよび関連文書ファイル（以下「ソフトウェア」）の\n複製を取得したすべての人に対し、ソフトウェアを無制限に取り扱う\nことを無償で許可します。これには、使用、複製、改変、結合、公開、\n頒布、サブライセンス、および/または販売する権利、ならびに\nソフトウェアを提供された相手に同様の行為を認める権利が含まれます。\nただし、以下の条件に従うものとします。\n\n上記の著作権表示および本許諾表示は、ソフトウェアのすべての複製\nまたは重要な部分に記載しなければなりません。\n\nソフトウェアは「現状のまま」提供され、明示または黙示を問わず、\nいかなる保証もありません。これには、商品性、特定目的への適合性、\nおよび権利非侵害の保証が含まれますが、それらに限定されません。\nいかなる場合も、著作者または著作権者は、契約行為、不法行為、\nまたはその他の行為であるかを問わず、ソフトウェアまたはその使用\nその他の取り扱いから生じるいかなる請求、損害、その他の責任について\n責任を負わないものとします。"
+  },
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "body": "<p><b>ensaYOnesa</b> は主にブラウザと端末のローカルストレージ上で動作します。エッセイの内容、プレビュー、PDF へのエクスポートはアプリ内でローカル処理されます。</p><ul><li><b>ローカルデータ:</b> アプリは、設定や言語、テンプレート、いくつかのローカルリソースを LocalStorage、SessionStorage、IndexedDB、およびブラウザキャッシュに保存することがあります。これは設定を記憶し、オフラインで動作させるためです。</li><li><b>音声入力:</b> 音声入力はブラウザの音声認識 API を使用します。ブラウザ、端末、設定によっては、音声がローカルで処理される場合もあれば、ブラウザ提供元や OS の認識サービスに送信される場合もあります。<b>ensaYOnesa</b> は、その音声やファイル内容を OptimeFlow(s) 独自のサーバーへアップロードしません。</li><li><b>アクセス:</b> このバージョンはログインせずに利用できます。</li><li><b>Cookie と追跡:</b> アプリでは追跡用 Cookie や広告分析を使用しません。</li><li><b>削除:</b> 「クリア」ボタンはアプリが保存したプロジェクトを初期化します。キャッシュやその他のサイトデータも削除したい場合は、ブラウザのサイトデータ削除機能を使ってください。</li><li><b>ライセンス:</b> ソフトウェアは「現状のまま」提供され、保証はありません。</li></ul><p><b>著者:</b> Andrés Calvo Espinosa。<br>最終更新日: 2026-03-16。</p>"
+  },
+  "coherence": {
+    "title": "普遍的な一貫性",
+    "body": "この作品が感謝であると同時に誓いでもありますように。同じ方向に向かって考え、感じ、行動すること。\"飾り\"ではなく、本質を大切にし、私たちを結びつけるすべてのものへの敬意と喜び、倫理をもって創造を続けること。"
+  },
+  "common": {
+    "close": "閉じる"
+  },
+  "panel5": {
+    "heading": "プレビュー",
+    "hint": "ここでは、現在の設定でエクスポートしたときの文書の見た目を確認できます。",
+    "toolbar": {
+      "aria": "プレビュー操作",
+      "zoomOutAria": "縮小",
+      "zoomInAria": "拡大",
+      "zoomRangeAria": "ズーム",
+      "fit": "幅に合わせる",
+      "actual": "100%",
+      "refresh": "更新"
+    },
+    "viewportAria": "文書プレビュー",
+    "frameTitle": "プレビューされた文書",
+    "status": {
+      "loading": "プレビューを生成しています…",
+      "ready": "プレビューを更新しました。",
+      "error": "プレビューを生成できませんでした。"
+    }
+  }
+}

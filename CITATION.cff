@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: "ensaYOnesa"
+authors:
+  - given-names: "Andrés"
+    family-names: "Calvo Espinosa"
+    orcid: "https://orcid.org/0009-0005-4079-7418"
+abstract: >-
+  ensaYOnesa is an offline-first Progressive Web App for writing, formatting,
+  previewing, and exporting essays as print-ready PDFs. It provides a
+  local-first editorial workspace with cover-page metadata, chapter and
+  subsection structure, inline citations, images, live preview, and
+  browser-based PDF export.
+keywords:
+  - "progressive web app"
+  - "offline-first"
+  - "essay editor"
+  - "PDF export"
+  - "local-first"
+  - "citation management"
+  - "speech dictation"
+  - "browser-based publishing"
+license: "MIT"
+doi: "10.5281/zenodo.19058048"
+repository-code: "https://github.com/AceOptimeFlows/ensayonesa"
+url: "https://github.com/AceOptimeFlows/ensayonesa"

@@ -1,0 +1,499 @@
+{
+  "app": {
+    "title": "ensaYOnesa — PWA offline",
+    "logoAlt": "Logo di OptimeFlow(s)",
+    "brandName": "OptimeFlow(s)",
+    "brandSrOnly": "ensaYOnesa",
+    "shellAriaLabel": "Generatore di saggi ensaYOnesa",
+    "windowTitleTemplate": "{{title}} — ensaYOnesa"
+  },
+  "nav": {
+    "step1": "1. Copertina e metadati",
+    "step2": "2. Impostazioni e stili",
+    "step3": "3. Contenuto",
+    "step4": "4. Esporta",
+    "step5": "5. Anteprima"
+  },
+  "panels": {
+    "panel1Label": "Copertina e metadati",
+    "panel2Label": "Impostazioni e stili",
+    "panel3Label": "Contenuto",
+    "panel4Label": "Esporta",
+    "panel5Label": "Anteprima"
+  },
+  "settings": {
+    "openButton": "Impostazioni",
+    "themeLabel": "Tema",
+    "themes": {
+      "system": "Sistema",
+      "dark": "Nucleo scuro",
+      "midnight": "Blu di mezzanotte",
+      "nebula": "Nebulosa neon",
+      "ocean": "Oceano profondo",
+      "forest": "Foresta smeraldo",
+      "amber": "Ambra calda",
+      "violet": "Viola reale",
+      "mono": "Mono noir"
+    },
+    "languageLabel": "Lingua",
+    "dictationLanguageLabel": "Lingua del dettato",
+    "languages": {
+      "es": "Spagnolo",
+      "en": "Inglese",
+      "pt-br": "Portoghese (Brasile)",
+      "it": "Italiano",
+      "fr": "Francese",
+      "de": "Tedesco",
+      "ko": "Coreano",
+      "zh": "Cinese",
+      "ja": "Giapponese",
+      "ru": "Russo",
+      "hi": "Hindi",
+      "ar": "Arabo"
+    },
+    "installButton": "Installa app"
+  },
+  "formats": {
+    "labels": {
+      "font": "Carattere",
+      "sizePx": "Dimensione (px)",
+      "color": "Colore",
+      "alphaPercent": "Alfa (%)",
+      "leading": "Interlinea (×)"
+    },
+    "fonts": {
+      "serif": "Serif",
+      "sans": "Sans",
+      "monospace": "Monospace"
+    }
+  },
+  "panel1": {
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "ensaYOnesa",
+    "subtitleLabel": "Sottotitolo (opzionale)",
+    "subtitlePlaceholder": "Sottotitolo del saggio",
+    "authorLabel": "Autore",
+    "authorPlaceholder": "Nome dell'autore",
+    "licenseLabel": "Licenza (opzionale)",
+    "licensePlaceholder": "es. CC BY 4.0",
+    "emailLabel": "Corrispondenza / Email (opzionale)",
+    "emailPlaceholder": "autore@esempio.com",
+    "dateLabel": "Data di pubblicazione (opzionale)",
+    "safeCreativeLabel": "Safe Creative ID (opzionale)",
+    "safeCreativePlaceholder": "SC-XXXXXXXX",
+    "doiLabel": "DOI (Zenodo) (opzionale)",
+    "doiPlaceholder": "10.5281/zenodo.xxxxxxx",
+    "noteLabel": "Nota (opzionale)",
+    "notePlaceholder": "Osservazioni / dediche / ecc.",
+    "summaryLabel": "Riassunto (opzionale)",
+    "summaryPlaceholder": "Riassunto del saggio…",
+    "keywordsLabel": "Parole chiave (opzionale)",
+    "keywordsPlaceholder": "parola1; parola2; parola3",
+    "endMatterHint": "Se compili uno di questi campi, verrà aggiunta una pagina finale al PDF (dopo la Bibliografia).",
+    "editorialNoteLabel": "Nota editoriale (opzionale)",
+    "editorialNotePlaceholder": "Nota editoriale…",
+    "acknowledgmentsLabel": "Ringraziamenti (opzionale)",
+    "acknowledgmentsPlaceholder": "Ringraziamenti…",
+    "fundingLabel": "Finanziamento (opzionale)",
+    "fundingPlaceholder": "Finanziamento…",
+    "conflictsLabel": "Conflitti di interesse (opzionale)",
+    "conflictsPlaceholder": "Conflitti di interesse…",
+    "howToCiteLabel": "Come citare (opzionale)",
+    "howToCitePlaceholder": "Come citare questo lavoro…"
+  },
+  "panel2": {
+    "tabs": {
+      "headerFooter": "Intestazione e piè di pagina",
+      "formats": "Formati",
+      "toc": "Indice"
+    },
+    "lineStyle": {
+      "label": "Stile della linea",
+      "none": "Senza linea",
+      "solid": "Linea continua",
+      "dashed": "Linea tratteggiata",
+      "dotted": "Punteggiata"
+    },
+    "header": {
+      "heading": "Intestazione",
+      "enable": "Attiva intestazione",
+      "hint": "L'intestazione usa il titolo del saggio e il nome dell'autore, rispettando i margini definiti."
+    },
+    "footer": {
+      "heading": "Piè di pagina",
+      "enable": "Attiva piè di pagina",
+      "citationsInFooter": "Citazioni nel piè di pagina",
+      "textLabel": "Testo del piè",
+      "textPlaceholder": "Testo di riferimento / sito web / ecc."
+    },
+    "pageNumbers": {
+      "heading": "Numero di pagina",
+      "enable": "Numera pagine",
+      "locationLabel": "Posizione",
+      "positionTopLeft": "In alto a sinistra",
+      "positionTopRight": "In alto a destra",
+      "positionBottomLeft": "In basso a sinistra",
+      "positionBottomRight": "In basso a destra",
+      "positionBottomCenter": "In basso al centro (sotto il piè)",
+      "hint": "In alto eredita lo stile dell'intestazione; in basso, quello del piè. Nascosto in copertina e nell'indice."
+    },
+    "toc": {
+      "enable": "Attiva indice",
+      "countLabel": "Numero di capitoli/punti",
+      "chapterDefaultTitle": "Capitolo {{index}}",
+      "chapterTitlePlaceholder": "Titolo del capitolo {{index}}"
+    },
+    "numbering": {
+      "roman": "Romani (I, II, III)",
+      "arabic": "Arabi (1, 2, 3)"
+    },
+    "formatCards": {
+      "header": "Intestazione",
+      "footer": "Piè di pagina",
+      "title": "Titolo",
+      "subtitle": "Sottotitolo",
+      "author": "Autore",
+      "meta": "Metadati",
+      "endMatterHeading": "Sezioni finali (titolo della pagina)",
+      "endMatterLabel": "Sezioni finali (titoli)",
+      "endMatterBody": "Sezioni finali (contenuto)"
+    }
+  },
+  "panel3": {
+    "inlineFmt": {
+      "label": "Formato:",
+      "bold": "Grassetto (Ctrl+B)",
+      "italic": "Corsivo (Ctrl+I)",
+      "underline": "Sottolineato (Ctrl+U)",
+      "hint": "Scorciatoie: Ctrl/Cmd + B / I / U"
+    },
+    "numbering": {
+      "label": "Numerazione dei capitoli",
+      "applyButton": "Applica"
+    },
+    "chapterPointLabel": "Capitolo / punto",
+    "subsectionCountLabel": "Numero di sottosezioni",
+    "subsectionSelectLabel": "Sottosezione",
+    "contentLabel": "Contenuto",
+    "contentPlaceholder": "Scrivi qui il contenuto della sottosezione selezionata…",
+    "formatsHeading": "Formati per capitolo / sottosezione",
+    "formatCards": {
+      "chapterTitle": "Titolo del capitolo",
+      "subsectionTitle": "Titolo della sottosezione",
+      "content": "Contenuto"
+    },
+    "applyAllInChapterButton": "Applica a tutte (capitolo)",
+    "noChaptersOption": "— Nessun capitolo —",
+    "chapterDefaultTitle": "Capitolo {{index}}",
+    "sectionDefaultTitle": "Sezione {{index}}",
+    "subsectionBaseLabel": "Sottosezione base",
+    "subsectionLabel": "Titolo sottosezione {{index}}",
+    "subsectionSelectBasePrefix": "(Base) "
+  },
+  "panel4": {
+    "ui": {
+      "sizeLabel": "Dimensione",
+      "pageSizes": {
+        "A4": "A4 (210 x 297 mm)",
+        "A5": "A5 (148 x 210 mm)",
+        "KDP6x9": "Kindle/Amazon 6”×9” (152.4 × 228.6 mm)"
+      },
+      "marginsLabel": "Margini (mm)",
+      "margins": {
+        "top": "Superiore",
+        "bottom": "Inferiore",
+        "left": "Sinistro",
+        "right": "Destro"
+      },
+      "headerGapLabel": "Distanza intestazione → testo (mm)",
+      "breakOnChapterLabel": "Nuova pagina all'inizio di ogni capitolo",
+      "endCitesLabel": "Appendice dei termini citati (alla fine)",
+      "bibliographyLabel": "Bibliografia",
+      "pdfFileNameLabel": "Nome del file PDF",
+      "actions": {
+        "saveJson": "Salva (JSON)",
+        "load": "Carica",
+        "clear": "Cancella (campi + database locale)",
+        "demo": "Carica demo (saggio completo)",
+        "saveTemplate": "Salva modello (solo stili)",
+        "loadTemplate": "Carica modello",
+        "exportTemplate": "Esporta modello",
+        "export": "Esporta"
+      }
+    },
+    "defaultProjectFileName": "saggio.json",
+    "defaultPdfFileName": "saggio.pdf",
+    "defaultTemplateBaseFileName": "modello",
+    "defaultTemplateNameShort": "Modello {{index}}",
+    "defaultTemplateNameWithDate": "Modello {{datetime}}",
+    "noTemplatesOption": "— Nessun modello salvato —",
+    "prompts": {
+      "templateName": "Nome del modello di stili (non include titoli né contenuti):"
+    },
+    "alerts": {
+      "projectLoaded": "Progetto caricato.",
+      "invalidProjectJson": "Il JSON non è valido.",
+      "confirmClearAll": "Vuoi davvero cancellare tutti i campi e svuotare il database locale?",
+      "demoConfirm": "Questo sostituirà il contenuto attuale con un saggio dimostrativo. Continuare?",
+      "demoLoaded": "Saggio dimostrativo caricato.",
+      "templateSaved": "Modello salvato.",
+      "templateNotDetected": "Questo JSON non sembra un modello.",
+      "templateApplied": "Modello applicato.",
+      "invalidTemplateJson": "Il JSON del modello non è valido.",
+      "selectTemplate": "Seleziona un modello."
+    },
+    "errors": {
+      "popupBlocked": "Consenti i popup per esportare."
+    }
+  },
+  "citations": {
+    "selectPlaceholder": "Citazioni salvate",
+    "textPlaceholder": "Contenuto della citazione…",
+    "addButton": "Aggiungi citazione",
+    "removeButton": "Elimina citazione",
+    "untitledWord": "(senza parola)",
+    "alertSelectText": "Seleziona una parola (o un testo) nel contenuto per aggiungere una citazione.",
+    "alertNoCitations": "Non ci sono ancora citazioni salvate.",
+    "alertNoCitation": "Non è stata rilevata alcuna citazione nella selezione. Seleziona la parola che contiene ^(N) o subito attorno ad essa.",
+    "confirmDelete": "Eliminare la citazione ({{number}}) e rinumerare le restanti?",
+    "typeSelectAria": "Tipo di nota a piè di pagina",
+    "includeInCitationsPage": "Includi nell'appendice terminologica/concettuale",
+    "types": {
+      "bibliographic": "Nota bibliografica",
+      "explanatory": "Nota esplicativa o di contenuto",
+      "authorComment": "Commento dell'autore"
+    }
+  },
+  "dictation": {
+    "noteStart": "Avvia dettatura (nota)",
+    "noteStop": "Ferma dettatura (nota)",
+    "noteIndicatorIdle": "Inattivo",
+    "summaryStart": "Avvia dettatura (riassunto)",
+    "summaryStop": "Ferma dettatura (riassunto)",
+    "summaryIndicatorIdle": "Inattivo",
+    "controls": {
+      "start": "Avvia dettatura",
+      "pause": "Ferma dettatura"
+    },
+    "status": {
+      "notSupported": "Dettatura non supportata da questo browser",
+      "notSupportedShort": "Non supportato",
+      "listening": "In ascolto",
+      "error": "Errore nella dettatura",
+      "idle": "Inattivo",
+      "webviewUnsupported": "Dettatura non disponibile in WebView. Apri l'app in Chrome/Edge per trascrivere.",
+      "needsHttps": "La dettatura richiede HTTPS (contesto sicuro).",
+      "noAudioEvents": "La dettatura è partita ma non arrivano eventi audio. Su questo dispositivo/browser potrebbe non essere supportata.",
+      "noResults": "Non arrivano risultati di dettatura. Prova Chrome/Edge oppure controlla il servizio di riconoscimento vocale del sistema."
+    },
+    "error": {
+      "noSpeech": "Nessuna voce rilevata. Avvicinati al microfono e riprova.",
+      "audioCapture": "Impossibile accedere al microfono. Controlla i permessi e che non sia usato da un'altra app.",
+      "notAllowed": "Permesso del microfono negato o bloccato dal browser.",
+      "serviceNotAllowed": "Il servizio di riconoscimento vocale non è disponibile su questo dispositivo/browser.",
+      "network": "Errore di rete durante la dettatura. Controlla la connessione.",
+      "languageNotSupported": "La lingua del dettato non è supportata su questo dispositivo.",
+      "badGrammar": "Errore interno di dettatura (bad-grammar).",
+      "generic": "Errore nella dettatura."
+    }
+  },
+  "licenseGuard": {
+    "checking": {
+      "title": "Verifica della licenza…",
+      "body": "Un secondo, stiamo verificando la tua licenza di ensaYOnesa."
+    },
+    "needsOnline": {
+      "title": "Connessione necessaria",
+      "body": "Per attivare ensaYOnesa la prima volta hai bisogno di una connessione a Internet. Riapri l'app quando sei online."
+    },
+    "noSession": {
+      "title": "Accedi per attivare l'app",
+      "body": "Apri il tuo account OptimeFlow(s) sul sito principale per accedere e attivare la tua licenza di ensaYOnesa."
+    },
+    "noLicense": {
+      "title": "Nessuna licenza attiva trovata",
+      "body": "Il tuo account non ha una licenza attiva di ensaYOnesa. Acquista l'app nello store di OptimeFlow(s) e riaprila."
+    },
+    "error": {
+      "title": "Impossibile verificare la licenza",
+      "body": "Si è verificato un problema durante la verifica della licenza. Controlla la connessione e riprova."
+    },
+    "configError": {
+      "title": "Errore di configurazione",
+      "body": "L'app non riesce a connettersi a Supabase. Controlla la configurazione del progetto o contatta lo sviluppatore."
+    },
+    "buttons": {
+      "openAccount": "Apri il mio account",
+      "goToStore": "Vai allo store",
+      "retry": "Riprova"
+    }
+  },
+  "export": {
+    "footer": {
+      "licenseLabel": "Licenza:",
+      "publicationDateLabel": "Data di pubblicazione"
+    },
+    "bibliography": {
+      "heading": "Bibliografia",
+      "empty": "(Senza bibliografia)"
+    },
+    "endMatter": {
+      "heading": "Nota editoriale e dichiarazioni",
+      "editorialNote": "Nota editoriale",
+      "acknowledgments": "Ringraziamenti",
+      "funding": "Finanziamento",
+      "conflicts": "Conflitti di interesse",
+      "howToCite": "Come citare"
+    },
+    "meta": {
+      "license": "Licenza",
+      "email": "Email",
+      "note": "Nota",
+      "summary": "Riassunto",
+      "keywords": "Parole chiave",
+      "safeCreativeId": "Safe Creative ID",
+      "doi": "DOI (Zenodo)"
+    },
+    "license": {
+      "heading": "Licenze"
+    },
+    "index": {
+      "heading": "Indice",
+      "defaultPagePlaceholder": "—",
+      "empty": "(Senza capitoli)"
+    },
+    "citations": {
+      "heading": "Appendice - Chiarimenti terminologici e concettuali",
+      "pageLabel": "pag.",
+      "empty": "(Senza citazioni)",
+      "pageUnknown": "—",
+      "missingText": "—"
+    },
+    "errors": {
+      "popupBlocked": "Consenti i popup per esportare."
+    }
+  },
+  "demo": {
+    "meta": {
+      "title": "Saggio demo: Coerenza e forma",
+      "subtitle": "Modello standard di ensaYOnesa",
+      "author": "OptimeFlow(s) · Esempio",
+      "license": "CC BY-NC-SA 4.0 (esempio)",
+      "email": "autore@esempio.com",
+      "note": "Questo è un saggio dimostrativo generato dal modello interno di ensaYOnesa. Puoi scriverci sopra senza timore: tutto il contenuto è fittizio ed è pensato solo per provare il formato.",
+      "summary": "L'obiettivo di questo saggio dimostrativo è mostrare come appare il formato standard di ensaYOnesa: copertina, indice, capitoli, sottosezioni e testo giustificato. Puoi modificare titoli, testi e stili senza toccare il codice.",
+      "keywords": "demo; modello; coerenza; esempio",
+      "safeCreativeId": "SC-DEMO-000000",
+      "doi": "10.0000/demo.ensayonesa"
+    },
+    "footer": {
+      "text": "ensaYOnesa · optimeflow.com · Modello dimostrativo"
+    },
+    "ch1": {
+      "title": "I. Punto di partenza",
+      "s0": {
+        "title": "I. Punto di partenza",
+        "body": "Questo primo capitolo dimostrativo riassume l'idea di un saggio semplice e leggibile. La copertina, l'indice e il corpo del testo sono pensati per lavorare insieme, senza che tu debba preoccuparti dell'impaginazione.\n\nPuoi usare questo capitolo come bozza: cambia i titoli, aggiungi i tuoi paragrafi e verifica come il modello mantiene il formato standard."
+      },
+      "s1": {
+        "title": "I.1. Domanda iniziale",
+        "body": "Qui andrebbe la prima vera sottosezione del capitolo. Un buon inizio di solito risponde a tre domande: che cosa voglio raccontare, per chi lo scrivo e quale forma mi serve perché si capisca con calma.\n\nIn questo esempio, l'attenzione è sul flusso: copertina → indice → capitolo → sottosezioni. Da qui in poi, tutto ciò che scriverai sarà già il tuo saggio."
+      },
+      "s2": {
+        "title": "I.2. Contesto e nota metodologica",
+        "body": "Questa seconda sottosezione di esempio mostra come il testo si distribuisce quando i paragrafi si estendono su più righe. L'interlinea e la giustificazione sono pensate per la lettura su schermo e su carta, senza che tu debba regolare nulla.\n\nSe vuoi, puoi usare questa sottosezione per spiegare il contesto del tuo saggio: da dove nasce l'idea, quali fonti tieni presenti e che cosa il tuo testo non pretende di fare."
+      }
+    },
+    "ch2": {
+      "title": "II. Corpo del saggio",
+      "s0": {
+        "title": "II. Corpo del saggio",
+        "body": "Questo capitolo di esempio rappresenta il cuore del testo: il luogo in cui sviluppi il tuo argomento, le tue scene o i tuoi dati. Puoi dividerlo in tutte le sottosezioni che ti servono; qui te ne mostriamo due per farti vedere il comportamento di base."
+      },
+      "s1": {
+        "title": "II.1. Sviluppo principale",
+        "body": "La prima sottosezione del corpo del saggio di solito ospita la parte più forte dell'argomentazione: ciò che vuoi che chi legge ricordi anche se sfoglia soltanto il testo.\n\nIn questo spazio puoi combinare paragrafi più lunghi con altri più brevi. Il modello si occupa di mantenere margini, tipografia e giustificazione."
+      },
+      "s2": {
+        "title": "II.2. Sfumature ed esempi",
+        "body": "Qui potresti aggiungere esempi concreti, piccole scene, dati o riferimenti. Quando i paragrafi si collegano con calma, la sensazione di lettura è quella di un filo continuo, non di un elenco di idee sparse.\n\nPuoi cancellare questo testo e scrivere direttamente sopra: la struttura del capitolo e delle sottosezioni continuerà a funzionare allo stesso modo."
+      }
+    },
+    "ch3": {
+      "title": "III. Chiusura e passi successivi",
+      "s0": {
+        "title": "III. Chiusura e passi successivi",
+        "body": "L'ultimo capitolo di questo esempio è pensato per la tua conclusione: che cosa porti via dal processo, che cosa offri a chi legge e quali strade si aprono dopo il testo.\n\nUna chiusura chiara aiuta il saggio a non restare soltanto una serie di idee interessanti, ma a diventare una forma a cui si può tornare e che si può condividere."
+      },
+      "s1": {
+        "title": "III.1. Sintesi",
+        "body": "Nella sintesi puoi raccogliere le linee principali del saggio in un paio di paragrafi: qual era la domanda iniziale, che cosa hai scoperto e che cosa resta aperto.\n\nL'idea è che qualcuno che arrivi direttamente qui possa capire, in poche righe, lo scheletro del testo."
+      },
+      "s2": {
+        "title": "III.2. Invito al lettore",
+        "body": "Infine, questo spazio può servire da invito: che cosa può fare ora la persona che ha letto il saggio, quale piccolo gesto può provare o quale conversazione potrebbe aprire.\n\nUna buona conclusione non chiude tutto, ma indica comunque un possibile passo successivo."
+      }
+    },
+    "citations": {
+      "wordPrefix": "demo-",
+      "c1": "Citazione demo 1: riferimento breve per provare il piè di pagina.",
+      "c2": "Citazione demo 2: riferimento un po' più lungo per forzare l'andata a capo nel piè di pagina e verificare i margini.",
+      "c3": "Citazione demo 3: un altro riferimento per vedere più citazioni impilate nella stessa pagina.",
+      "c4": "Citazione demo 4: esempio di citazione di media lunghezza (serve a testare l'appendice finale delle citazioni).",
+      "c5": "Citazione demo 5: citazione di prova.",
+      "c6": "Citazione demo 6: citazione di prova un po' più lunga per verificare il word-wrap.",
+      "c7": "Citazione demo 7: citazione di prova.",
+      "c8": "Citazione demo 8: citazione di prova.",
+      "c9": "Citazione demo 9: citazione di prova.",
+      "defaultText": "Citazione demo {{number}}: citazione di prova."
+    },
+    "export": {
+      "fileName": "saggio-demo.pdf"
+    }
+  },
+  "footer": {
+    "brand": "OptimeFlow(s)®",
+    "appName": "ensaYOnesa",
+    "year": "2025",
+    "author": "Andrés Calvo Espinosa",
+    "coherenceButtonAria": "Coerenza universale",
+    "licenseButtonAria": "Licenza MIT",
+    "licenseButton": "Licenza",
+    "privacyButton": "Privacy"
+  },
+  "licenseOverlay": {
+    "title": "Licenza MIT",
+    "text": "Licenza MIT\n\nCopyright (c) 2025 OptimeFlow(s) by Andrés Calvo Espinosa\n\nCon la presente si concede, gratuitamente, a chiunque ottenga una copia\ndi questo software e dei file di documentazione associati (il \"Software\"),\nil permesso di trattare il Software senza restrizioni, inclusi, senza\nlimitazione, i diritti di usare, copiare, modificare, unire, pubblicare,\ndistribuire, sublicenziare e/o vendere copie del Software, e di consentire\nalle persone alle quali il Software è fornito di farlo, alle seguenti\ncondizioni:\n\nL'avviso di copyright sopra riportato e questo avviso di autorizzazione\ndevono essere inclusi in tutte le copie o parti sostanziali del Software.\n\nIL SOFTWARE È FORNITO \"COSÌ COM'È\", SENZA GARANZIA DI ALCUN TIPO, ESPRESSA\nO IMPLICITA, INCLUSE, A TITOLO ESEMPLIFICATIVO MA NON ESAUSTIVO, LE\nGARANZIE DI COMMERCIABILITÀ, IDONEITÀ A UNO SCOPO PARTICOLARE E NON\nVIOLAZIONE. IN NESSUN CASO GLI AUTORI O I TITOLARI DEL COPYRIGHT SARANNO\nRESPONSABILI PER QUALSIASI RIVENDICAZIONE, DANNO O ALTRA RESPONSABILITÀ,\nSIA IN UN'AZIONE CONTRATTUALE, ILLECITA O DI ALTRO TIPO, DERIVANTE DA, O\nIN CONNESSIONE CON, IL SOFTWARE O L'USO O ALTRE OPERAZIONI NEL SOFTWARE."
+  },
+  "privacy": {
+    "title": "Informativa sulla privacy",
+    "body": "<p><b>ensaYOnesa</b> funziona principalmente nel tuo browser e nella memoria locale del tuo dispositivo. Il contenuto del saggio, l'anteprima e l'esportazione in PDF vengono elaborati localmente nell'app stessa.</p><ul><li><b>Dati locali:</b> l'app può salvare progetto, impostazioni, lingua, modelli e alcune risorse locali in LocalStorage, SessionStorage, IndexedDB e nelle cache del browser per ricordare le tue preferenze e funzionare offline.</li><li><b>Dettato vocale:</b> il dettato usa l'API di riconoscimento vocale del browser. A seconda del browser, del dispositivo e della sua configurazione, l'audio può essere elaborato localmente oppure inviato al servizio di riconoscimento del fornitore del browser o del sistema. <b>ensaYOnesa</b> non carica quell'audio né il contenuto dei tuoi file su server propri di OptimeFlow(s).</li><li><b>Accesso:</b> questa versione può essere usata senza effettuare il login.</li><li><b>Cookie e tracciamento:</b> non utilizziamo cookie di tracciamento né analisi pubblicitaria nell'app.</li><li><b>Cancellazione:</b> il pulsante “Cancella” reimposta il progetto salvato dall'app. Per eliminare anche cache e altri dati del sito, usa l'opzione del browser per cancellare i dati del sito.</li><li><b>Licenza:</b> il software è fornito “così com'è”, senza garanzie.</li></ul><p><b>Autore:</b> Andrés Calvo Espinosa. <br>Ultimo aggiornamento: 2026-03-16.</p>"
+  },
+  "coherence": {
+    "title": "Coerenza universale",
+    "body": "Che quest'opera serva come ringraziamento e come impegno: pensare, sentire e agire nella stessa direzione, senza \"ornamenti\"; continuare a creare con etica, con gioia e con rispetto per tutto ciò che ci connette."
+  },
+  "common": {
+    "close": "Chiudi"
+  },
+  "panel5": {
+    "heading": "Anteprima",
+    "hint": "Qui puoi vedere il documento esattamente come verrà esportato con le impostazioni attuali.",
+    "toolbar": {
+      "aria": "Controlli dell'anteprima",
+      "zoomOutAria": "Riduci zoom",
+      "zoomInAria": "Aumenta zoom",
+      "zoomRangeAria": "Zoom",
+      "fit": "Adatta alla larghezza",
+      "actual": "100%",
+      "refresh": "Aggiorna"
+    },
+    "viewportAria": "Anteprima del documento",
+    "frameTitle": "Documento in anteprima",
+    "status": {
+      "loading": "Generazione dell'anteprima…",
+      "ready": "Anteprima aggiornata.",
+      "error": "Impossibile generare l'anteprima."
+    }
+  }
+}

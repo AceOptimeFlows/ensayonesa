@@ -1,0 +1,2131 @@
+/* ===========================
+   TUS ESTILOS ORIGINALES (actualizados con header/footer OptimeFlow(s))
+   =========================== */
+:root{
+  --bg: #0b0d12;
+  --panel: #0f1321;
+  --ink: #e5f2ff;
+  --muted: #9fb4ca;
+  --primary: #0ea5e9;
+  --accent: #22d3ee;
+  --danger: #ef4444;
+  --ghost: #1f2942;
+  --field: #121935;
+  --border: #24304f;
+  --radius: 12px;
+  --space: 14px;
+  --input-h: 36px; /* más compacto para campos */
+  /* añadido para indicador de voz */
+  --success: #22c55e;
+  /* vidrio para header tipo ColoCode */
+  --glass: blur(18px) saturate(1.1);
+
+  /* ✅ Safe areas (notch / iPhone / landscape) */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+
+  /* Compat OptimeFlow(s) header/footer */
+  --border-subtle: color-mix(in srgb, var(--border) 65%, transparent);
+  --text: var(--ink);
+  --text-soft: var(--muted);
+  --accent-blue: var(--primary);
+  --accent-green: #22c55e;
+  --surface-card:
+    linear-gradient(145deg, rgba(15,23,42,0.97), rgba(15,23,42,0.88));
+  --pill-offline-bg: rgba(22,163,74,0.26);
+  --pill-offline-dot: #4ade80;
+  --pill-online-bg: rgba(59,130,246,0.28);
+  --pill-online-dot: #60a5fa;
+}
+
+/* ===== Paletas por tema (se activan con data-theme en <html>) ===== */
+
+:root[data-theme="dark"]{
+  /* Núcleo oscuro (más neutro verdoso) */
+  --bg: #020617;
+  --panel: #020617;
+  --field: #020617;
+  --ghost: #020617;
+  --border: #111827;
+  --ink: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #22c55e;
+  --accent: #a3e635;
+  --accent-blue: #38bdf8;
+  --accent-green: #22c55e;
+  --surface-card:
+    linear-gradient(145deg, rgba(15,23,42,0.98), rgba(15,23,42,0.9));
+  --pill-offline-bg: rgba(22,163,74,0.30);
+  --pill-offline-dot: #4ade80;
+  --pill-online-bg: rgba(59,130,246,0.30);
+  --pill-online-dot: #93c5fd;
+}
+
+:root[data-theme="midnight"]{
+  /* Azul medianoche */
+  --bg: #020617;
+  --panel: #020617;
+  --field: #02081b;
+  --ghost: #020a23;
+  --border: #1e293b;
+  --ink: #e5f2ff;
+  --muted: #9fb4ca;
+  --primary: #0ea5e9;
+  --accent: #4f46e5;
+  --accent-blue: #38bdf8;
+  --accent-green: #22c55e;
+  --surface-card:
+    linear-gradient(145deg, rgba(15,23,42,0.98), rgba(30,64,175,0.90));
+  --pill-offline-bg: rgba(22,163,74,0.30);
+  --pill-offline-dot: #4ade80;
+  --pill-online-bg: rgba(56,189,248,0.30);
+  --pill-online-dot: #93c5fd;
+}
+
+:root[data-theme="nebula"]{
+  /* Nebulosa neón (violeta + cian) */
+  --bg: #0b0614;
+  --panel: #120a22;
+  --field: #140c2c;
+  --ghost: #1a1032;
+  --border: #372054;
+  --ink: #f9f5ff;
+  --muted: #c4b5fd;
+  --primary: #a855f7;
+  --accent: #22d3ee;
+  --accent-blue: #22d3ee;
+  --accent-green: #4ade80;
+  --surface-card:
+    linear-gradient(145deg, rgba(15,23,42,0.96), rgba(76,29,149,0.88));
+  --pill-offline-bg: rgba(52,211,153,0.26);
+  --pill-offline-dot: #6ee7b7;
+  --pill-online-bg: rgba(56,189,248,0.28);
+  --pill-online-dot: #7dd3fc;
+}
+
+:root[data-theme="ocean"]{
+  /* Océano profundo (teal/azules) */
+  --bg: #021015;
+  --panel: #02151c;
+  --field: #031b22;
+  --ghost: #032029;
+  --border: #0f3a4c;
+  --ink: #e0f9ff;
+  --muted: #88c3d8;
+  --primary: #06b6d4;
+  --accent: #22c55e;
+  --accent-blue: #0ea5e9;
+  --accent-green: #22c55e;
+  --surface-card:
+    linear-gradient(145deg, rgba(6,78,59,0.96), rgba(15,23,42,0.90));
+  --pill-offline-bg: rgba(34,197,94,0.30);
+  --pill-offline-dot: #4ade80;
+  --pill-online-bg: rgba(56,189,248,0.28);
+  --pill-online-dot: #7dd3fc;
+}
+
+:root[data-theme="forest"]{
+  /* Bosque esmeralda */
+  --bg: #020f0b;
+  --panel: #031511;
+  --field: #031a13;
+  --ghost: #042018;
+  --border: #064e3b;
+  --ink: #ecfdf3;
+  --muted: #6ee7b7;
+  --primary: #22c55e;
+  --accent: #a3e635;
+  --accent-blue: #22d3ee;
+  --accent-green: #22c55e;
+  --surface-card:
+    linear-gradient(145deg, rgba(6,78,59,0.96), rgba(15,23,42,0.90));
+  --pill-offline-bg: rgba(22,163,74,0.35);
+  --pill-offline-dot: #bbf7d0;
+  --pill-online-bg: rgba(34,211,238,0.26);
+  --pill-online-dot: #67e8f9;
+}
+
+:root[data-theme="amber"]{
+  /* Ámbar cálido */
+  --bg: #120c03;
+  --panel: #1a1206;
+  --field: #201508;
+  --ghost: #25180a;
+  --border: #854d0e;
+  --ink: #fffbeb;
+  --muted: #fed7aa;
+  --primary: #f59e0b;
+  --accent: #f97316;
+  --accent-blue: #38bdf8;
+  --accent-green: #22c55e;
+  --surface-card:
+    linear-gradient(145deg, rgba(120,53,15,0.96), rgba(15,23,42,0.90));
+  --pill-offline-bg: rgba(251,191,36,0.22);
+  --pill-offline-dot: #facc15;
+  --pill-online-bg: rgba(248,250,252,0.12);
+  --pill-online-dot: #fef3c7;
+}
+
+:root[data-theme="violet"]{
+  /* Violeta real */
+  --bg: #090520;
+  --panel: #0e082b;
+  --field: #130b35;
+  --ghost: #180f3f;
+  --border: #4c1d95;
+  --ink: #f5f3ff;
+  --muted: #ddd6fe;
+  --primary: #8b5cf6;
+  --accent: #ec4899;
+  --accent-blue: #38bdf8;
+  --accent-green: #22c55e;
+  --surface-card:
+    linear-gradient(145deg, rgba(76,29,149,0.96), rgba(15,23,42,0.90));
+  --pill-offline-bg: rgba(139,92,246,0.30);
+  --pill-offline-dot: #c4b5fd;
+  --pill-online-bg: rgba(236,72,153,0.26);
+  --pill-online-dot: #f9a8d4;
+}
+
+:root[data-theme="mono"]{
+  /* Mono noir (escala de grises) */
+  --bg: #050505;
+  --panel: #0a0a0a;
+  --field: #141414;
+  --ghost: #141414;
+  --border: #262626;
+  --ink: #f5f5f5;
+  --muted: #a3a3a3;
+  --primary: #e5e5e5;
+  --accent: #737373;
+  --accent-blue: #e5e5e5;
+  --accent-green: #d4d4d4;
+  --surface-card:
+    linear-gradient(145deg, rgba(23,23,23,0.98), rgba(15,23,42,0.90));
+  --pill-offline-bg: rgba(163,163,163,0.30);
+  --pill-offline-dot: #e5e5e5;
+  --pill-online-bg: rgba(82,82,82,0.40);
+  --pill-online-dot: #d4d4d4;
+}
+
+*{
+  box-sizing:border-box;
+}
+html,body{
+  margin:0;
+  padding:0;
+  min-height:100%;
+  background:var(--bg);
+  color:var(--ink);
+  font:16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+
+  /* ✅ Evita “cortes” por overflow horizontal en móviles */
+  overflow-x:hidden;
+}
+
+.page-root{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Utilidad accesible */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* (ANTES) .app-header simple — mantenemos por compat,
+   pero el estilo real del header lo define .brand-header */
+.app-header{
+  padding:24px;
+}
+.app-header h1{
+  margin:0;
+  font-size:28px;
+  letter-spacing:.5px;
+}
+.app-header .subtitle{
+  margin:.25rem 0 0;
+  color:var(--muted);
+}
+
+/* ================= LAYOUT PANEL CENTRAL tipo NoEstásSol@ ================= */
+
+.hero{
+  flex:1;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+
+  /* ✅ Más espacio real abajo para que el footer fijo no tape tarjetas (Panel 2 y 3) */
+  padding:
+    24px
+    calc(12px + var(--safe-right))
+    calc(120px + var(--safe-bottom))
+    calc(12px + var(--safe-left));
+}
+
+.nes-shell{
+  width:100%;
+  max-width:640px;
+}
+
+.app-shell{
+  width:100%;
+  display:flex;
+  background:
+    radial-gradient(circle at top left, rgba(59,130,246,0.22), transparent 50%),
+    radial-gradient(circle at top right, rgba(34,197,94,0.18), transparent 55%),
+    radial-gradient(circle at bottom, rgba(15,23,42,0.95), rgba(15,23,42,0.85));
+  border-radius:28px;
+  border:1px solid var(--border);
+  box-shadow:
+    0 30px 90px rgba(0,0,0,0.95),
+    0 0 40px rgba(56,189,248,0.3),
+    0 0 0 1px rgba(15,23,42,0.9) inset;
+  padding:16px 16px 12px;
+  backdrop-filter:var(--glass);
+}
+
+.editor-stack{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  gap:10px;
+  min-width:0;
+}
+
+@media (max-width: 768px){
+  .app-shell{
+    border-radius:22px;
+    padding:12px 10px 10px;
+  }
+}
+
+/* PASOS (tabs principales tipo 2x2) */
+.steps{
+  margin-top:6px;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  grid-auto-rows:1fr;
+  gap:6px;
+  padding:4px;
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(148,163,184,0.18), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(56,189,248,0.18), transparent 55%),
+    rgba(15,23,42,0.92);
+  border:1px solid var(--border-subtle);
+
+  /* ✅ Un poco más ancho para evitar overflows */
+  max-width:608px;
+
+  margin-inline:auto;
+  box-shadow:0 14px 40px rgba(0,0,0,0.85);
+  backdrop-filter:var(--glass);
+  min-width:0;
+}
+.step-btn{
+  flex:1;
+  min-width:0;
+  border:none;
+  border-radius:999px;
+  padding:6px 10px;
+  background:transparent;
+  color:var(--text-soft);
+  font-size:0.78rem;
+  font-weight:500;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:
+    background .16s ease,
+    color .16s ease,
+    box-shadow .18s ease,
+    transform .08s ease;
+}
+.step-btn:hover{
+  transform:translateY(-1px);
+}
+.step-btn.active{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,0.22), transparent 55%),
+    linear-gradient(145deg, var(--accent), var(--accent-blue));
+  color:#03120a;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.85),
+    0 0 0 1px rgba(15,23,42,0.9) inset,
+    0 0 26px rgba(56,189,248,0.8);
+}
+.step-btn:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+
+@media (max-width: 640px){
+  .steps{
+    max-width:100%;
+    border-radius:16px;
+  }
+  .step-btn{
+    white-space:normal;
+    text-align:center;
+  }
+
+  /* ✅ Un pelín menos de padding general dentro de paneles en móvil */
+  .panel-inner{
+    padding:12px;
+  }
+
+  .format-grid,
+  .format-row{
+    grid-template-columns:1fr;
+  }
+}
+
+/* PANELS (tarjeta central + contenido más estrecho) */
+.panels{
+  flex:1;
+  padding:8px 0 0;
+  min-width:0;
+}
+.panel{
+  display:none;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  /* ✅ Un poco más ancho para que los selects (font) no empujen fuera */
+  max-width:608px;
+
+  width:100%;
+  margin:0 auto;
+  box-shadow:0 22px 60px rgba(0,0,0,0.9);
+  min-width:0;
+}
+.panel.active{
+  display:block;
+}
+.panel-inner{
+  padding:16px;
+  min-width:0;
+}
+
+/* =================
+   FIX anti-overflow (grids/flex + form controls)
+   ================= */
+.twocol,
+.split,
+.content-controls,
+.subtitles,
+.format-grid,
+.format-row{
+  min-width:0;
+}
+.twocol > *,
+.split > *,
+.content-controls > *,
+.subtitles > *{
+  min-width:0;
+}
+.tab-content,
+.tab-pane,
+.col,
+.half,
+.field,
+.format-card{
+  min-width:0;
+}
+
+/* Layouts generales */
+.twocol{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.col{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+/* ✅ IMPORTANTE: .field.inline NO puede tener inputs/select a width:100% en fila,
+   porque label + control suman > 100% y se salen del panel. */
+.field.inline{
+  flex-direction:row;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap; /* si falta espacio, baja el control sin romper */
+  min-width:0;
+}
+.field.inline label{
+  flex:0 0 auto;
+  min-width:0;
+}
+.field.inline input[type="text"],
+.field.inline input[type="email"],
+.field.inline input[type="number"],
+.field.inline input[type="date"],
+.field.inline select,
+.field.inline textarea{
+  flex:1 1 240px;
+  width:auto;       /* override del width:100% base */
+  min-width:0;
+  max-width:100%;
+}
+
+.field label{
+  color:var(--muted);
+  font-weight:600;
+}
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="number"],
+.field input[type="date"],
+.field select{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+
+  height:var(--input-h);
+  background:var(--field);
+  border:1px solid var(--border);
+  color:var(--ink);
+  border-radius:10px;
+  padding:0 12px;
+  outline:none;
+
+  /* ayuda con fuentes largas en el control */
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.field textarea{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+
+  background:var(--field);
+  border:1px solid var(--border);
+  color:var(--ink);
+  border-radius:10px;
+  padding:12px;
+  resize:vertical;
+  min-height:96px;
+  display:block;
+}
+
+/* === CONTROLES DE VOZ (fila del label) === */
+.field-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  min-width:0;
+}
+.voice-controls{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+}
+.btn-icon{
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--ghost);
+  color:var(--ink);
+  font-size:16px;
+  cursor:pointer;
+}
+.btn-icon:disabled{
+  opacity:.55;
+  cursor:not-allowed;
+}
+.voice-indicator{
+  width:12px;
+  height:12px;
+  border-radius:999px;
+  background: var(--muted);
+  border: 2px solid rgba(0,0,0,.25);
+  box-shadow: 0 0 0 0 rgba(34,197,94,0);
+}
+.voice-indicator[data-state="listening"]{
+  background: var(--success);
+  box-shadow: 0 0 0 0 rgba(34,197,94,.6);
+  animation: pulse-voice 1.2s ease-out infinite;
+}
+.voice-indicator[data-state="error"]{
+  background: var(--danger);
+  animation: none;
+}
+.voice-indicator[data-state="idle"]{
+  background: var(--muted);
+  animation: none;
+}
+@keyframes pulse-voice{
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,.6); }
+  70%  { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+.field.compact .margins{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+.margins-labels{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  color:var(--muted);
+  font-size:.9rem;
+  margin-bottom:6px;
+}
+.hint{
+  color:var(--muted);
+  font-size:.9rem;
+  margin:.3rem 0 0;
+}
+
+/* TABS secundarios */
+.tabs{
+  display:flex;
+  gap:8px;
+  padding:16px 16px 0;
+  min-width:0;
+}
+
+/* ✅ En móvil: si no caben, que se puedan desplazar */
+@media (max-width: 640px){
+  .tabs{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    padding:12px 10px 0;
+    gap:6px;
+  }
+  .tab-btn{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+  .tab-content{
+    padding:12px 10px;
+  }
+}
+
+.tab-btn{
+  padding:10px 12px;
+  background:var(--ghost);
+  border:1px solid var(--border);
+  color:var(--ink);
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+.tab-btn.active{
+  border-color:var(--primary);
+  box-shadow:0 0 0 2px color-mix(in oklab, var(--primary) 30%, transparent);
+}
+.tab-content{
+  padding:16px;
+  min-width:0;
+}
+.tab-pane{
+  display:none;
+  background:var(--panel);
+  padding:12px;
+  min-width:0;
+}
+.tab-pane.active{
+  display:block;
+}
+
+/* BLOQUES divididos */
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:8px;
+  min-width:0;
+}
+.half{
+  background:linear-gradient(180deg,#0e1633,#0a1228);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px;
+  min-width:0;
+}
+
+/* Tarjetas de formato (compactas, 2 por fila en escritorio) */
+.format-grid,
+.format-row{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:12px;
+}
+
+/* ✅ NUEVO: en “móvil real” (incluye landscape de móvil), 1 panel por fila y más ancho */
+@media (max-width: 900px){
+  .format-grid,
+  .format-row{
+    grid-template-columns:1fr;
+  }
+}
+
+.format-card{
+  background:linear-gradient(180deg,#0e1633,#0a1228);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px 12px 10px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.format-card h4{
+  margin:0 0 4px;
+  font-size:0.9rem;
+}
+.format-card .row{
+  display:grid;
+  grid-template-columns:minmax(0, 120px) minmax(0, 1fr);
+  gap:6px;
+  align-items:center;
+  font-size:0.8rem;
+}
+.format-card .row label{
+  color:var(--muted);
+}
+
+/* ✅ En pantallas muy estrechas: label arriba, control abajo (evita “cortes” visuales) */
+@media (max-width: 420px){
+  .format-card .row{
+    grid-template-columns:1fr;
+    align-items:start;
+  }
+  .format-card .row input[type="color"]{
+    width:100%;
+    height:34px;
+    border-radius:12px;
+  }
+}
+
+/* Controles dentro de las tarjetas de formato */
+.format-card .row select,
+.format-card .row input[type="number"],
+.format-card .row input[type="text"]{
+  height:30px;
+  border-radius:999px;
+  background:var(--field);
+  border:1px solid var(--border-subtle);
+  color:var(--ink);
+  padding:0 10px;
+  font-size:0.8rem;
+  outline:none;
+
+  /* ✅ NUEVO: mismo “anti-overflow” que tus .field selects */
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.format-card .row select{
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(148,163,184,0.9) 50%),
+    linear-gradient(135deg, rgba(148,163,184,0.9) 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 9px) 50%,
+    100% 0;
+  background-size:
+    6px 6px,
+    6px 6px,
+    2.5em 2.5em;
+  background-repeat:no-repeat;
+  padding-right:26px;
+}
+.format-card .row input[type="color"]{
+  width:40px;
+  height:26px;
+  padding:0;
+  border-radius:10px;
+  border:1px solid var(--border-subtle);
+  background:var(--field);
+}
+.format-card .row input[type="range"]{
+  width:100%;
+  accent-color:var(--accent-blue);
+}
+.format-card button{
+  margin-top:6px;
+  height:32px;
+  font-size:0.78rem;
+  border-radius:999px;
+  padding-inline:10px;
+}
+
+/* === Panel Contenido === */
+.content-controls{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  column-gap:16px;
+  row-gap:12px;
+  align-items:start; /* clave para que no "caiga" la columna derecha */
+  min-width:0;
+}
+
+/* Bloque superior sin huecos:
+   Fila 1: Numeración (izq) | Capítulo/Punto (der)
+   Fila 2: Aplicar   (izq) | Nº subsecciones (der) */
+.cc-numbering{
+  grid-column:1;
+  grid-row:1;
+  min-width:0;
+}
+.cc-chapterpoint{
+  grid-column:2;
+  grid-row:1;
+  min-width:0;
+}
+.cc-apply-numbering{
+  grid-column:1;
+  grid-row:2;
+  justify-self:start;
+  width:fit-content;
+}
+/* Si el botón usa .btn, lo igualamos a la altura de inputs */
+.cc-apply-numbering.btn{
+  height:var(--input-h);
+  padding:0 16px;
+}
+
+.cc-subcount{
+  grid-column:2;
+  grid-row:2;
+  min-width:0;
+}
+
+.subtitles{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  min-width:0;
+}
+
+.field.wide{
+  grid-column:1 / -1;
+  min-width:0;
+}
+
+#contenidoField{
+  min-width:0;
+}
+#contenidoField textarea{
+  min-height:280px;
+  max-width:100%;
+  min-width:0;
+}
+
+.format-per-sub{
+  margin-top:20px;
+}
+
+/* Móvil: apilado limpio */
+@media (max-width: 640px){
+  .content-controls{
+    grid-template-columns:1fr;
+  }
+  .cc-numbering,
+  .cc-chapterpoint,
+  .cc-apply-numbering,
+  .cc-subcount{
+    grid-column:1;
+    grid-row:auto;
+  }
+  .cc-apply-numbering{
+    justify-self:stretch;
+    width:auto;
+  }
+}
+
+/* === Panel Exportar === */
+.export-grid{
+  display:grid;
+  grid-template-columns:1fr 1.5fr 1fr 1fr;
+  gap:16px;
+  align-items:end;
+  min-width:0;
+}
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+  align-items:center;
+  min-width:0;
+}
+.actions .plantillas{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  min-width:0;
+}
+button{
+  height:44px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--ghost);
+  color:var(--ink);
+  cursor:pointer;
+  padding:0 14px;
+  font-weight:700;
+}
+button.primary{
+  background:linear-gradient(180deg,#0ea5e9,#0284c7);
+  border-color:#0284c7;
+}
+button.danger{
+  background:linear-gradient(180deg,#ef4444,#b91c1c);
+  border-color:#b91c1c;
+}
+button.ghost{
+  background:var(--ghost);
+}
+button:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+/* Footer anterior (lo dejamos por compat pero no se usa directamente) */
+.app-footer{
+  padding:18px 24px;
+  color:var(--muted);
+}
+
+/* Responsive de tu UI principal */
+@media (max-width: 1200px){
+  .export-grid{
+    grid-template-columns:1fr;
+  }
+  .twocol{
+    grid-template-columns:1fr;
+  }
+  .split{
+    grid-template-columns:1fr;
+  }
+  .subtitles{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ---------- Estilos del documento de impresión generado ---------- */
+.print-root{
+  background:white;
+  color:#111;
+  margin:0;
+  padding:0;
+}
+.print-page{
+  position:relative;
+  background:white;
+  color:#111;
+  overflow:hidden;
+  page-break-after:always;
+  break-after:page;
+}
+.print-content{
+  position:absolute;
+}
+.print-header,
+.print-footer{
+  position:absolute;
+  padding:8px 0;
+  border-left-width:0 !important;
+  border-right-width:0 !important;
+  border-top-width:0;
+  border-bottom-width:0;
+  background:transparent;
+}
+.print-header{
+  top:0;
+  border-bottom:1px solid transparent;
+}
+.print-footer{
+  bottom:0;
+  border-top:1px solid transparent;
+}
+.line-none{
+  border-color:transparent;
+}
+.line-solid{
+  border-color:currentColor;
+  border-style:solid;
+}
+.line-dashed{
+  border-color:currentColor;
+  border-style:dashed;
+}
+.line-dotted{
+  border-color:currentColor;
+  border-style:dotted;
+}
+.pn{
+  position:absolute;
+  font-weight:600;
+}
+.pn.tl{
+  top:8px;
+  left:12px;
+}
+.pn.tr{
+  top:8px;
+  right:12px;
+}
+.pn.bl{
+  bottom:8px;
+  left:12px;
+}
+.pn.br{
+  bottom:8px;
+  right:12px;
+}
+.print-center{
+  text-align:center;
+}
+.print-right{
+  text-align:right;
+}
+.print-left{
+  text-align:left;
+}
+.print-line{
+  position:absolute;
+  white-space:pre-wrap;
+}
+.print-hr{
+  height:1px;
+  background:#222;
+}
+
+/* ===========================
+   COMPONENTES COMUNES OptimeFlow(s)
+   =========================== */
+
+/* Botones tipo pill (solo cuando se use .btn) */
+.btn{
+  border-radius:999px;
+  border:1px solid var(--border-subtle);
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.18), transparent 55%),
+    linear-gradient(145deg, rgba(15,23,42,0.98), rgba(15,23,42,0.86));
+  color:var(--text);
+  padding:6px 14px;
+  font-size:0.9rem;
+  font-weight:500;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  cursor:pointer;
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.8),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  transition:
+    background .16s ease,
+    border-color .16s ease,
+    box-shadow .18s ease,
+    transform .08s ease,
+    filter .16s ease;
+}
+.btn:hover{
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.24), transparent 55%),
+    linear-gradient(145deg, rgba(30,64,175,0.98), rgba(15,23,42,0.9));
+  border-color:var(--accent);
+  box-shadow:
+    0 14px 30px rgba(15,23,42,0.9),
+    0 0 20px rgba(56,189,248,0.45);
+  transform:translateY(-1px);
+  filter:brightness(1.03);
+}
+.btn:active{
+  transform:translateY(0);
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.9),
+    inset 0 0 0 1px rgba(15,23,42,0.95);
+  filter:brightness(0.98);
+}
+.btn:disabled{
+  opacity:0.45;
+  cursor:default;
+  box-shadow:none;
+  transform:none;
+  filter:none;
+}
+.btn.primary{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,0.26) 0, transparent 55%),
+    linear-gradient(145deg, #4ade80, #22c55e, #16a34a);
+  border-color: rgba(34,197,94,0.95);
+  color:#022c16;
+  box-shadow:
+    0 14px 42px rgba(22,163,74,0.8),
+    0 0 0 1px rgba(21,128,61,0.8) inset;
+}
+.btn.primary:hover{
+  filter:brightness(1.05);
+  box-shadow:
+    0 18px 48px rgba(22,163,74,0.9),
+    0 0 26px rgba(74,222,128,0.7);
+}
+.btn.ghost{
+  background:
+    radial-gradient(circle at 30% 0%, rgba(148,163,184,0.22), transparent 55%),
+    linear-gradient(145deg, rgba(15,23,42,0.96), rgba(15,23,42,0.85));
+  border-color:var(--border-subtle);
+}
+
+/* Select tipo pill */
+.sel{
+  border-radius:999px;
+  border:1px solid var(--border-subtle);
+  background:rgba(15,23,42,0.96);
+  color:var(--text);
+  padding:6px 10px;
+  font-size:0.85rem;
+  min-width:120px;
+  max-width:100%;
+}
+
+/* ================= HEADER (marca OptimeFlow(s)) ================= */
+
+.brand-header{
+  position:sticky;
+  top:0;
+  z-index:40;
+
+  /* ✅ safe-area para iPhone/landscape */
+  padding:
+    calc(6px + var(--safe-top))
+    calc(14px + var(--safe-right))
+    6px
+    calc(14px + var(--safe-left));
+
+  background:
+    radial-gradient(circle at 0% 0%, rgba(148,163,184,0.2), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(56,189,248,0.16), transparent 55%),
+    linear-gradient(180deg, rgba(15,23,42,0.96), rgba(15,23,42,0.7));
+  backdrop-filter:var(--glass);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 18px 40px rgba(0,0,0,0.85);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  position:relative;
+  min-height:40px;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+
+/* Logo sin "chip" alrededor: solo imagen con heat-waves */
+.brand-logo{
+  height:clamp(32px, 5vw, 48px);
+  width:clamp(32px, 5vw, 48px);
+  border-radius:10px;
+  object-fit:contain;
+  background:transparent;
+  border:none;
+}
+.brand-logo.heat{
+  filter:
+    url(#heat-waves)
+    drop-shadow(0 0 6px rgba(255,255,255,.35))
+    drop-shadow(0 0 16px rgba(34,211,238,.35));
+}
+.brand-word{
+  font-weight:800;
+  font-size:clamp(1.6rem, 2.8vw, 2.0rem);
+  letter-spacing:.2px;
+}
+
+/* Efecto neón (por si lo usas en otra app) */
+.brand-neon{
+  color:#000;
+  animation:hue 12s linear infinite, glow 3.2s ease-in-out infinite;
+}
+@keyframes hue{
+  from{filter:hue-rotate(0);}
+  to{filter:hue-rotate(360deg);}
+}
+@keyframes glow{
+  0%,100%{
+    text-shadow:
+      0 0 6px rgba(255,255,255,.25),
+      0 0 14px rgba(34,211,238,.55);
+  }
+  50%{
+    text-shadow:
+      0 0 10px rgba(255,255,255,.5),
+      0 0 24px rgba(167,139,250,.7);
+  }
+}
+
+/* Tagline centrada con glyphs ensaYOnesa */
+.tagline{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  align-items:center;
+  gap:0;
+  white-space:nowrap;
+  pointer-events:none;
+  text-align:center;
+}
+.tag-gap{
+  display:inline-block;
+  width:clamp(16px, 3vw, 36px);
+}
+.glyph{
+  display:inline-block;
+  letter-spacing:0;
+  line-height:1;
+  transform-origin:center bottom;
+}
+.frag-silver{
+  font-size:1.4rem;
+  color:#cfd3d6;
+  opacity:.9;
+  animation:wave 3.8s ease-in-out infinite;
+  text-shadow:0 0 6px rgba(255,255,255,.18);
+}
+.frag-white{
+  font-size:1.6rem;
+  color:#fff;
+  opacity:.95;
+  animation:wave 3.8s ease-in-out infinite;
+  text-shadow:0 0 8px rgba(255,255,255,.25);
+}
+.sun-i{
+  font-weight:900;
+  font-size:1.6rem;
+  color:#ffffff;
+  text-shadow:0 0 8px rgba(255,255,255,.7),
+    0 0 22px rgba(255,255,255,.55),
+    0 0 40px rgba(207,229,248,.5);
+}
+.orb-blue{
+  font-weight:900;
+  font-size:1.7rem;
+  color:#bfe5ff;
+  text-shadow:
+    0 0 8px rgba(180,215,255,.9),
+    0 0 22px rgba(80,160,255,.85),
+    0 0 40px rgba(40,120,255,.7);
+}
+.orb-black{
+  font-weight:900;
+  font-size:1.6rem;
+  color:#000;
+  text-shadow:
+    0 0 8px rgba(255,255,255,.45),
+    0 0 22px rgba(190,190,190,.35),
+    0 0 40px rgba(130,130,130,.3);
+}
+.rotate-z{
+  animation:tiltZ 5s ease-in-out infinite alternate;
+}
+.orb-dawn{
+  font-weight:900;
+  font-size:1.7rem;
+  color:#ffd1b1;
+  animation:dawnGlow 6s ease-in-out infinite;
+}
+@keyframes tiltZ{
+  from{transform:rotate(-6deg);}
+  to{transform:rotate(6deg);}
+}
+@keyframes wave{
+  0%,100%{
+    transform:translateY(0);
+    opacity:.6;
+  }
+  50%{
+    transform:translateY(-3px);
+    opacity:.85;
+  }
+}
+@keyframes dawnGlow{
+  0%{
+    color:#ffd1b1;
+    text-shadow:0 0 8px rgba(255,180,80,.95),
+      0 0 24px rgba(255,140,0,.8),
+      0 0 40px rgba(255,100,0,.65);
+  }
+  25%{
+    color:#ffc2ef;
+    text-shadow:0 0 8px rgba(255,0,128,.95),
+      0 0 24px rgba(255,80,160,.8),
+      0 0 40px rgba(255,0,120,.6);
+  }
+  50%{
+    color:#ffd9e6;
+    text-shadow:0 0 8px rgba(255,70,160,.95),
+      0 0 24px rgba(255,20,100,.8),
+      0 0 40px rgba(255,50,140,.6);
+  }
+  75%{
+    color:#d6f1ff;
+    text-shadow:0 0 8px rgba(120,180,255,.95),
+      0 0 24px rgba(70,140,255,.8),
+      0 0 40px rgba(40,120,255,.6);
+  }
+  100%{
+    color:#ffd1b1;
+    text-shadow:0 0 8px rgba(255,180,80,.95),
+      0 0 24px rgba(255,140,0,.8),
+      0 0 40px rgba(255,100,0,.65);
+  }
+}
+
+/* Subtítulo (no lo usamos en esta app, pero lo dejamos por compat) */
+.brand-subtitle{
+  display:none;
+}
+
+/* Botón ajustes en header */
+.quick-controls{
+  margin-left:auto;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.icon-button{
+  border-radius:999px;
+  border:1px solid var(--border-subtle);
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.16), transparent 55%),
+    linear-gradient(145deg, rgba(15,23,42,0.98), rgba(15,23,42,0.85));
+  padding:6px 10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:
+    0 8px 22px rgba(0,0,0,0.85),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  transition:
+    background .15s ease,
+    border-color .15s ease,
+    transform .08s ease,
+    box-shadow .15s ease,
+    filter .16s ease;
+}
+.icon-button:hover{
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.22), transparent 55%),
+    linear-gradient(145deg, rgba(30,64,175,0.98), rgba(15,23,42,0.9));
+  border-color:var(--accent);
+  box-shadow:
+    0 10px 26px rgba(15,23,42,0.9),
+    0 0 20px rgba(56,189,248,0.45);
+  transform:translateY(-1px);
+  filter:brightness(1.03);
+}
+.icon-button:active{
+  transform:translateY(0);
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.9),
+    inset 0 0 0 1px rgba(15,23,42,0.95);
+  filter:brightness(0.98);
+}
+.icon-gear{
+  width:18px;
+  height:18px;
+  border-radius:999px;
+  border:2px solid var(--accent);
+  box-shadow:0 0 0 1px rgba(15,23,42,0.8);
+  position:relative;
+}
+.icon-gear::before,
+.icon-gear::after{
+  content:"";
+  position:absolute;
+  inset:4px;
+  border-radius:999px;
+  border:2px solid rgba(148,163,184,0.8);
+}
+.icon-gear::after{
+  inset:7px;
+  border-width:3px;
+  border-color:var(--accent);
+}
+
+/* Hoja de ajustes */
+.settings-sheet{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:flex-start;
+  justify-content:flex-end;
+
+  /* ✅ safe areas también aquí */
+  padding:
+    calc(62px + var(--safe-top))
+    calc(12px + var(--safe-right))
+    calc(12px + var(--safe-bottom))
+    calc(12px + var(--safe-left));
+
+  background:linear-gradient(to bottom, rgba(15,23,42,0.7), transparent);
+  pointer-events:none;
+  z-index:45;
+}
+.settings-sheet.is-open{
+  display:flex;
+  pointer-events:auto;
+}
+.settings-card{
+  width:min(320px, 100%);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(148,163,184,0.18), transparent 55%),
+    radial-gradient(circle at 120% 0%, rgba(56,189,248,0.16), transparent 55%),
+    var(--surface-card);
+  border-radius:20px;
+  border:1px solid var(--border);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.9),
+    0 0 0 1px rgba(15,23,42,0.9) inset;
+  padding:14px 14px 12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  backdrop-filter:var(--glass);
+}
+.settings-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  font-size:0.9rem;
+  min-width:0;
+}
+.settings-row label{
+  color:var(--text-soft);
+}
+
+/* Responsive header: móvil en vertical alineado a NoEstásSol@ */
+@media (max-width: 1024px) and (orientation: portrait){
+  .brand{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    min-height:40px;
+    flex-wrap:nowrap;
+  }
+  .brand-logo{
+    flex-shrink:0;
+  }
+  .brand-word{
+    display:none;
+  }
+  .tagline{
+    position:static;
+    transform:none;
+    white-space:nowrap;
+    flex:1;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    pointer-events:none;
+  }
+  .quick-controls{
+    margin-left:8px;
+    flex-shrink:0;
+    justify-content:flex-end;
+  }
+}
+
+/* ================= FOOTER OptimeFlow(s) ================= */
+
+.brand-footer{
+  background:
+    radial-gradient(circle at 0% 100%, rgba(148,163,184,0.18), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(56,189,248,0.16), transparent 55%),
+    linear-gradient(0deg, rgba(15,23,42,0.96), rgba(15,23,42,0.7));
+  border-top: 1px solid var(--border);
+
+  /* ✅ safe-area en bottom y laterales */
+  padding:
+    4px
+    calc(12px + var(--safe-right))
+    calc(4px + var(--safe-bottom))
+    calc(12px + var(--safe-left));
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  color:var(--muted);
+  box-shadow:0 -14px 32px rgba(0,0,0,.8);
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:40;
+  backdrop-filter:var(--glass);
+}
+.brand-footer strong{
+  color:var(--ink);
+}
+.brand-footer .sep{
+  opacity:.6;
+}
+.brand-footer .btn.ghost{
+  background:var(--ghost);
+  border:1px solid var(--border);
+  color:var(--ink);
+  height:26px;
+  border-radius:7px;
+  padding:0 10px;
+  font-weight:800;
+}
+
+.footer-left{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  font-size:0.78rem;
+}
+.footer-left .sep{
+  opacity:.6;
+}
+
+.footer-center{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+
+.footer-right{
+  display:flex;
+  align-items:center;
+  gap:clamp(8px, 2vw, 18px);
+}
+
+/* Icono central del footer: chip pegado al icono y solo visible al interactuar */
+.footer-logo-btn{
+  display:inline-grid;
+  place-items:center;
+  padding:0;
+  border-radius:50%;
+  border:1px solid transparent;
+  background:transparent;
+  cursor:pointer;
+  transition:
+    box-shadow .14s ease,
+    transform .08s ease,
+    filter .14s ease,
+    border-color .12s ease,
+    background-color .12s ease;
+  box-shadow:none;
+}
+.footer-logo-btn:hover,
+.footer-logo-btn:focus-visible{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,0.16), transparent 55%),
+    linear-gradient(145deg, rgba(15,23,42,0.98), rgba(15,23,42,0.85));
+  border-color:var(--accent);
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.85),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.footer-logo-btn:active{
+  transform:scale(0.97);
+}
+
+.footer-logo{
+  height: clamp(22px, 5vw, 28px);
+  width: clamp(22px, 5vw, 28px);
+  object-fit:contain;
+  border-radius:10px;
+}
+.tag-logo{
+  object-fit:contain;
+  transform-origin:center center;
+  animation:sway 5.5s ease-in-out infinite;
+  filter:
+    drop-shadow(0 0 6px rgba(255,255,255,.35))
+    drop-shadow(0 0 16px rgba(34,211,238,.35));
+}
+@keyframes sway{
+  0%{transform:rotate(-3deg);}
+  50%{transform:rotate(3deg);}
+  100%{transform:rotate(-3deg);}
+}
+
+/* Footer responsive en móvil vertical */
+@media (max-width: 600px) and (orientation: portrait){
+  .brand-footer{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center;
+
+    /* ✅ mantener safe-area laterales */
+    padding-left: calc(10px + var(--safe-left));
+    padding-right: calc(10px + var(--safe-right));
+
+    column-gap:8px;
+  }
+  .footer-left{
+    justify-self:flex-start;
+    text-align:left;
+  }
+  .footer-center{
+    position:static;
+    transform:none;
+    justify-self:center;
+  }
+  .footer-right{
+    justify-self:flex-end;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:4px;
+  }
+  .footer-right .btn.ghost{
+    width:auto;
+    min-width:0;
+  }
+  .footer-logo{
+    height: clamp(32px, 10vw, 40px);
+    width: clamp(32px, 10vw, 40px);
+  }
+}
+
+/* ================= OVERLAYS (licencia / privacidad / coherencia / gate) ================= */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(15,23,42,0.78);
+  backdrop-filter: blur(22px);
+  z-index:60;
+}
+
+/* Oculto por defecto si tiene [hidden] */
+.overlay[hidden]{
+  display:none;
+}
+
+/* Estado forzado visible */
+.overlay.is-visible{
+  display:flex !important;
+}
+
+.overlay .box{
+  background:
+    radial-gradient(circle at 0% 0%, rgba(148,163,184,0.2), transparent 55%),
+    radial-gradient(circle at 120% 0%, rgba(56,189,248,0.18), transparent 55%),
+    var(--surface-card);
+  border-radius:18px;
+  border:1px solid var(--border);
+  max-width: min(640px, 100% - 32px);
+  max-height: min(80vh, 640px);
+  padding:16px 16px 14px;
+  box-shadow:
+    0 26px 80px rgba(0,0,0,0.95),
+    0 0 0 1px rgba(15,23,42,0.9) inset;
+  overflow:auto;
+  font-size:0.86rem;
+  backdrop-filter:var(--glass);
+}
+.overlay .box h2{
+  margin:0 0 8px;
+  font-size:1.05rem;
+}
+.overlay .box .small{
+  font-size:0.83rem;
+  color:var(--text-soft);
+}
+.overlay-actions{
+  margin-top:10px;
+  text-align:right;
+}
+.license-text{
+  margin:0;
+  white-space:pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:0.8rem;
+  background:rgba(15,23,42,0.8);
+  border-radius:10px;
+  padding:10px;
+  border:1px solid var(--border-subtle);
+}
+
+/* Bloquear scroll cuando hay overlay */
+body.overlay-open{
+  overflow:hidden;
+}
+
+/* ===========================
+   Desktop only tweaks (>=1201px)
+   - Panel 2: reducir font en textos de checks (Cabecero/Pie/Nº página)
+   - Panel 4 (Exportar): re-layout en PC + márgenes más legibles
+   =========================== */
+@media (min-width: 1201px){
+
+  /* ---------------------------
+     (1) Panel 2: checks más pequeños
+     --------------------------- */
+  /* Soporta 2 estructuras:
+     A) <label><input id="cabEnabled"> Texto</label>  (usa :has)
+     B) <input id="cabEnabled"> <label for="cabEnabled">Texto</label> (usa [for])
+  */
+  label:has(#cabEnabled),
+  label[for="cabEnabled"],
+  .field.inline:has(#cabEnabled),
+
+  label:has(#pieEnabled),
+  label[for="pieEnabled"],
+  .field.inline:has(#pieEnabled),
+
+  label:has(#pieCitasEnabled),
+  label[for="pieCitasEnabled"],
+  .field.inline:has(#pieCitasEnabled),
+
+  label:has(#numEnabled),
+  label[for="numEnabled"],
+  .field.inline:has(#numEnabled){
+    font-size: 0.86rem;
+    line-height: 1.15;
+  }
+
+  /* ---------------------------
+     (2) Panel 4: Exportar — layout PC
+     --------------------------- */
+
+  .export-grid{
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .export-grid > *{
+    min-width: 0;
+  }
+
+  .export-grid .field.inline{
+    grid-column: 1 / -1;
+    order: 5;
+  }
+
+  .export-grid > :nth-child(1){ order: 1; grid-column: 1; }
+  .export-grid > :nth-child(2){ order: 2; grid-column: 2; }
+  .export-grid > :nth-child(7){ order: 3; grid-column: 1; }
+  .export-grid > :nth-child(3){ order: 4; grid-column: 2; }
+  .export-grid > :nth-child(4){ order: 5; grid-column: 1 / -1; }
+  .export-grid > :nth-child(5){ order: 6; grid-column: 1 / -1; }
+  .export-grid > :nth-child(6){ order: 7; grid-column: 1 / -1; }
+
+  @supports selector(:has(*)){
+    .export-grid > *{
+      order: 0;
+      grid-column: auto;
+    }
+
+    .export-grid > *:has(#tamPagina){
+      order: 1;
+      grid-column: 1;
+    }
+
+    .export-grid > *:has(#margenSup),
+    .export-grid > *:has(#margenInf),
+    .export-grid > *:has(#margenIzq),
+    .export-grid > *:has(#margenDer){
+      order: 2;
+      grid-column: 2;
+    }
+
+    .export-grid > *:has(#nombreArchivo){
+      order: 3;
+      grid-column: 1;
+    }
+
+    .export-grid > *:has(#gapCabTexto){
+      order: 4;
+      grid-column: 2;
+    }
+
+    .export-grid > *:has(#breakOnChapter){
+      order: 5;
+      grid-column: 1 / -1;
+    }
+    .export-grid > *:has(#endCitesEnabled){
+      order: 6;
+      grid-column: 1 / -1;
+    }
+    .export-grid > *:has(#endBibliographyEnabled){
+      order: 7;
+      grid-column: 1 / -1;
+    }
+  }
+
+  .export-grid label:has(#breakOnChapter),
+  .export-grid .field.inline:has(#breakOnChapter),
+  .export-grid label:has(#endCitesEnabled),
+  .export-grid .field.inline:has(#endCitesEnabled),
+  .export-grid label:has(#endBibliographyEnabled),
+  .export-grid .field.inline:has(#endBibliographyEnabled){
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    white-space: normal;
+    max-width: 100%;
+  }
+
+  .export-grid .field.inline label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    white-space:normal;
+    max-width:100%;
+  }
+
+  .export-grid .margins-labels,
+  .export-grid .field.compact .margins{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .export-grid .field.compact .margins input[type="number"]{
+    height: calc(var(--input-h) + 6px);
+    padding: 0 14px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ===========================
+   ✅ FIXES UI (Panel 3 / Índice / Exportar)
+   - 1) Botones B/I/U con color del tema
+   - 2) Campos dinámicos del Índice bonitos
+   - 3) Select de Plantillas (Exportar) bonito
+   =========================== */
+
+/* (1) Toolbar inline format: caja bonita */
+.inline-fmt-toolbar{
+  padding:6px 8px;
+  border-radius:14px;
+  border:1px solid var(--border-subtle);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(148,163,184,0.14), transparent 55%),
+    rgba(15,23,42,0.38);
+  box-shadow:0 12px 28px rgba(0,0,0,0.55);
+  backdrop-filter:var(--glass);
+}
+
+/* (1) Botones B / I / U -> theme color (pisando inline styles del JS) */
+.inline-fmt-toolbar button{
+  /* tamaño cómodo pero compacto */
+  height:34px;
+  min-width:36px;
+
+  /* pisar los inline styles que ponía el JS */
+  padding:0 12px !important;
+  border-radius:999px !important;
+  border:1px solid color-mix(in srgb, var(--primary) 55%, var(--border) 45%) !important;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.26), transparent 60%),
+    linear-gradient(145deg, var(--primary), var(--accent)) !important;
+
+  /* texto oscuro para que SIEMPRE se lea */
+  color:var(--bg) !important;
+
+  /* feel */
+  font-weight:850;
+  letter-spacing:.2px;
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.75),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+  transition:
+    transform .08s ease,
+    filter .15s ease,
+    box-shadow .15s ease,
+    border-color .15s ease;
+}
+.inline-fmt-toolbar button:hover{
+  transform:translateY(-1px);
+  filter:brightness(1.06);
+  border-color:var(--accent-blue) !important;
+  box-shadow:
+    0 14px 32px rgba(0,0,0,0.85),
+    0 0 22px color-mix(in srgb, var(--primary) 45%, transparent),
+    inset 0 1px 0 rgba(255,255,255,0.14);
+}
+.inline-fmt-toolbar button:active{
+  transform:translateY(0);
+  filter:brightness(0.98);
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.85),
+    inset 0 0 0 1px rgba(0,0,0,0.18);
+}
+.inline-fmt-toolbar button:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+
+/* (2) Índice: wrapper de campos dinámicos */
+#idxCampos{
+  margin-top:10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0;
+}
+
+/* Cada fila del índice (la crea JS como .idx-row) */
+#idxCampos .idx-row{
+  padding:10px;
+  border-radius:16px;
+  border:1px solid var(--border-subtle);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(148,163,184,0.14), transparent 55%),
+    linear-gradient(180deg, rgba(15,23,42,0.92), rgba(15,23,42,0.78));
+  box-shadow:0 14px 40px rgba(0,0,0,0.65);
+  min-width:0;
+}
+
+/* Input de título del capítulo (no estaba cubierto por .field input) */
+#idxCampos .idx-row input[type="text"]{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+
+  height:var(--input-h);
+  background:var(--field);
+  border:1px solid var(--border);
+  color:var(--ink);
+  border-radius:12px;
+  padding:0 12px;
+  outline:none;
+
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#idxCampos .idx-row input[type="text"]::placeholder{
+  color:color-mix(in srgb, var(--muted) 82%, transparent);
+}
+#idxCampos .idx-row input[type="text"]:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 2px color-mix(in oklab, var(--primary) 30%, transparent);
+}
+
+/* (3) Exportar: select de plantillas bonito
+   - cubre el caso típico: .actions .plantillas select
+   - y también si el id/nombre contiene "plantilla" */
+.actions .plantillas select,
+select.sel,
+select[id*="plantilla" i],
+select[name*="plantilla" i]{
+  height:36px;
+  border-radius:999px;
+  border:1px solid var(--border-subtle);
+  color:var(--text);
+  font-size:0.9rem;
+  font-weight:750;
+  outline:none;
+
+  padding:0 38px 0 12px;
+  min-width:180px;
+  max-width:100%;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255,255,255,0.14), transparent 55%),
+    linear-gradient(145deg, rgba(15,23,42,0.96), rgba(15,23,42,0.82));
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.75),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+
+  /* flechita custom */
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(148,163,184,0.9) 50%),
+    linear-gradient(135deg, rgba(148,163,184,0.9) 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 16px) 50%,
+    calc(100% - 11px) 50%,
+    100% 0;
+  background-size:
+    6px 6px,
+    6px 6px,
+    2.5em 2.5em;
+  background-repeat:no-repeat;
+}
+.actions .plantillas select:hover,
+select.sel:hover,
+select[id*="plantilla" i]:hover,
+select[name*="plantilla" i]:hover{
+  border-color:var(--accent);
+  box-shadow:
+    0 14px 32px rgba(0,0,0,0.85),
+    0 0 22px color-mix(in srgb, var(--accent-blue) 40%, transparent),
+    inset 0 1px 0 rgba(255,255,255,0.10);
+}
+.actions .plantillas select:focus-visible,
+select.sel:focus-visible,
+select[id*="plantilla" i]:focus-visible,
+select[name*="plantilla" i]:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+.actions .plantillas select:disabled,
+select.sel:disabled,
+select[id*="plantilla" i]:disabled,
+select[name*="plantilla" i]:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+/* Opciones (limitado según navegador, pero ayuda bastante) */
+.actions .plantillas select option,
+select.sel option,
+select[id*="plantilla" i] option,
+select[name*="plantilla" i] option{
+  background:var(--panel);
+  color:var(--ink);
+}
+
+/* ===========================
+   ✅ FIX móvil: Citas/Notas (toolbar + #citaTipo) no se salen del panel
+   =========================== */
+@media (max-width: 640px){
+
+  /* En el bloque de Contenido, el encabezado (label + controles) debe poder romper línea */
+  #contenidoField .field-head{
+    flex-wrap:wrap;
+    align-items:flex-start;
+    justify-content:flex-start; /* evita empujes raros a la derecha */
+    gap:10px;
+  }
+
+  /* El label ocupa su línea y los controles bajan debajo */
+  #contenidoField .field-head > label{
+    flex:1 1 100%;
+    min-width:0;
+  }
+
+  /* Contenedor de controles de citas: ancho completo y sin mínimos “intrínsecos” */
+  #contenidoField .citation-controls{
+    flex:1 1 100%;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+
+  /* IMPORTANTÍSIMO en flex: permitir que los hijos se encogan */
+  #contenidoField .citation-controls > *{
+    min-width:0;
+    max-width:100%;
+  }
+
+  /* El select de tipo de nota tiene inline min-width:320px -> lo anulamos en móvil */
+  #contenidoField #citaTipo{
+    width:100% !important;
+    min-width:0 !important;
+    flex:1 1 100%;
+  }
+
+  /* Si algún día vuelves a mostrar estos, también quedan “a prueba de móvil” */
+  #contenidoField #selCita,
+  #contenidoField #citaTexto{
+    width:100% !important;
+    min-width:0 !important;
+    flex:1 1 100%;
+  }
+
+  /* Toolbar de negrita/cursiva/subrayado (la de citas): que no desborde */
+  #contenidoField .field-head .inline-fmt-toolbar{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+
+    overflow-x:auto; /* por si mañana metes más botones */
+    -webkit-overflow-scrolling:touch;
+  }
+}
+/* ===========================
+   ✅ Panel 1: secciones finales a ancho completo en desktop
+   =========================== */
+#panel1 .panel1-endmatter-section{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:16px;
+}
+
+#panel1 .panel1-endmatter-section[hidden]{
+  display:none !important;
+}
+
+#panel1 .panel1-endmatter-hint{
+  margin:0;
+}
+
+#panel1 .panel1-endmatter-field{
+  min-width:0;
+}
+
+#panel1 .panel1-endmatter-placeholder{
+  display:none !important;
+}
+
+@media (max-width: 1200px){
+  #panel1 .panel1-endmatter-section{
+    margin-top:12px;
+  }
+}
